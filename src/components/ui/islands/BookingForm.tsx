@@ -59,7 +59,8 @@ export default function BookingForm({ className, onSuccess }: BookingFormProps) 
           required
           value={formData.name}
           onChange={handleChange}
-          className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-ioc-blue focus:ring-2 focus:ring-ioc-blue/20 outline-none transition-colors"
+          className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gray-400 focus:ring-0 focus:outline-none transition-colors"
+          style={{ outline: 'none', boxShadow: 'none' }}
           placeholder="John Doe"
         />
       </div>
@@ -75,7 +76,8 @@ export default function BookingForm({ className, onSuccess }: BookingFormProps) 
           required
           value={formData.phone}
           onChange={handleChange}
-          className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-ioc-blue focus:ring-2 focus:ring-ioc-blue/20 outline-none transition-colors"
+          className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gray-400 focus:ring-0 focus:outline-none transition-colors"
+          style={{ outline: 'none', boxShadow: 'none' }}
           placeholder="(385) 275-2110"
         />
       </div>
@@ -90,7 +92,8 @@ export default function BookingForm({ className, onSuccess }: BookingFormProps) 
           name="email"
           value={formData.email}
           onChange={handleChange}
-          className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-ioc-blue focus:ring-2 focus:ring-ioc-blue/20 outline-none transition-colors"
+          className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gray-400 focus:ring-0 focus:outline-none transition-colors"
+          style={{ outline: 'none', boxShadow: 'none' }}
           placeholder="john@example.com"
         />
       </div>
@@ -104,7 +107,8 @@ export default function BookingForm({ className, onSuccess }: BookingFormProps) 
           name="insurance"
           value={formData.insurance}
           onChange={handleChange}
-          className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-ioc-blue focus:ring-2 focus:ring-ioc-blue/20 outline-none transition-colors"
+          className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gray-400 focus:ring-0 focus:outline-none transition-colors"
+          style={{ outline: 'none', boxShadow: 'none' }}
         >
           <option value="">Select insurance...</option>
           <option value="self-pay">Self Pay</option>
@@ -128,7 +132,8 @@ export default function BookingForm({ className, onSuccess }: BookingFormProps) 
           value={formData.reason}
           onChange={handleChange}
           rows={3}
-          className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-ioc-blue focus:ring-2 focus:ring-ioc-blue/20 outline-none transition-colors resize-none"
+          className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gray-400 focus:ring-0 focus:outline-none transition-colors resize-none"
+          style={{ outline: 'none', boxShadow: 'none' }}
           placeholder="Brief description of your injury or concern..."
         />
       </div>

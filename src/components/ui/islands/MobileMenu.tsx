@@ -33,13 +33,14 @@ export default function MobileMenu({ className }: MobileMenuProps) {
             className="fixed inset-0 bg-black/50 z-40 top-20"
             onClick={() => setIsOpen(false)}
           />
-          <nav className="fixed top-20 left-0 right-0 bg-white border-t shadow-lg z-50 focus:outline-none focus:ring-0 focus:shadow-lg">
+          <nav className="fixed top-20 left-0 right-0 bg-white border-t shadow-lg z-50 focus:outline-none focus:ring-0 focus:shadow-lg" style={{ outline: 'none', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)' }}>
             <div className="px-4 py-6 space-y-4">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="block py-3 text-lg font-semibold text-ioc-gray-dark hover:text-ioc-blue transition-colors focus:outline-none focus:ring-0 focus:shadow-none active:outline-none active:ring-0 active:shadow-none"
+                  className="block py-3 text-lg font-semibold text-ioc-gray-dark hover:text-ioc-blue transition-colors focus:outline-none focus:ring-0 focus:shadow-none active:outline-none active:ring-0 active:shadow-none no-underline"
+                  style={{ textDecoration: 'none', outline: 'none', boxShadow: 'none', WebkitTapHighlightColor: 'transparent' }}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
@@ -47,14 +48,16 @@ export default function MobileMenu({ className }: MobileMenuProps) {
               ))}
               <a
                 href="tel:3852752110"
-                className="block py-3 text-lg font-semibold text-ioc-blue hover:text-ioc-blue-dark focus:outline-none focus:ring-0 focus:shadow-none active:outline-none active:ring-0 active:shadow-none"
+                className="block py-3 text-lg font-semibold text-ioc-blue hover:text-ioc-blue-dark focus:outline-none focus:ring-0 focus:shadow-none active:outline-none active:ring-0 active:shadow-none no-underline"
+                style={{ textDecoration: 'none', outline: 'none', boxShadow: 'none', WebkitTapHighlightColor: 'transparent' }}
                 onClick={() => setIsOpen(false)}
               >
                 (385) 275-2110
               </a>
               <a
                 href="/book"
-                className="block w-full py-3 px-6 text-center bg-ioc-blue text-white rounded-lg font-semibold hover:bg-ioc-blue-dark transition-colors focus:outline-none focus:ring-0 focus:shadow-none active:outline-none active:ring-0 active:shadow-none"
+                className="block w-full py-3 px-6 text-center bg-ioc-blue text-white rounded-lg font-semibold hover:bg-ioc-blue-dark transition-colors focus:outline-none focus:ring-0 focus:shadow-none active:outline-none active:ring-0 active:shadow-none no-underline"
+                style={{ textDecoration: 'none', outline: 'none', boxShadow: 'none', WebkitTapHighlightColor: 'transparent' }}
                 onClick={() => setIsOpen(false)}
               >
                 Book Online

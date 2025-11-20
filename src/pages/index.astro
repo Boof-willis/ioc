@@ -288,7 +288,7 @@ import '@/styles/global.css';
 
         <StaggerChildren client:visible staggerDelay={0.1}>
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <Card hover>
+          <Card hover class="border-gray-300 focus:border-gray-300">
             <h3 class="text-xl font-bold text-ioc-gray-dark mb-3">Ankle & Foot</h3>
             <ul class="space-y-2 text-ioc-gray">
               <li>• Sprains & fractures</li>
@@ -297,7 +297,7 @@ import '@/styles/global.css';
             </ul>
           </Card>
 
-          <Card hover>
+          <Card hover class="border-gray-300 focus:border-gray-300">
             <h3 class="text-xl font-bold text-ioc-gray-dark mb-3">Knee & Hip</h3>
             <ul class="space-y-2 text-ioc-gray">
               <li>• Joint pain</li>
@@ -306,7 +306,7 @@ import '@/styles/global.css';
             </ul>
           </Card>
 
-          <Card hover>
+          <Card hover class="border-gray-300 focus:border-gray-300">
             <h3 class="text-xl font-bold text-ioc-gray-dark mb-3">Shoulder</h3>
             <ul class="space-y-2 text-ioc-gray">
               <li>• Rotator cuff injuries</li>
@@ -315,7 +315,7 @@ import '@/styles/global.css';
             </ul>
           </Card>
 
-          <Card hover>
+          <Card hover class="border-gray-300 focus:border-gray-300">
             <h3 class="text-xl font-bold text-ioc-gray-dark mb-3">Elbow & Wrist</h3>
             <ul class="space-y-2 text-ioc-gray">
               <li>• Tennis elbow</li>
@@ -324,7 +324,7 @@ import '@/styles/global.css';
             </ul>
           </Card>
 
-          <Card hover>
+          <Card hover class="border-gray-300 focus:border-gray-300">
             <h3 class="text-xl font-bold text-ioc-gray-dark mb-3">Sports Injuries</h3>
             <ul class="space-y-2 text-ioc-gray">
               <li>• Acute injuries</li>
@@ -333,7 +333,7 @@ import '@/styles/global.css';
             </ul>
           </Card>
 
-          <Card hover>
+          <Card hover class="border-gray-300 focus:border-gray-300">
             <h3 class="text-xl font-bold text-ioc-gray-dark mb-3">Chronic Pain</h3>
             <ul class="space-y-2 text-ioc-gray">
               <li>• Arthritis management</li>
@@ -363,28 +363,28 @@ import '@/styles/global.css';
             <h2 class="text-3xl md:text-4xl font-bold text-ioc-gray-dark mb-6">No Surprise Bills. No Facility Fees.</h2>
             <ul class="space-y-4 mb-8">
               <li class="flex items-start gap-3">
-                <CheckCircle client:load class="w-6 h-6 text-ioc-green flex-shrink-0 mt-1" />
+                <CheckCircle client:load class="!w-6 !h-6 text-ioc-green flex-shrink-0 mt-1" style="width: 24px; height: 24px;" />
                 <div>
                   <h3 class="font-semibold text-ioc-gray-dark mb-1">Accept All Major Insurance Plans</h3>
                   <p class="text-ioc-gray">Blue Cross, Aetna, Cigna, UnitedHealthcare, Medicaid, Medicare, and more</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
-                <CheckCircle client:load class="w-6 h-6 text-ioc-green flex-shrink-0 mt-1" />
+                <CheckCircle client:load class="!w-6 !h-6 text-ioc-green flex-shrink-0 mt-1" style="width: 24px; height: 24px;" />
                 <div>
                   <h3 class="font-semibold text-ioc-gray-dark mb-1">Transparent Self-Pay Options</h3>
                   <p class="text-ioc-gray">Clear pricing for those without insurance</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
-                <CheckCircle client:load class="w-6 h-6 text-ioc-green flex-shrink-0 mt-1" />
+                <CheckCircle client:load class="!w-6 !h-6 text-ioc-green flex-shrink-0 mt-1" style="width: 24px; height: 24px;" />
                 <div>
                   <h3 class="font-semibold text-ioc-gray-dark mb-1">Workers Comp & Auto Accidents</h3>
                   <p class="text-ioc-gray">We accept and work with all insurance types</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
-                <CheckCircle client:load class="w-6 h-6 text-ioc-green flex-shrink-0 mt-1" />
+                <CheckCircle client:load class="!w-6 !h-6 text-ioc-green flex-shrink-0 mt-1" style="width: 24px; height: 24px;" />
                 <div>
                   <h3 class="font-semibold text-ioc-gray-dark mb-1">75% Cost Savings vs. ER</h3>
                   <p class="text-ioc-gray">Get the same quality care for a fraction of the cost</p>
@@ -398,7 +398,7 @@ import '@/styles/global.css';
           </ScrollAnimation>
           <ScrollAnimation client:visible direction="left" delay={0.3}>
             <div>
-              <Card class="p-8">
+              <Card class="p-8 border-black focus:border-black">
               <h3 class="text-2xl font-bold text-ioc-gray-dark mb-6 text-center">Cost Comparison</h3>
               <div class="space-y-4">
                 <div class="flex justify-between items-center p-4 bg-red-50 rounded-lg">
@@ -433,7 +433,7 @@ import '@/styles/global.css';
 
         <StaggerChildren client:visible staggerDelay={0.15}>
           <div class="grid md:grid-cols-3 gap-6 mb-12">
-          <Card hover class="text-center">
+          <Card hover class="text-center border-gray-300 focus:border-gray-300">
             <div class="w-20 h-20 bg-ioc-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
               <ShieldCheck client:load class="w-12 h-12 text-ioc-blue" />
             </div>
@@ -441,7 +441,7 @@ import '@/styles/global.css';
             <p class="text-ioc-gray">Fellowship-trained orthopedic specialists</p>
           </Card>
 
-          <Card hover class="text-center">
+          <Card hover class="text-center border-gray-300 focus:border-gray-300">
             <div class="w-20 h-20 bg-ioc-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
               <BadgeCheck client:load class="w-12 h-12 text-ioc-blue" />
             </div>
@@ -449,7 +449,7 @@ import '@/styles/global.css';
             <p class="text-ioc-gray">Expert care for athletes of all levels</p>
           </Card>
 
-          <Card hover class="text-center">
+          <Card hover class="text-center border-gray-300 focus:border-gray-300">
             <div class="w-20 h-20 bg-ioc-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
               <Award client:load class="w-12 h-12 text-ioc-blue" />
             </div>
