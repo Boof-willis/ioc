@@ -6,8 +6,6 @@ import Card from '@/components/ui/Card.astro';
 import Container from '@/components/ui/Container.astro';
 import Section from '@/components/ui/Section.astro';
 import BookingForm from '@/components/ui/islands/BookingForm';
-import ScrollAnimation from '@/components/ui/islands/ScrollAnimation';
-import StaggerChildren from '@/components/ui/islands/StaggerChildren';
 import AnimatedLine from '@/components/ui/islands/AnimatedLine';
 import CheckCircle from '@/components/ui/icons/CheckCircle';
 import Clock from '@/components/ui/icons/Clock';
@@ -38,36 +36,35 @@ import '@/styles/global.css';
     <Section background="gray" id="hero" class="min-h-[90vh] flex items-center">
       <Container>
         <div class="grid lg:grid-cols-[45%_55%] gap-8 lg:gap-12 items-center">
-          <ScrollAnimation client:visible direction="right" delay={0.2}>
-            <div>
-              <h1 class="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-ioc-gray-dark mb-4 lg:mb-5 leading-tight">
-                <span class="block lg:inline">See an Orthopedic Specialist Today.</span> <span class="text-ioc-blue block lg:inline">No Wait. No ER Bills.</span>
-              </h1>
-              <p class="text-lg md:text-xl text-ioc-gray mb-6 lg:mb-7 leading-relaxed">
-                Walk in or book online. Expert diagnosis, imaging, and treatment in under an hour. Save up to <strong class="text-ioc-blue">75% vs. the ER</strong>.
-              </p>
-              
-              <div class="flex flex-col sm:flex-row gap-4">
-                <Button href="/book" variant="primary" size="lg" class="w-full sm:w-auto">
-                  Walk In Now
-                </Button>
-                <Button href="#book" variant="secondary" size="lg" class="w-full sm:w-auto">
-                  Book Appointment
-                </Button>
-              </div>
+          <div>
+            <h1 class="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-ioc-gray-dark mb-4 lg:mb-5 leading-tight">
+              <span class="block lg:inline">See an Orthopedic Specialist Today.</span> <span class="text-ioc-blue block lg:inline">No Wait. No ER Bills.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-ioc-gray mb-6 lg:mb-7 leading-relaxed">
+              Walk in or book online. Expert diagnosis, imaging, and treatment in under an hour. Save up to <strong class="text-ioc-blue">75% vs. the ER</strong>.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4">
+              <Button href="/book" variant="primary" size="lg" class="w-full sm:w-auto">
+                Walk In Now
+              </Button>
+              <Button href="#book" variant="secondary" size="lg" class="w-full sm:w-auto">
+                Book Appointment
+              </Button>
             </div>
-          </ScrollAnimation>
+          </div>
           
-          <ScrollAnimation client:visible direction="left" delay={0.4}>
-            <div class="relative">
-              <img 
-                src="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/sfc_wilk_male_doctor_talking_to_male_patient_in_exam_room_smili_570b443f-7725-426b-becd-1e1c2254807b.png" 
-                alt="Friendly orthopedic doctor consulting with a smiling patient"
-                class="rounded-2xl w-full h-full object-cover aspect-[4/3] shadow-lg"
-                loading="eager"
-              />
-            </div>
-          </ScrollAnimation>
+          <div class="relative">
+            <img 
+              src="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/sfc_wilk_male_doctor_talking_to_male_patient_in_exam_room_smili_570b443f-7725-426b-becd-1e1c2254807b.png" 
+              alt="Friendly orthopedic doctor consulting with a smiling patient"
+              class="rounded-2xl w-full h-full object-cover aspect-[4/3] shadow-lg"
+              width="800"
+              height="600"
+              loading="eager"
+              fetchpriority="high"
+            />
+          </div>
         </div>
       </Container>
     </Section>
@@ -75,15 +72,12 @@ import '@/styles/global.css';
     <!-- Problem/Solution Section -->
     <Section background="white" id="problem-solution">
       <Container>
-        <ScrollAnimation client:visible direction="fade" delay={0.2}>
-          <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-ioc-gray-dark mb-4">The Old Way is Broken</h2>
-            <p class="text-xl text-ioc-gray max-w-2xl mx-auto">Compare your options and see why IOC is the better choice</p>
-          </div>
-        </ScrollAnimation>
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-ioc-gray-dark mb-4">The Old Way is Broken</h2>
+          <p class="text-xl text-ioc-gray max-w-2xl mx-auto">Compare your options and see why IOC is the better choice</p>
+        </div>
 
-        <StaggerChildren client:visible staggerDelay={0.15}>
-          <div class="grid md:grid-cols-3 gap-6 mb-16">
+        <div class="grid md:grid-cols-3 gap-6 mb-16">
           <!-- ER -->
           <Card hover class="border-red-200">
             <div class="flex items-center gap-3 mb-4">
@@ -149,23 +143,19 @@ import '@/styles/global.css';
               </li>
             </ul>
           </Card>
-          </div>
-        </StaggerChildren>
+        </div>
       </Container>
     </Section>
 
     <!-- Cost & Time Comparison -->
     <Section background="gray" id="comparison">
       <Container>
-        <ScrollAnimation client:visible direction="fade" delay={0.2}>
-          <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-ioc-gray-dark mb-4">Cost & Time Comparison</h2>
-            <p class="text-xl text-ioc-gray">See the real difference</p>
-          </div>
-        </ScrollAnimation>
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-ioc-gray-dark mb-4">Cost & Time Comparison</h2>
+          <p class="text-xl text-ioc-gray">See the real difference</p>
+        </div>
 
-        <ScrollAnimation client:visible direction="fade" delay={0.3}>
-          <div class="max-w-5xl mx-auto -mx-4 px-4 sm:mx-0 sm:px-0">
+        <div class="max-w-5xl mx-auto -mx-4 px-4 sm:mx-0 sm:px-0">
             <div class="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0">
               <table class="w-full min-w-full">
                 <thead>
@@ -222,23 +212,20 @@ import '@/styles/global.css';
               </Button>
             </div>
           </div>
-        </ScrollAnimation>
+        </div>
       </Container>
     </Section>
 
     <!-- How It Works -->
     <Section background="white" id="how-it-works">
       <Container>
-        <ScrollAnimation client:visible direction="fade" delay={0.2}>
-          <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-ioc-gray-dark mb-4">From Injury to Treatment in One Visit</h2>
-            <p class="text-xl text-ioc-gray max-w-2xl mx-auto">Simple, fast, and effective</p>
-          </div>
-        </ScrollAnimation>
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-ioc-gray-dark mb-4">From Injury to Treatment in One Visit</h2>
+          <p class="text-xl text-ioc-gray max-w-2xl mx-auto">Simple, fast, and effective</p>
+        </div>
 
-        <StaggerChildren client:visible staggerDelay={0.15}>
-          <div class="relative grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <AnimatedLine client:visible />
+        <div class="relative grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <AnimatedLine client:idle />
             
             <div class="text-center relative z-10">
               <div class="w-16 h-16 bg-ioc-blue rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 relative z-50" style="background-color: #4A90E2; z-index: 50;">
@@ -271,23 +258,19 @@ import '@/styles/global.css';
               <h3 class="text-xl font-bold text-ioc-gray-dark mb-3">Treatment Today</h3>
               <p class="text-ioc-gray">Casting, bracing, injections, or treatment plan - all in one visit.</p>
             </div>
-          </div>
-        </StaggerChildren>
+        </div>
       </Container>
     </Section>
 
     <!-- Conditions Treated -->
     <Section background="gray" id="conditions">
       <Container>
-        <ScrollAnimation client:visible direction="fade" delay={0.2}>
-          <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-ioc-gray-dark mb-4">We Treat All Orthopedic Injuries</h2>
-            <p class="text-xl text-ioc-gray">Expert care for every part of your body</p>
-          </div>
-        </ScrollAnimation>
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-ioc-gray-dark mb-4">We Treat All Orthopedic Injuries</h2>
+          <p class="text-xl text-ioc-gray">Expert care for every part of your body</p>
+        </div>
 
-        <StaggerChildren client:visible staggerDelay={0.1}>
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <Card hover class="border-gray-300 focus:border-gray-300">
             <h3 class="text-xl font-bold text-ioc-gray-dark mb-3">Ankle & Foot</h3>
             <ul class="space-y-2 text-ioc-gray">
@@ -341,16 +324,13 @@ import '@/styles/global.css';
               <li>• Treatment plans</li>
             </ul>
           </Card>
-          </div>
-        </StaggerChildren>
+        </div>
 
-        <ScrollAnimation client:visible direction="fade" delay={0.4}>
-          <div class="text-center mt-12">
-            <Button href="/services" variant="secondary" size="lg">
-              See Full Conditions List
-            </Button>
-          </div>
-        </ScrollAnimation>
+        <div class="text-center mt-12">
+          <Button href="/services" variant="secondary" size="lg">
+            See Full Conditions List
+          </Button>
+        </div>
       </Container>
     </Section>
 
@@ -358,8 +338,7 @@ import '@/styles/global.css';
     <Section background="white" id="insurance">
       <Container>
         <div class="grid lg:grid-cols-2 gap-12 items-center">
-          <ScrollAnimation client:visible direction="right" delay={0.2}>
-            <div>
+          <div>
             <h2 class="text-3xl md:text-4xl font-bold text-ioc-gray-dark mb-6">No Surprise Bills. No Facility Fees.</h2>
             <ul class="space-y-4 mb-8">
               <li class="flex items-start gap-3">
@@ -394,10 +373,8 @@ import '@/styles/global.css';
             <Button href="/insurance" variant="primary" size="lg">
               Verify Insurance
             </Button>
-            </div>
-          </ScrollAnimation>
-          <ScrollAnimation client:visible direction="left" delay={0.3}>
-            <div>
+          </div>
+          <div>
               <Card class="p-8 border-black focus:border-black">
               <h3 class="text-2xl font-bold text-ioc-gray-dark mb-6 text-center">Cost Comparison</h3>
               <div class="space-y-4">
@@ -415,8 +392,7 @@ import '@/styles/global.css';
                 </div>
               </div>
             </Card>
-            </div>
-          </ScrollAnimation>
+          </div>
         </div>
       </Container>
     </Section>
@@ -424,15 +400,12 @@ import '@/styles/global.css';
     <!-- Provider Credentials -->
     <Section background="gray" id="providers">
       <Container>
-        <ScrollAnimation client:visible direction="fade" delay={0.2}>
-          <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-ioc-gray-dark mb-4">Expert Care You Can Trust</h2>
-            <p class="text-xl text-ioc-gray max-w-2xl mx-auto">Board-certified orthopedic surgeons and specialists</p>
-          </div>
-        </ScrollAnimation>
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-ioc-gray-dark mb-4">Expert Care You Can Trust</h2>
+          <p class="text-xl text-ioc-gray max-w-2xl mx-auto">Board-certified orthopedic surgeons and specialists</p>
+        </div>
 
-        <StaggerChildren client:visible staggerDelay={0.15}>
-          <div class="grid md:grid-cols-3 gap-6 mb-12">
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
           <Card hover class="text-center border-gray-300 focus:border-gray-300">
             <div class="w-20 h-20 bg-ioc-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
               <ShieldCheck client:load class="w-12 h-12 text-ioc-blue" />
@@ -456,16 +429,13 @@ import '@/styles/global.css';
             <h3 class="text-xl font-bold text-ioc-gray-dark mb-2">Advanced Imaging Expertise</h3>
             <p class="text-ioc-gray">On-site X-ray and ultrasound capabilities</p>
           </Card>
-          </div>
-        </StaggerChildren>
+        </div>
 
-        <ScrollAnimation client:visible direction="fade" delay={0.4}>
-          <div class="text-center">
-            <Button href="/book" variant="primary" size="lg">
-              Book Your Visit Today
-            </Button>
-          </div>
-        </ScrollAnimation>
+        <div class="text-center">
+          <Button href="/book" variant="primary" size="lg">
+            Book Your Visit Today
+          </Button>
+        </div>
       </Container>
     </Section>
 
@@ -473,8 +443,7 @@ import '@/styles/global.css';
     <Section background="white" id="location">
       <Container>
         <div class="grid lg:grid-cols-2 gap-12">
-          <ScrollAnimation client:visible direction="right" delay={0.2}>
-            <div>
+          <div>
             <h2 class="text-3xl md:text-4xl font-bold text-ioc-gray-dark mb-6">Draper, Utah Clinic</h2>
             <div class="space-y-6 mb-8">
               <div class="flex items-start gap-4">
@@ -526,10 +495,8 @@ import '@/styles/global.css';
               </Button>
             </div>
           </div>
-          </ScrollAnimation>
 
-          <ScrollAnimation client:visible direction="left" delay={0.3}>
-            <div>
+          <div>
               <!-- Google Maps Embed -->
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d230.5013213331995!2d-111.8890543584764!3d40.52947107362816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sus!4v1763660368733!5m2!1sen!2sus"
@@ -541,8 +508,7 @@ import '@/styles/global.css';
               referrerpolicy="no-referrer-when-downgrade"
               class="rounded-lg"
             ></iframe>
-            </div>
-          </ScrollAnimation>
+          </div>
         </div>
       </Container>
     </Section>
@@ -550,18 +516,14 @@ import '@/styles/global.css';
     <!-- Booking Section -->
     <Section background="blue" id="book">
       <Container size="md">
-        <ScrollAnimation client:visible direction="fade" delay={0.2}>
-          <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Book Your Appointment</h2>
-            <p class="text-xl opacity-90">Walk-ins also welcome during business hours</p>
-          </div>
-        </ScrollAnimation>
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Book Your Appointment</h2>
+          <p class="text-xl opacity-90">Walk-ins also welcome during business hours</p>
+        </div>
 
-        <ScrollAnimation client:visible direction="scale" delay={0.3}>
-          <Card class="max-w-2xl mx-auto">
-            <BookingForm client:load />
-          </Card>
-        </ScrollAnimation>
+        <Card class="max-w-2xl mx-auto">
+          <BookingForm client:idle />
+        </Card>
       </Container>
     </Section>
 
