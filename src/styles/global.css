@@ -54,6 +54,9 @@
   }
   img {
     content-visibility: auto;
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
 }
 
@@ -214,12 +217,19 @@ a, button {
   transition: all 0.3s ease;
 }
 
-/* Image hover effects */
-img {
-  transition: transform 0.3s ease;
+/* iOS/Safari scroll optimization */
+header, .sticky {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
 }
 
-img:hover {
-  transform: scale(1.02);
+/* Prevent flickering on iOS Safari */
+* {
+  -webkit-transform: translateZ(0);
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 

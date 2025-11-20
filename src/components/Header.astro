@@ -4,7 +4,7 @@ import Container from '@/components/ui/Container.astro';
 import Phone from '@/components/ui/icons/Phone';
 ---
 
-<header class="sticky top-0 z-50 bg-white border-b shadow-sm">
+<header class="sticky top-0 z-50 bg-white border-b shadow-sm" style="transform: translateZ(0); will-change: transform; -webkit-backface-visibility: hidden; backface-visibility: hidden;">
   <Container>
     <div class="flex items-center justify-between h-20 md:h-24">
       <!-- Logo -->
@@ -13,7 +13,10 @@ import Phone from '@/components/ui/icons/Phone';
           src="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/Untitled%20design%20(49).png" 
           alt="Instant Orthopedic Care Logo" 
           class="w-[110px] h-auto"
+          width="110"
+          height="40"
           loading="eager"
+          style="transform: translateZ(0); will-change: transform; -webkit-backface-visibility: hidden; backface-visibility: hidden;"
         />
       </a>
 
