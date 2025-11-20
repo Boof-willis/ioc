@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { cn } from '@/lib/utils';
 
 interface MobileMenuProps {
   className?: string;
@@ -18,47 +17,121 @@ export default function MobileMenu({ className }: MobileMenuProps) {
   ];
 
   return (
-    <div className={cn('lg:hidden', className)}>
+    <div className={className} style={{ display: 'block' }}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="p-2 text-ioc-gray-dark hover:text-ioc-blue transition-colors focus:outline-none focus:ring-0 focus:shadow-none active:outline-none active:ring-0 active:shadow-none"
+        className="lg:hidden p-2"
         aria-label="Toggle menu"
+        style={{
+          color: '#1F2937',
+          background: 'transparent',
+          border: 'none',
+          outline: 'none',
+          boxShadow: 'none',
+          WebkitTapHighlightColor: 'transparent',
+        }}
       >
         {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
       </button>
 
       {isOpen && (
         <>
+          {/* Backdrop */}
           <div
-            className="fixed inset-0 bg-black/50 z-40 top-20"
             onClick={() => setIsOpen(false)}
+            style={{
+              position: 'fixed',
+              top: '80px',
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: 'rgba(0, 0, 0, 0.5)',
+              zIndex: 40,
+            }}
           />
-          <nav className="fixed top-20 left-0 right-0 bg-white z-50" style={{ outline: 'none', boxShadow: 'none', borderTop: '1px solid #d1d5db', borderBottom: 'none' }}>
-            <div className="px-4 py-6 space-y-4">
+          
+          {/* Mobile Menu */}
+          <nav
+            style={{
+              position: 'fixed',
+              top: '80px',
+              left: 0,
+              right: 0,
+              backgroundColor: '#ffffff',
+              zIndex: 50,
+              borderTop: '1px solid #9ca3af',
+              borderBottom: 'none',
+              borderLeft: 'none',
+              borderRight: 'none',
+              boxShadow: 'none',
+              outline: 'none',
+              transform: 'translateZ(0)',
+              WebkitBackfaceVisibility: 'hidden',
+              backfaceVisibility: 'hidden',
+            }}
+          >
+            <div style={{ padding: '24px 16px' }}>
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="block py-3 text-lg font-semibold text-ioc-gray-dark hover:text-ioc-blue transition-colors focus:outline-none focus:ring-0 focus:shadow-none active:outline-none active:ring-0 active:shadow-none no-underline"
-                  style={{ textDecoration: 'none', outline: 'none', boxShadow: 'none', WebkitTapHighlightColor: 'transparent' }}
                   onClick={() => setIsOpen(false)}
+                  style={{
+                    display: 'block',
+                    padding: '12px 0',
+                    fontSize: '18px',
+                    fontWeight: 600,
+                    color: '#1F2937',
+                    textDecoration: 'none',
+                    outline: 'none',
+                    border: 'none',
+                    boxShadow: 'none',
+                    WebkitTapHighlightColor: 'transparent',
+                  }}
                 >
                   {item.label}
                 </a>
               ))}
+              
               <a
                 href="tel:3852752110"
-                className="block py-3 text-lg font-semibold text-ioc-blue hover:text-ioc-blue-dark focus:outline-none focus:ring-0 focus:shadow-none active:outline-none active:ring-0 active:shadow-none no-underline"
-                style={{ textDecoration: 'none', outline: 'none', boxShadow: 'none', WebkitTapHighlightColor: 'transparent' }}
                 onClick={() => setIsOpen(false)}
+                style={{
+                  display: 'block',
+                  padding: '12px 0',
+                  fontSize: '18px',
+                  fontWeight: 600,
+                  color: '#4A90E2',
+                  textDecoration: 'none',
+                  outline: 'none',
+                  border: 'none',
+                  boxShadow: 'none',
+                  WebkitTapHighlightColor: 'transparent',
+                }}
               >
                 (385) 275-2110
               </a>
+              
               <a
                 href="/book"
-                className="block w-full py-3 px-6 text-center bg-ioc-blue text-white rounded-lg font-semibold hover:bg-ioc-blue-dark transition-colors focus:outline-none focus:ring-0 focus:shadow-none active:outline-none active:ring-0 active:shadow-none no-underline"
-                style={{ textDecoration: 'none', outline: 'none', boxShadow: 'none', WebkitTapHighlightColor: 'transparent' }}
                 onClick={() => setIsOpen(false)}
+                style={{
+                  display: 'block',
+                  width: '100%',
+                  padding: '12px 24px',
+                  marginTop: '8px',
+                  textAlign: 'center',
+                  fontSize: '16px',
+                  fontWeight: 600,
+                  color: '#ffffff',
+                  backgroundColor: '#4A90E2',
+                  borderRadius: '8px',
+                  textDecoration: 'none',
+                  outline: 'none',
+                  border: 'none',
+                  boxShadow: 'none',
+                  WebkitTapHighlightColor: 'transparent',
+                }}
               >
                 Book Online
               </a>
@@ -69,4 +142,3 @@ export default function MobileMenu({ className }: MobileMenuProps) {
     </div>
   );
 }
-
