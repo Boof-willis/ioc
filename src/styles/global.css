@@ -34,7 +34,8 @@
   html {
     overflow-x: hidden;
     max-width: 100%;
-    scroll-behavior: smooth;
+    /* Remove smooth scroll on iOS - causes flicker */
+    scroll-behavior: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -53,7 +54,8 @@
     line-height: 1.2;
   }
   img {
-    content-visibility: auto;
+    /* Remove content-visibility - causes iOS issues */
+    display: block;
   }
 }
 
@@ -209,18 +211,27 @@ nav:focus-visible {
   --tw-ring-offset-color: transparent !important;
 }
 
-/* Smooth transitions for interactive elements */
+/* Smooth transitions for interactive elements - but NOT transforms on mobile */
 a, button {
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
 }
 
-/* iOS/Safari optimization - Minimal & Safe */
+/* iOS/Safari sticky header optimization */
 header {
   position: -webkit-sticky;
   position: sticky;
+  /* Fixed shadow to prevent recalculation */
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  /* GPU acceleration only on header */
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
+/* Prevent any flickering on header logo */
+header img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
