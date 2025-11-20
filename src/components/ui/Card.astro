@@ -8,6 +8,6 @@ const { class: className = '', hover = false } = Astro.props;
 const hoverClass = hover ? 'hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300' : '';
 ---
 
-<div class={`rounded-lg border bg-white p-6 shadow-card ${hoverClass} ${className}`}>
+<div class={`rounded-lg border bg-white p-6 shadow-card focus:outline-none focus:ring-0 focus:shadow-card ${hoverClass} ${className}`}>
   <slot />
 </div>

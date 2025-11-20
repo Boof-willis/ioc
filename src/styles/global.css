@@ -118,33 +118,81 @@
 
 /* Remove mobile focus outlines and shadows */
 * {
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent !important;
   -webkit-touch-callout: none;
 }
 
 *:focus,
 *:focus-visible,
-*:active {
+*:focus-within,
+*:active,
+*:hover:focus,
+*:hover:focus-visible {
   outline: none !important;
+  outline-offset: 0 !important;
   box-shadow: none !important;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+}
+
+button,
+a,
+input,
+textarea,
+select,
+div,
+nav,
+section,
+article,
+header,
+footer {
+  -webkit-tap-highlight-color: transparent !important;
 }
 
 button:focus,
 button:focus-visible,
 button:active,
+button:hover:focus,
 a:focus,
 a:focus-visible,
 a:active,
+a:hover:focus,
 input:focus,
 input:focus-visible,
+input:active,
 textarea:focus,
 textarea:focus-visible,
 select:focus,
-select:focus-visible {
+select:focus-visible,
+div:focus,
+div:focus-visible,
+nav:focus,
+nav:focus-visible {
   outline: none !important;
+  outline-offset: 0 !important;
   box-shadow: none !important;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  border-color: inherit !important;
+}
+
+/* Remove all Tailwind focus rings */
+.focus\:ring-0,
+.focus\:ring-offset-0,
+.ring-0,
+.ring-offset-0 {
+  --tw-ring-offset-shadow: 0 0 #0000 !important;
+  --tw-ring-shadow: 0 0 #0000 !important;
+  box-shadow: none !important;
+}
+
+/* Remove focus rings from all elements */
+[class*="focus:ring"],
+[class*="ring-"] {
+  --tw-ring-color: transparent !important;
+  --tw-ring-offset-color: transparent !important;
 }
 
 /* Smooth transitions for interactive elements */
