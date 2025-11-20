@@ -31,10 +31,17 @@
   * {
     @apply border-border;
   }
+  html {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
   body {
     @apply bg-ioc-gray-light text-ioc-gray-dark;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     line-height: 1.6;
+    overflow-x: hidden;
+    max-width: 100%;
+    position: relative;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Inter', system-ui, sans-serif;

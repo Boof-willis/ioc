@@ -33,7 +33,7 @@ export default function MobileMenu({ className }: MobileMenuProps) {
             className="fixed inset-0 bg-black/50 z-40 top-20"
             onClick={() => setIsOpen(false)}
           />
-          <nav className="fixed top-20 left-0 right-0 bg-white border-t shadow-lg z-50 focus:outline-none focus:ring-0 focus:shadow-lg" style={{ outline: 'none', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)' }}>
+          <nav className="fixed top-20 left-0 right-0 bg-white border-t border-gray-200 z-50" style={{ outline: 'none', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)' }}>
             <div className="px-4 py-6 space-y-4">
               {navItems.map((item) => (
                 <a

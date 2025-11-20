@@ -165,51 +165,51 @@ import '@/styles/global.css';
         </ScrollAnimation>
 
         <ScrollAnimation client:visible direction="fade" delay={0.3}>
-          <div class="max-w-5xl mx-auto">
-            <div class="overflow-x-auto">
-              <table class="w-full">
+          <div class="max-w-5xl mx-auto -mx-4 px-4 sm:mx-0 sm:px-0">
+            <div class="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0">
+              <table class="w-full min-w-full">
                 <thead>
                   <tr class="h-16 bg-black">
-                    <th class="text-left px-6 font-medium text-white">Comparison</th>
-                    <th class="text-center px-6 font-medium text-white">Emergency Room</th>
-                    <th class="text-center px-6 font-medium text-white">Instant Orthopedic Care</th>
+                    <th class="text-left px-3 sm:px-6 font-medium text-white text-sm sm:text-base">Comparison</th>
+                    <th class="text-center px-2 sm:px-6 font-medium text-white text-sm sm:text-base">Emergency Room</th>
+                    <th class="text-center px-2 sm:px-6 font-medium text-white text-sm sm:text-base">Instant Orthopedic Care</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr class="h-16 bg-white">
-                    <td class="px-6 font-medium text-ioc-gray-dark">Wait Time</td>
-                    <td class="px-6 text-center text-ioc-gray">4+ hours</td>
-                    <td class="px-6 text-center text-ioc-blue font-medium">15-30 minutes</td>
+                    <td class="px-3 sm:px-6 font-medium text-ioc-gray-dark text-xs sm:text-base">Wait Time</td>
+                    <td class="px-2 sm:px-6 text-center text-ioc-gray text-xs sm:text-base">4+ hours</td>
+                    <td class="px-2 sm:px-6 text-center text-ioc-blue font-medium text-xs sm:text-base">15-30 min</td>
                   </tr>
                   <tr class="h-16 bg-ioc-gray-light">
-                    <td class="px-6 font-medium text-ioc-gray-dark">Total Visit Time</td>
-                    <td class="px-6 text-center text-ioc-gray">4-6 hours</td>
-                    <td class="px-6 text-center text-ioc-blue font-medium">&lt;1 hour</td>
+                    <td class="px-3 sm:px-6 font-medium text-ioc-gray-dark text-xs sm:text-base">Total Visit</td>
+                    <td class="px-2 sm:px-6 text-center text-ioc-gray text-xs sm:text-base">4-6 hours</td>
+                    <td class="px-2 sm:px-6 text-center text-ioc-blue font-medium text-xs sm:text-base">&lt;1 hour</td>
                   </tr>
                   <tr class="h-16 bg-white">
-                    <td class="px-6 font-medium text-ioc-gray-dark">Cost Range</td>
-                    <td class="px-6 text-center text-ioc-gray">$800 - $1,500</td>
-                    <td class="px-6 text-center text-ioc-green font-medium">$200 - $400</td>
+                    <td class="px-3 sm:px-6 font-medium text-ioc-gray-dark text-xs sm:text-base">Cost Range</td>
+                    <td class="px-2 sm:px-6 text-center text-ioc-gray text-xs sm:text-base">$800-$1,500</td>
+                    <td class="px-2 sm:px-6 text-center text-ioc-green font-medium text-xs sm:text-base">$200-$400</td>
                   </tr>
                   <tr class="h-16 bg-ioc-gray-light">
-                    <td class="px-6 font-medium text-ioc-gray-dark">Specialist Care</td>
-                    <td class="px-6 text-center text-ioc-gray">General ER doctors</td>
-                    <td class="px-6 text-center text-ioc-blue font-medium">Board-certified orthopedic surgeons</td>
+                    <td class="px-3 sm:px-6 font-medium text-ioc-gray-dark text-xs sm:text-base">Specialist</td>
+                    <td class="px-2 sm:px-6 text-center text-ioc-gray text-xs sm:text-base">General ER</td>
+                    <td class="px-2 sm:px-6 text-center text-ioc-blue font-medium text-xs sm:text-base">Board-certified</td>
                   </tr>
                   <tr class="h-16 bg-white">
-                    <td class="px-6 font-medium text-ioc-gray-dark">On-Site Imaging</td>
-                    <td class="px-6 text-center text-ioc-gray">Limited availability</td>
-                    <td class="px-6 text-center text-ioc-blue font-medium">X-ray & ultrasound available</td>
+                    <td class="px-3 sm:px-6 font-medium text-ioc-gray-dark text-xs sm:text-base">Imaging</td>
+                    <td class="px-2 sm:px-6 text-center text-ioc-gray text-xs sm:text-base">Limited</td>
+                    <td class="px-2 sm:px-6 text-center text-ioc-blue font-medium text-xs sm:text-base">X-ray & US</td>
                   </tr>
                   <tr class="h-16 bg-ioc-gray-light">
-                    <td class="px-6 font-medium text-ioc-gray-dark">Treatment in One Visit</td>
-                    <td class="px-6 text-center text-ioc-gray">Often requires follow-up</td>
-                    <td class="px-6 text-center text-ioc-blue font-medium">Complete treatment same day</td>
+                    <td class="px-3 sm:px-6 font-medium text-ioc-gray-dark text-xs sm:text-base">Treatment</td>
+                    <td class="px-2 sm:px-6 text-center text-ioc-gray text-xs sm:text-base">Follow-up needed</td>
+                    <td class="px-2 sm:px-6 text-center text-ioc-blue font-medium text-xs sm:text-base">Same day</td>
                   </tr>
                   <tr class="h-16 bg-white">
-                    <td class="px-6 font-medium text-ioc-gray-dark">Transparent Pricing</td>
-                    <td class="px-6 text-center text-ioc-gray">Surprise bills common</td>
-                    <td class="px-6 text-center text-ioc-blue font-medium">Clear pricing upfront</td>
+                    <td class="px-3 sm:px-6 font-medium text-ioc-gray-dark text-xs sm:text-base">Pricing</td>
+                    <td class="px-2 sm:px-6 text-center text-ioc-gray text-xs sm:text-base">Surprise bills</td>
+                    <td class="px-2 sm:px-6 text-center text-ioc-blue font-medium text-xs sm:text-base">Clear upfront</td>
                   </tr>
                 </tbody>
               </table>
