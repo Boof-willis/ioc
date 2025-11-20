@@ -1,0 +1,43 @@
+---
+import MobileMenu from '@/components/ui/islands/MobileMenu';
+import Container from '@/components/ui/Container.astro';
+import Phone from '@/components/ui/icons/Phone';
+---
+
+<header class="sticky top-0 z-50 bg-white border-b shadow-sm">
+  <Container>
+    <div class="flex items-center justify-between h-20 md:h-24">
+      <!-- Logo -->
+      <a href="/" class="flex items-center">
+        <img 
+          src="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/Untitled%20design%20(49).png" 
+          alt="Instant Orthopedic Care Logo" 
+          class="w-[110px] h-auto"
+          loading="eager"
+        />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center gap-8">
+        <a href="/services" class="text-ioc-gray-dark hover:text-ioc-blue font-medium transition-colors">Services</a>
+        <a href="/how-it-works" class="text-ioc-gray-dark hover:text-ioc-blue font-medium transition-colors">How It Works</a>
+        <a href="/insurance" class="text-ioc-gray-dark hover:text-ioc-blue font-medium transition-colors">Insurance</a>
+        <a href="/providers" class="text-ioc-gray-dark hover:text-ioc-blue font-medium transition-colors">Providers</a>
+        <a href="/location" class="text-ioc-gray-dark hover:text-ioc-blue font-medium transition-colors">Location</a>
+      </nav>
+
+      <!-- Right side: Phone CTA -->
+      <div class="flex items-center gap-4">
+        <a 
+          href="tel:3852752110" 
+          class="hidden md:flex items-center gap-2 bg-ioc-blue text-white px-4 py-2 rounded-lg font-semibold hover:bg-ioc-blue-dark transition-all duration-300 ease-in-out hover:scale-[1.02] active:scale-[0.98]"
+        >
+          <Phone client:load class="w-5 h-5" />
+          <span>(385) 275-2110</span>
+        </a>
+        <MobileMenu client:load />
+      </div>
+    </div>
+  </Container>
+</header>
+

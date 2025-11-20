@@ -1,0 +1,69 @@
+import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
+import { cn } from '@/lib/utils';
+
+interface MobileMenuProps {
+  className?: string;
+}
+
+export default function MobileMenu({ className }: MobileMenuProps) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const navItems = [
+    { label: 'Services', href: '/services' },
+    { label: 'How It Works', href: '/how-it-works' },
+    { label: 'Insurance', href: '/insurance' },
+    { label: 'Providers', href: '/providers' },
+    { label: 'Location', href: '/location' },
+  ];
+
+  return (
+    <div className={cn('lg:hidden', className)}>
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="p-2 text-ioc-gray-dark hover:text-ioc-blue transition-colors"
+        aria-label="Toggle menu"
+      >
+        {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+      </button>
+
+      {isOpen && (
+        <>
+          <div
+            className="fixed inset-0 bg-black/50 z-40 top-20"
+            onClick={() => setIsOpen(false)}
+          />
+          <nav className="fixed top-20 left-0 right-0 bg-white border-t shadow-lg z-50">
+            <div className="px-4 py-6 space-y-4">
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="block py-3 text-lg font-semibold text-ioc-gray-dark hover:text-ioc-blue transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.label}
+                </a>
+              ))}
+              <a
+                href="tel:3852752110"
+                className="block py-3 text-lg font-semibold text-ioc-blue hover:text-ioc-blue-dark"
+                onClick={() => setIsOpen(false)}
+              >
+                (385) 275-2110
+              </a>
+              <a
+                href="/book"
+                className="block w-full py-3 px-6 text-center bg-ioc-blue text-white rounded-lg font-semibold hover:bg-ioc-blue-dark transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Book Online
+              </a>
+            </div>
+          </nav>
+        </>
+      )}
+    </div>
+  );
+}
+

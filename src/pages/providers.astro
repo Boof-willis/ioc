@@ -1,0 +1,101 @@
+---
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import Button from '@/components/ui/Button.astro';
+import Card from '@/components/ui/Card.astro';
+import Container from '@/components/ui/Container.astro';
+import Section from '@/components/ui/Section.astro';
+import '@/styles/global.css';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Meet our board-certified orthopedic surgeons and specialists at Instant Orthopedic Care." />
+    <title>Our Providers - Instant Orthopedic Care</title>
+  </head>
+  <body>
+    <Header />
+    
+    <Section background="gray">
+      <Container>
+        <div class="text-center mb-12">
+          <h1 class="text-4xl md:text-5xl font-bold text-ioc-gray-dark mb-4">Expert Care You Can Trust</h1>
+          <p class="text-xl text-ioc-gray max-w-2xl mx-auto">Board-certified orthopedic surgeons and specialists</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <!-- Provider 1 -->
+          <Card hover class="text-center">
+            <img 
+              src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=80&fit=crop" 
+              alt="Dr. John Smith, Board-Certified Orthopedic Surgeon"
+              class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-ioc-blue/20"
+              loading="lazy"
+            />
+            <h2 class="text-2xl font-bold text-ioc-gray-dark mb-2">Dr. John Smith</h2>
+            <p class="text-ioc-blue font-semibold mb-4">Board-Certified Orthopedic Surgeon</p>
+            <p class="text-ioc-gray mb-4">Fellowship-trained in sports medicine with over 15 years of experience treating athletes and active individuals.</p>
+            <p class="text-sm text-ioc-gray"><strong>Specialties:</strong> Sports injuries, knee & shoulder surgery</p>
+          </Card>
+
+          <!-- Provider 2 -->
+          <Card hover class="text-center">
+            <img 
+              src="https://images.unsplash.com/photo-1594824476969-48dfc288d014?w=400&q=80&fit=crop" 
+              alt="Dr. Sarah Johnson, Board-Certified Orthopedic Surgeon"
+              class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-ioc-blue/20"
+              loading="lazy"
+            />
+            <h2 class="text-2xl font-bold text-ioc-gray-dark mb-2">Dr. Sarah Johnson</h2>
+            <p class="text-ioc-blue font-semibold mb-4">Board-Certified Orthopedic Surgeon</p>
+            <p class="text-ioc-gray mb-4">Specializes in hand, wrist, and elbow injuries with expertise in minimally invasive techniques.</p>
+            <p class="text-sm text-ioc-gray"><strong>Specialties:</strong> Hand & wrist surgery, upper extremity</p>
+          </Card>
+
+          <!-- Provider 3 -->
+          <Card hover class="text-center">
+            <img 
+              src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&q=80&fit=crop" 
+              alt="PA Michael Davis, Orthopedic Physician Assistant"
+              class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-ioc-blue/20"
+              loading="lazy"
+            />
+            <h2 class="text-2xl font-bold text-ioc-gray-dark mb-2">PA Michael Davis</h2>
+            <p class="text-ioc-blue font-semibold mb-4">Orthopedic Physician Assistant</p>
+            <p class="text-ioc-gray mb-4">Orthopedic-trained PA with advanced ultrasound expertise. Specializes in acute injuries and injections.</p>
+            <p class="text-sm text-ioc-gray"><strong>Specialties:</strong> Acute injuries, ultrasound-guided injections</p>
+          </Card>
+        </div>
+
+        <div class="bg-ioc-blue text-white rounded-2xl p-8 md:p-12 text-center">
+          <h2 class="text-3xl font-bold mb-4">Why Choose Our Team?</h2>
+          <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-8">
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Board Certified</h3>
+              <p class="opacity-90">All surgeons are board-certified and fellowship-trained</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Years of Experience</h3>
+              <p class="opacity-90">Combined decades of orthopedic expertise</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Patient-Focused</h3>
+              <p class="opacity-90">Committed to getting you back to your active life</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <Button href="/book" variant="primary" size="lg">
+            Book with Our Team
+          </Button>
+        </div>
+      </Container>
+    </Section>
+
+    <Footer />
+  </body>
+</html>
+

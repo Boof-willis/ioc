@@ -1,0 +1,126 @@
+---
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import Button from '@/components/ui/Button.astro';
+import Card from '@/components/ui/Card.astro';
+import Container from '@/components/ui/Container.astro';
+import Section from '@/components/ui/Section.astro';
+import '@/styles/global.css';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Insurance and pricing information for Instant Orthopedic Care. We accept all major insurance plans and offer transparent self-pay options." />
+    <title>Insurance & Pricing - Instant Orthopedic Care</title>
+  </head>
+  <body>
+    <Header />
+    
+    <Section background="gray">
+      <Container>
+        <div class="text-center mb-12">
+          <h1 class="text-4xl md:text-5xl font-bold text-ioc-gray-dark mb-4">No Surprise Bills. No Facility Fees.</h1>
+          <p class="text-xl text-ioc-gray max-w-2xl mx-auto">Transparent pricing and insurance acceptance</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 mb-12">
+          <div>
+            <h2 class="text-3xl font-bold text-ioc-gray-dark mb-6">Accepted Insurance Plans</h2>
+            <div class="grid grid-cols-2 gap-4 mb-8">
+              <Card class="text-center p-4">
+                <p class="font-semibold">Blue Cross Blue Shield</p>
+              </Card>
+              <Card class="text-center p-4">
+                <p class="font-semibold">Aetna</p>
+              </Card>
+              <Card class="text-center p-4">
+                <p class="font-semibold">Cigna</p>
+              </Card>
+              <Card class="text-center p-4">
+                <p class="font-semibold">UnitedHealthcare</p>
+              </Card>
+              <Card class="text-center p-4">
+                <p class="font-semibold">Medicaid</p>
+              </Card>
+              <Card class="text-center p-4">
+                <p class="font-semibold">Medicare</p>
+              </Card>
+            </div>
+            <p class="text-ioc-gray mb-4">We accept most major insurance plans. Don't see yours listed? Call us to verify coverage.</p>
+            <Button href="tel:3852752110" variant="primary" size="md">
+              Verify Insurance: (385) 275-2110
+            </Button>
+          </div>
+
+          <Card>
+            <h2 class="text-2xl font-bold text-ioc-gray-dark mb-6">Self-Pay Pricing</h2>
+            <p class="text-ioc-gray mb-6">Transparent pricing for those without insurance or with high deductibles:</p>
+            <div class="space-y-4">
+              <div class="flex justify-between items-center p-4 bg-ioc-gray-light rounded-lg">
+                <span class="font-semibold">Initial Consultation</span>
+                <span class="text-xl font-bold text-ioc-blue">$200-$300</span>
+              </div>
+              <div class="flex justify-between items-center p-4 bg-ioc-gray-light rounded-lg">
+                <span class="font-semibold">X-Ray</span>
+                <span class="text-xl font-bold text-ioc-blue">$100-$150</span>
+              </div>
+              <div class="flex justify-between items-center p-4 bg-ioc-gray-light rounded-lg">
+                <span class="font-semibold">Ultrasound</span>
+                <span class="text-xl font-bold text-ioc-blue">$150-$200</span>
+              </div>
+              <div class="flex justify-between items-center p-4 bg-ioc-gray-light rounded-lg">
+                <span class="font-semibold">Treatment (casting, injections, etc.)</span>
+                <span class="text-xl font-bold text-ioc-blue">$100-$300</span>
+              </div>
+            </div>
+            <p class="text-sm text-ioc-gray mt-6">*Prices may vary based on specific treatment needs. Final pricing discussed before treatment.</p>
+          </Card>
+        </div>
+
+        <div class="bg-ioc-blue text-white rounded-2xl p-8 md:p-12 mb-12">
+          <h2 class="text-3xl font-bold mb-6 text-center">Cost Comparison</h2>
+          <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+            <div class="text-center">
+              <h3 class="text-xl font-semibold mb-4 opacity-90">Emergency Room</h3>
+              <div class="text-4xl font-bold mb-2">$800-$1,500</div>
+              <p class="opacity-75">4+ hour wait</p>
+            </div>
+            <div class="text-center">
+              <h3 class="text-xl font-semibold mb-4 opacity-90">Instant Orthopedic Care</h3>
+              <div class="text-4xl font-bold mb-2">$200-$400</div>
+              <p class="opacity-75">&lt;1 hour visit</p>
+            </div>
+          </div>
+          <p class="text-center mt-8 text-xl font-semibold">Save up to 75% with the same quality care</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <Card>
+            <h2 class="text-2xl font-bold text-ioc-gray-dark mb-4">Workers Compensation</h2>
+            <p class="text-ioc-gray mb-4">We accept workers compensation claims and work directly with employers and insurance companies.</p>
+            <ul class="space-y-2 text-ioc-gray">
+              <li>• Direct billing to workers comp insurance</li>
+              <li>• Coordination with employers</li>
+              <li>• Return-to-work documentation</li>
+            </ul>
+          </Card>
+
+          <Card>
+            <h2 class="text-2xl font-bold text-ioc-gray-dark mb-4">Auto Accidents</h2>
+            <p class="text-ioc-gray mb-4">We work with auto insurance companies for accident-related injuries.</p>
+            <ul class="space-y-2 text-ioc-gray">
+              <li>• Accept auto insurance claims</li>
+              <li>• Coordination with attorneys</li>
+              <li>• Detailed documentation for claims</li>
+            </ul>
+          </Card>
+        </div>
+      </Container>
+    </Section>
+
+    <Footer />
+  </body>
+</html>
+

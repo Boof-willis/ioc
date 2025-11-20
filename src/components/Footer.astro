@@ -1,0 +1,71 @@
+---
+import Container from '@/components/ui/Container.astro';
+---
+
+<footer class="bg-ioc-gray-dark text-white">
+  <Container>
+    <div class="py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- About -->
+      <div>
+        <img 
+          src="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/Untitled%20design%20(49).png" 
+          alt="Instant Orthopedic Care Logo" 
+          class="w-[110px] h-auto mb-4"
+          loading="lazy"
+        />
+        <p class="text-gray-300 text-sm leading-relaxed">
+          Expert orthopedic care without the wait. Walk in or book online today.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="font-semibold mb-4">Services</h4>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li><a href="/services" class="hover:text-white transition-colors">All Conditions</a></li>
+          <li><a href="/how-it-works" class="hover:text-white transition-colors">How It Works</a></li>
+          <li><a href="/insurance" class="hover:text-white transition-colors">Insurance & Pricing</a></li>
+        </ul>
+      </div>
+
+      <!-- Information -->
+      <div>
+        <h4 class="font-semibold mb-4">Information</h4>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li><a href="/providers" class="hover:text-white transition-colors">Our Providers</a></li>
+          <li><a href="/location" class="hover:text-white transition-colors">Location & Hours</a></li>
+          <li><a href="/contact" class="hover:text-white transition-colors">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="font-semibold mb-4">Contact</h4>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li>
+            <a href="tel:3852752110" class="hover:text-white transition-colors">
+              (385) 275-2110
+            </a>
+          </li>
+          <li>
+            <a href="mailto:info@instantorthocare.com" class="hover:text-white transition-colors">
+              info@instantorthocare.com
+            </a>
+          </li>
+          <li class="leading-relaxed">
+            75 E 12300 S Suite 100<br />
+            Draper, UT 84020
+          </li>
+          <li class="pt-2">
+            <span class="text-ioc-green font-semibold">Walk-ins welcome</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-700 py-6 text-center text-sm text-gray-400">
+      <p>&copy; {new Date().getFullYear()} Instant Orthopedic Care. All rights reserved.</p>
+    </div>
+  </Container>
+</footer>
+

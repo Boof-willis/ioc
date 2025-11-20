@@ -1,0 +1,570 @@
+---
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import Button from '@/components/ui/Button.astro';
+import Card from '@/components/ui/Card.astro';
+import Container from '@/components/ui/Container.astro';
+import Section from '@/components/ui/Section.astro';
+import BookingForm from '@/components/ui/islands/BookingForm';
+import ScrollAnimation from '@/components/ui/islands/ScrollAnimation';
+import StaggerChildren from '@/components/ui/islands/StaggerChildren';
+import AnimatedLine from '@/components/ui/islands/AnimatedLine';
+import CheckCircle from '@/components/ui/icons/CheckCircle';
+import Clock from '@/components/ui/icons/Clock';
+import UserCheck from '@/components/ui/icons/UserCheck';
+import AlertTriangle from '@/components/ui/icons/AlertTriangle';
+import DollarSign from '@/components/ui/icons/DollarSign';
+import XIcon from '@/components/ui/icons/X';
+import MapPin from '@/components/ui/icons/MapPin';
+import Mail from '@/components/ui/icons/Mail';
+import Phone from '@/components/ui/icons/Phone';
+import ShieldCheck from '@/components/ui/icons/ShieldCheck';
+import BadgeCheck from '@/components/ui/icons/BadgeCheck';
+import Award from '@/components/ui/icons/Award';
+import '@/styles/global.css';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="See an orthopedic specialist today. No wait, no ER bills. Walk in or book online. Expert diagnosis, imaging, and treatment in under an hour. Save up to 75% vs. the ER." />
+    <title>Instant Orthopedic Care - See a Specialist Today | Draper, UT</title>
+  </head>
+  <body>
+    <Header />
+    
+    <!-- Hero Section -->
+    <Section background="gray" id="hero" class="min-h-[90vh] flex items-center">
+      <Container>
+        <div class="grid lg:grid-cols-[45%_55%] gap-8 lg:gap-12 items-center">
+          <ScrollAnimation client:visible direction="right" delay={0.2}>
+            <div>
+              <h1 class="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-ioc-gray-dark mb-4 lg:mb-5 leading-tight">
+                <span class="block lg:inline">See an Orthopedic Specialist Today.</span> <span class="text-ioc-blue block lg:inline">No Wait. No ER Bills.</span>
+              </h1>
+              <p class="text-lg md:text-xl text-ioc-gray mb-6 lg:mb-7 leading-relaxed">
+                Walk in or book online. Expert diagnosis, imaging, and treatment in under an hour. Save up to <strong class="text-ioc-blue">75% vs. the ER</strong>.
+              </p>
+              
+              <div class="flex flex-col sm:flex-row gap-4">
+                <Button href="/book" variant="primary" size="lg" class="w-full sm:w-auto">
+                  Walk In Now
+                </Button>
+                <Button href="#book" variant="secondary" size="lg" class="w-full sm:w-auto">
+                  Book Appointment
+                </Button>
+              </div>
+            </div>
+          </ScrollAnimation>
+          
+          <ScrollAnimation client:visible direction="left" delay={0.4}>
+            <div class="relative">
+              <img 
+                src="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/sfc_wilk_male_doctor_talking_to_male_patient_in_exam_room_smili_570b443f-7725-426b-becd-1e1c2254807b.png" 
+                alt="Friendly orthopedic doctor consulting with a smiling patient"
+                class="rounded-2xl w-full h-full object-cover aspect-[4/3] shadow-lg"
+                loading="eager"
+              />
+            </div>
+          </ScrollAnimation>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Problem/Solution Section -->
+    <Section background="white" id="problem-solution">
+      <Container>
+        <ScrollAnimation client:visible direction="fade" delay={0.2}>
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-ioc-gray-dark mb-4">The Old Way is Broken</h2>
+            <p class="text-xl text-ioc-gray max-w-2xl mx-auto">Compare your options and see why IOC is the better choice</p>
+          </div>
+        </ScrollAnimation>
+
+        <StaggerChildren client:visible staggerDelay={0.15}>
+          <div class="grid md:grid-cols-3 gap-6 mb-16">
+          <!-- ER -->
+          <Card hover class="border-red-200">
+            <div class="flex items-center gap-3 mb-4">
+              <AlertTriangle client:load class="w-8 h-8 text-red-500" />
+              <h3 class="text-xl font-bold text-ioc-gray-dark">Emergency Room</h3>
+            </div>
+            <ul class="space-y-2 text-ioc-gray mb-4">
+              <li class="flex items-start gap-2">
+                <XIcon client:load class="text-red-500 w-4 h-4 mt-0.5" />
+                <span>4+ hour waits</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <XIcon client:load class="text-red-500 w-4 h-4 mt-0.5" />
+                <span>$1,200+ bills</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <XIcon client:load class="text-red-500 w-4 h-4 mt-0.5" />
+                <span>Surrounded by non-orthopedic cases</span>
+              </li>
+            </ul>
+          </Card>
+
+          <!-- Urgent Care -->
+          <Card hover class="border-yellow-200">
+            <div class="flex items-center gap-3 mb-4">
+              <AlertTriangle client:load class="w-8 h-8 text-yellow-500" />
+              <h3 class="text-xl font-bold text-ioc-gray-dark">Urgent Care</h3>
+            </div>
+            <ul class="space-y-2 text-ioc-gray mb-4">
+              <li class="flex items-start gap-2">
+                <XIcon client:load class="text-yellow-500 w-4 h-4 mt-0.5" />
+                <span>Can't treat most orthopedic injuries</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <XIcon client:load class="text-yellow-500 w-4 h-4 mt-0.5" />
+                <span>No specialists</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <XIcon client:load class="text-yellow-500 w-4 h-4 mt-0.5" />
+                <span>Limited imaging</span>
+              </li>
+            </ul>
+          </Card>
+
+          <!-- Traditional Specialist -->
+          <Card hover class="border-gray-200">
+            <div class="flex items-center gap-3 mb-4">
+              <AlertTriangle client:load class="w-8 h-8 text-gray-500" />
+              <h3 class="text-xl font-bold text-ioc-gray-dark">Traditional Specialist</h3>
+            </div>
+            <ul class="space-y-2 text-ioc-gray mb-4">
+              <li class="flex items-start gap-2">
+                <XIcon client:load class="text-gray-500 w-4 h-4 mt-0.5" />
+                <span>3-6 week wait times</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <XIcon client:load class="text-gray-500 w-4 h-4 mt-0.5" />
+                <span>Multiple visits required</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <XIcon client:load class="text-gray-500 w-4 h-4 mt-0.5" />
+                <span>High facility fees</span>
+              </li>
+            </ul>
+          </Card>
+          </div>
+        </StaggerChildren>
+      </Container>
+    </Section>
+
+    <!-- Cost & Time Comparison -->
+    <Section background="gray" id="comparison">
+      <Container>
+        <ScrollAnimation client:visible direction="fade" delay={0.2}>
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-ioc-gray-dark mb-4">Cost & Time Comparison</h2>
+            <p class="text-xl text-ioc-gray">See the real difference</p>
+          </div>
+        </ScrollAnimation>
+
+        <ScrollAnimation client:visible direction="fade" delay={0.3}>
+          <div class="max-w-5xl mx-auto">
+            <div class="overflow-x-auto">
+              <table class="w-full">
+                <thead>
+                  <tr class="h-16 bg-black">
+                    <th class="text-left px-6 font-medium text-white">Comparison</th>
+                    <th class="text-center px-6 font-medium text-white">Emergency Room</th>
+                    <th class="text-center px-6 font-medium text-white">Instant Orthopedic Care</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="h-16 bg-white">
+                    <td class="px-6 font-medium text-ioc-gray-dark">Wait Time</td>
+                    <td class="px-6 text-center text-ioc-gray">4+ hours</td>
+                    <td class="px-6 text-center text-ioc-blue font-medium">15-30 minutes</td>
+                  </tr>
+                  <tr class="h-16 bg-ioc-gray-light">
+                    <td class="px-6 font-medium text-ioc-gray-dark">Total Visit Time</td>
+                    <td class="px-6 text-center text-ioc-gray">4-6 hours</td>
+                    <td class="px-6 text-center text-ioc-blue font-medium">&lt;1 hour</td>
+                  </tr>
+                  <tr class="h-16 bg-white">
+                    <td class="px-6 font-medium text-ioc-gray-dark">Cost Range</td>
+                    <td class="px-6 text-center text-ioc-gray">$800 - $1,500</td>
+                    <td class="px-6 text-center text-ioc-green font-medium">$200 - $400</td>
+                  </tr>
+                  <tr class="h-16 bg-ioc-gray-light">
+                    <td class="px-6 font-medium text-ioc-gray-dark">Specialist Care</td>
+                    <td class="px-6 text-center text-ioc-gray">General ER doctors</td>
+                    <td class="px-6 text-center text-ioc-blue font-medium">Board-certified orthopedic surgeons</td>
+                  </tr>
+                  <tr class="h-16 bg-white">
+                    <td class="px-6 font-medium text-ioc-gray-dark">On-Site Imaging</td>
+                    <td class="px-6 text-center text-ioc-gray">Limited availability</td>
+                    <td class="px-6 text-center text-ioc-blue font-medium">X-ray & ultrasound available</td>
+                  </tr>
+                  <tr class="h-16 bg-ioc-gray-light">
+                    <td class="px-6 font-medium text-ioc-gray-dark">Treatment in One Visit</td>
+                    <td class="px-6 text-center text-ioc-gray">Often requires follow-up</td>
+                    <td class="px-6 text-center text-ioc-blue font-medium">Complete treatment same day</td>
+                  </tr>
+                  <tr class="h-16 bg-white">
+                    <td class="px-6 font-medium text-ioc-gray-dark">Transparent Pricing</td>
+                    <td class="px-6 text-center text-ioc-gray">Surprise bills common</td>
+                    <td class="px-6 text-center text-ioc-blue font-medium">Clear pricing upfront</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <div class="mt-8 text-center">
+              <p class="text-lg text-ioc-gray mb-4">Save up to <strong class="text-ioc-blue text-2xl">75%</strong> compared to the ER</p>
+              <Button href="/book" variant="primary" size="lg">
+                Book Your Visit Today
+              </Button>
+            </div>
+          </div>
+        </ScrollAnimation>
+      </Container>
+    </Section>
+
+    <!-- How It Works -->
+    <Section background="white" id="how-it-works">
+      <Container>
+        <ScrollAnimation client:visible direction="fade" delay={0.2}>
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-ioc-gray-dark mb-4">From Injury to Treatment in One Visit</h2>
+            <p class="text-xl text-ioc-gray max-w-2xl mx-auto">Simple, fast, and effective</p>
+          </div>
+        </ScrollAnimation>
+
+        <StaggerChildren client:visible staggerDelay={0.15}>
+          <div class="relative grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <AnimatedLine client:visible />
+            
+            <div class="text-center relative z-10">
+              <div class="w-16 h-16 bg-ioc-blue rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 relative z-50" style="background-color: #4A90E2; z-index: 50;">
+                <span class="text-white" style="color: #FFFFFF; position: relative; z-index: 51;">1</span>
+              </div>
+              <h3 class="text-xl font-bold text-ioc-gray-dark mb-3">Walk In or Book</h3>
+              <p class="text-ioc-gray">No referral needed. Schedule online or walk in during business hours.</p>
+            </div>
+
+            <div class="text-center relative z-10">
+              <div class="w-16 h-16 bg-ioc-blue rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 relative z-50" style="background-color: #4A90E2; z-index: 50;">
+                <span class="text-white" style="color: #FFFFFF; position: relative; z-index: 51;">2</span>
+              </div>
+              <h3 class="text-xl font-bold text-ioc-gray-dark mb-3">Immediate Exam</h3>
+              <p class="text-ioc-gray">Orthopedic specialist evaluates your injury right away.</p>
+            </div>
+
+            <div class="text-center relative z-10">
+              <div class="w-16 h-16 bg-ioc-blue rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 relative z-50" style="background-color: #4A90E2; z-index: 50;">
+                <span class="text-white" style="color: #FFFFFF; position: relative; z-index: 51;">3</span>
+              </div>
+              <h3 class="text-xl font-bold text-ioc-gray-dark mb-3">On-Site Imaging</h3>
+              <p class="text-ioc-gray">X-ray or ultrasound results available in minutes.</p>
+            </div>
+
+            <div class="text-center relative z-10">
+              <div class="w-16 h-16 bg-ioc-blue rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 relative z-50" style="background-color: #4A90E2; z-index: 50;">
+                <span class="text-white" style="color: #FFFFFF; position: relative; z-index: 51;">4</span>
+              </div>
+              <h3 class="text-xl font-bold text-ioc-gray-dark mb-3">Treatment Today</h3>
+              <p class="text-ioc-gray">Casting, bracing, injections, or treatment plan - all in one visit.</p>
+            </div>
+          </div>
+        </StaggerChildren>
+      </Container>
+    </Section>
+
+    <!-- Conditions Treated -->
+    <Section background="gray" id="conditions">
+      <Container>
+        <ScrollAnimation client:visible direction="fade" delay={0.2}>
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-ioc-gray-dark mb-4">We Treat All Orthopedic Injuries</h2>
+            <p class="text-xl text-ioc-gray">Expert care for every part of your body</p>
+          </div>
+        </ScrollAnimation>
+
+        <StaggerChildren client:visible staggerDelay={0.1}>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <Card hover>
+            <h3 class="text-xl font-bold text-ioc-gray-dark mb-3">Ankle & Foot</h3>
+            <ul class="space-y-2 text-ioc-gray">
+              <li>• Sprains & fractures</li>
+              <li>• Plantar fasciitis</li>
+              <li>• Achilles injuries</li>
+            </ul>
+          </Card>
+
+          <Card hover>
+            <h3 class="text-xl font-bold text-ioc-gray-dark mb-3">Knee & Hip</h3>
+            <ul class="space-y-2 text-ioc-gray">
+              <li>• Joint pain</li>
+              <li>• Ligament tears</li>
+              <li>• Arthroscopy</li>
+            </ul>
+          </Card>
+
+          <Card hover>
+            <h3 class="text-xl font-bold text-ioc-gray-dark mb-3">Shoulder</h3>
+            <ul class="space-y-2 text-ioc-gray">
+              <li>• Rotator cuff injuries</li>
+              <li>• Dislocations</li>
+              <li>• Injections</li>
+            </ul>
+          </Card>
+
+          <Card hover>
+            <h3 class="text-xl font-bold text-ioc-gray-dark mb-3">Elbow & Wrist</h3>
+            <ul class="space-y-2 text-ioc-gray">
+              <li>• Tennis elbow</li>
+              <li>• Fractures</li>
+              <li>• Carpal tunnel</li>
+            </ul>
+          </Card>
+
+          <Card hover>
+            <h3 class="text-xl font-bold text-ioc-gray-dark mb-3">Sports Injuries</h3>
+            <ul class="space-y-2 text-ioc-gray">
+              <li>• Acute injuries</li>
+              <li>• Overuse injuries</li>
+              <li>• Return-to-play evaluations</li>
+            </ul>
+          </Card>
+
+          <Card hover>
+            <h3 class="text-xl font-bold text-ioc-gray-dark mb-3">Chronic Pain</h3>
+            <ul class="space-y-2 text-ioc-gray">
+              <li>• Arthritis management</li>
+              <li>• Joint injections</li>
+              <li>• Treatment plans</li>
+            </ul>
+          </Card>
+          </div>
+        </StaggerChildren>
+
+        <ScrollAnimation client:visible direction="fade" delay={0.4}>
+          <div class="text-center mt-12">
+            <Button href="/services" variant="secondary" size="lg">
+              See Full Conditions List
+            </Button>
+          </div>
+        </ScrollAnimation>
+      </Container>
+    </Section>
+
+    <!-- Insurance & Pricing -->
+    <Section background="white" id="insurance">
+      <Container>
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <ScrollAnimation client:visible direction="right" delay={0.2}>
+            <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-ioc-gray-dark mb-6">No Surprise Bills. No Facility Fees.</h2>
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-start gap-3">
+                <CheckCircle client:load class="w-6 h-6 text-ioc-green flex-shrink-0 mt-1" />
+                <div>
+                  <h3 class="font-semibold text-ioc-gray-dark mb-1">Accept All Major Insurance Plans</h3>
+                  <p class="text-ioc-gray">Blue Cross, Aetna, Cigna, UnitedHealthcare, Medicaid, Medicare, and more</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <CheckCircle client:load class="w-6 h-6 text-ioc-green flex-shrink-0 mt-1" />
+                <div>
+                  <h3 class="font-semibold text-ioc-gray-dark mb-1">Transparent Self-Pay Options</h3>
+                  <p class="text-ioc-gray">Clear pricing for those without insurance</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <CheckCircle client:load class="w-6 h-6 text-ioc-green flex-shrink-0 mt-1" />
+                <div>
+                  <h3 class="font-semibold text-ioc-gray-dark mb-1">Workers Comp & Auto Accidents</h3>
+                  <p class="text-ioc-gray">We accept and work with all insurance types</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <CheckCircle client:load class="w-6 h-6 text-ioc-green flex-shrink-0 mt-1" />
+                <div>
+                  <h3 class="font-semibold text-ioc-gray-dark mb-1">75% Cost Savings vs. ER</h3>
+                  <p class="text-ioc-gray">Get the same quality care for a fraction of the cost</p>
+                </div>
+              </li>
+            </ul>
+            <Button href="/insurance" variant="primary" size="lg">
+              Verify Insurance
+            </Button>
+            </div>
+          </ScrollAnimation>
+          <ScrollAnimation client:visible direction="left" delay={0.3}>
+            <div>
+              <Card class="p-8">
+              <h3 class="text-2xl font-bold text-ioc-gray-dark mb-6 text-center">Cost Comparison</h3>
+              <div class="space-y-4">
+                <div class="flex justify-between items-center p-4 bg-red-50 rounded-lg">
+                  <span class="font-semibold">Emergency Room</span>
+                  <span class="text-xl font-bold text-red-600">$800-$1,500</span>
+                </div>
+                <div class="flex justify-between items-center p-4 bg-ioc-green/10 rounded-lg">
+                  <span class="font-semibold">Instant Orthopedic Care</span>
+                  <span class="text-xl font-bold text-ioc-green">$200-$400</span>
+                </div>
+                <div class="text-center pt-4 border-t">
+                  <p class="text-2xl font-bold text-ioc-blue">Save up to 75%</p>
+                  <p class="text-ioc-gray text-sm">with the same quality care</p>
+                </div>
+              </div>
+            </Card>
+            </div>
+          </ScrollAnimation>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Provider Credentials -->
+    <Section background="gray" id="providers">
+      <Container>
+        <ScrollAnimation client:visible direction="fade" delay={0.2}>
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-ioc-gray-dark mb-4">Expert Care You Can Trust</h2>
+            <p class="text-xl text-ioc-gray max-w-2xl mx-auto">Board-certified orthopedic surgeons and specialists</p>
+          </div>
+        </ScrollAnimation>
+
+        <StaggerChildren client:visible staggerDelay={0.15}>
+          <div class="grid md:grid-cols-3 gap-6 mb-12">
+          <Card hover class="text-center">
+            <div class="w-20 h-20 bg-ioc-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <ShieldCheck client:load class="w-12 h-12 text-ioc-blue" />
+            </div>
+            <h3 class="text-xl font-bold text-ioc-gray-dark mb-2">Board-Certified Surgeons</h3>
+            <p class="text-ioc-gray">Fellowship-trained orthopedic specialists</p>
+          </Card>
+
+          <Card hover class="text-center">
+            <div class="w-20 h-20 bg-ioc-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <BadgeCheck client:load class="w-12 h-12 text-ioc-blue" />
+            </div>
+            <h3 class="text-xl font-bold text-ioc-gray-dark mb-2">Sports Medicine Specialists</h3>
+            <p class="text-ioc-gray">Expert care for athletes of all levels</p>
+          </Card>
+
+          <Card hover class="text-center">
+            <div class="w-20 h-20 bg-ioc-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Award client:load class="w-12 h-12 text-ioc-blue" />
+            </div>
+            <h3 class="text-xl font-bold text-ioc-gray-dark mb-2">Advanced Imaging Expertise</h3>
+            <p class="text-ioc-gray">On-site X-ray and ultrasound capabilities</p>
+          </Card>
+          </div>
+        </StaggerChildren>
+
+        <ScrollAnimation client:visible direction="fade" delay={0.4}>
+          <div class="text-center">
+            <Button href="/book" variant="primary" size="lg">
+              Book Your Visit Today
+            </Button>
+          </div>
+        </ScrollAnimation>
+      </Container>
+    </Section>
+
+    <!-- Location & Hours -->
+    <Section background="white" id="location">
+      <Container>
+        <div class="grid lg:grid-cols-2 gap-12">
+          <ScrollAnimation client:visible direction="right" delay={0.2}>
+            <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-ioc-gray-dark mb-6">Draper, Utah Clinic</h2>
+            <div class="space-y-6 mb-8">
+              <div class="flex items-start gap-4">
+                <MapPin client:load class="w-6 h-6 text-ioc-blue flex-shrink-0 mt-1" />
+                <div>
+                  <h3 class="font-semibold text-ioc-gray-dark mb-1">Address</h3>
+                  <p class="text-ioc-gray">75 E 12300 S Suite 100<br />Draper, UT 84020</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <Clock client:load class="w-6 h-6 text-ioc-blue flex-shrink-0 mt-1" />
+                <div>
+                  <h3 class="font-semibold text-ioc-gray-dark mb-1">Hours</h3>
+                  <ul class="text-ioc-gray space-y-1">
+                    <li>Monday - Friday: 9:00 AM - 6:30 PM</li>
+                    <li>Saturday: 9:00 AM - 2:00 PM</li>
+                    <li>Sunday: 9:00 AM - 12:00 PM</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <Phone client:load class="w-6 h-6 text-ioc-blue flex-shrink-0 mt-1" />
+                <div>
+                  <h3 class="font-semibold text-ioc-gray-dark mb-1">Phone</h3>
+                  <a href="tel:3852752110" class="text-ioc-blue hover:text-ioc-blue-dark font-semibold">
+                    (385) 275-2110
+                  </a>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <Mail client:load class="w-6 h-6 text-ioc-blue flex-shrink-0 mt-1" />
+                <div>
+                  <h3 class="font-semibold text-ioc-gray-dark mb-1">Email</h3>
+                  <a href="mailto:info@instantorthocare.com" class="text-ioc-blue hover:text-ioc-blue-dark font-semibold">
+                    info@instantorthocare.com
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+              <Button href="https://maps.google.com" variant="primary" size="lg" class="w-full sm:w-auto">
+                Get Directions
+              </Button>
+              <Button href="/location" variant="outline" size="lg" class="w-full sm:w-auto">
+                View Full Details
+              </Button>
+            </div>
+          </div>
+          </ScrollAnimation>
+
+          <ScrollAnimation client:visible direction="left" delay={0.3}>
+            <div>
+              <!-- Google Maps Embed -->
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d230.5013213331995!2d-111.8890543584764!3d40.52947107362816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sus!4v1763660368733!5m2!1sen!2sus"
+              width="100%" 
+              height="100%" 
+              style="border:0; min-height: 400px;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              class="rounded-lg"
+            ></iframe>
+            </div>
+          </ScrollAnimation>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Booking Section -->
+    <Section background="blue" id="book">
+      <Container size="md">
+        <ScrollAnimation client:visible direction="fade" delay={0.2}>
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Book Your Appointment</h2>
+            <p class="text-xl opacity-90">Walk-ins also welcome during business hours</p>
+          </div>
+        </ScrollAnimation>
+
+        <ScrollAnimation client:visible direction="scale" delay={0.3}>
+          <Card class="max-w-2xl mx-auto">
+            <BookingForm client:load />
+          </Card>
+        </ScrollAnimation>
+      </Container>
+    </Section>
+
+    <Footer />
+  </body>
+</html>

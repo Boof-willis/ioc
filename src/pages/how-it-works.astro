@@ -1,0 +1,101 @@
+---
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import Button from '@/components/ui/Button.astro';
+import Card from '@/components/ui/Card.astro';
+import Container from '@/components/ui/Container.astro';
+import Section from '@/components/ui/Section.astro';
+import '@/styles/global.css';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Learn how Instant Orthopedic Care works. From walk-in to treatment in one visit. No referral needed." />
+    <title>How It Works - Instant Orthopedic Care</title>
+  </head>
+  <body>
+    <Header />
+    
+    <Section background="gray">
+      <Container>
+        <div class="text-center mb-16">
+          <h1 class="text-4xl md:text-5xl font-bold text-ioc-gray-dark mb-4">From Injury to Treatment in One Visit</h1>
+          <p class="text-xl text-ioc-gray max-w-2xl mx-auto">Simple, fast, and effective orthopedic care</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <Card hover class="text-center">
+            <div class="w-20 h-20 bg-ioc-blue text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-6">1</div>
+            <h2 class="text-2xl font-bold text-ioc-gray-dark mb-4">Walk In or Book</h2>
+            <p class="text-ioc-gray mb-4">No referral needed. Schedule online or walk in during business hours. Bring your insurance card and ID.</p>
+          </Card>
+
+          <Card hover class="text-center">
+            <div class="w-20 h-20 bg-ioc-blue text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-6">2</div>
+            <h2 class="text-2xl font-bold text-ioc-gray-dark mb-4">Immediate Exam</h2>
+            <p class="text-ioc-gray mb-4">Orthopedic specialist evaluates your injury right away. No long waits in the waiting room.</p>
+          </Card>
+
+          <Card hover class="text-center">
+            <div class="w-20 h-20 bg-ioc-blue text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-6">3</div>
+            <h2 class="text-2xl font-bold text-ioc-gray-dark mb-4">On-Site Imaging</h2>
+            <p class="text-ioc-gray mb-4">X-ray or ultrasound results available in minutes. No need for separate appointments.</p>
+          </Card>
+
+          <Card hover class="text-center">
+            <div class="w-20 h-20 bg-ioc-blue text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-6">4</div>
+            <h2 class="text-2xl font-bold text-ioc-gray-dark mb-4">Treatment Today</h2>
+            <p class="text-ioc-gray mb-4">Casting, bracing, injections, or treatment plan - all in one visit. You leave with a plan.</p>
+          </Card>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl font-bold text-ioc-gray-dark mb-6">What to Bring</h2>
+            <ul class="space-y-3 text-ioc-gray">
+              <li class="flex items-start gap-3">
+                <span class="text-ioc-blue font-bold">•</span>
+                <span>Valid photo ID (driver's license, passport, etc.)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-ioc-blue font-bold">•</span>
+                <span>Insurance card (if you have insurance)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-ioc-blue font-bold">•</span>
+                <span>List of current medications</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-ioc-blue font-bold">•</span>
+                <span>Previous imaging or medical records (if available)</span>
+              </li>
+            </ul>
+          </div>
+
+          <Card>
+            <h2 class="text-2xl font-bold text-ioc-gray-dark mb-4">Average Visit Duration</h2>
+            <div class="text-4xl font-bold text-ioc-blue mb-4">~1 Hour</div>
+            <p class="text-ioc-gray">From check-in to treatment completion, most visits are completed in under an hour. This includes:</p>
+            <ul class="mt-4 space-y-2 text-ioc-gray">
+              <li>• Check-in and paperwork: 5-10 minutes</li>
+              <li>• Specialist evaluation: 15-20 minutes</li>
+              <li>• Imaging (if needed): 10-15 minutes</li>
+              <li>• Treatment: 15-20 minutes</li>
+            </ul>
+          </Card>
+        </div>
+
+        <div class="text-center mt-12">
+          <Button href="/book" variant="primary" size="lg">
+            Book Your Visit
+          </Button>
+        </div>
+      </Container>
+    </Section>
+
+    <Footer />
+  </body>
+</html>
+

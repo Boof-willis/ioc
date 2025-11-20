@@ -1,0 +1,6 @@
+import { CheckCircle2 } from 'lucide-react';
+
+export default function CheckCircle({ className = "w-6 h-6" }: { className?: string }) {
+  return <CheckCircle2 className={className} />;
+}
+

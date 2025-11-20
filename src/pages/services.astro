@@ -1,0 +1,117 @@
+---
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import Button from '@/components/ui/Button.astro';
+import Card from '@/components/ui/Card.astro';
+import Container from '@/components/ui/Container.astro';
+import Section from '@/components/ui/Section.astro';
+import '@/styles/global.css';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Comprehensive list of orthopedic conditions we treat at Instant Orthopedic Care. From ankle sprains to chronic joint pain, we treat it all." />
+    <title>Services & Conditions - Instant Orthopedic Care</title>
+  </head>
+  <body>
+    <Header />
+    
+    <Section background="gray">
+      <Container>
+        <div class="text-center mb-12">
+          <h1 class="text-4xl md:text-5xl font-bold text-ioc-gray-dark mb-4">We Treat All Orthopedic Injuries</h1>
+          <p class="text-xl text-ioc-gray max-w-2xl mx-auto">Expert diagnosis and treatment for every part of your body</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Ankle & Foot -->
+          <Card hover>
+            <h2 class="text-2xl font-bold text-ioc-gray-dark mb-4">Ankle & Foot</h2>
+            <ul class="space-y-2 text-ioc-gray">
+              <li>• Sprains & fractures</li>
+              <li>• Plantar fasciitis</li>
+              <li>• Achilles tendon injuries</li>
+              <li>• Ankle instability</li>
+              <li>• Bunions & hammertoes</li>
+              <li>• Stress fractures</li>
+            </ul>
+          </Card>
+
+          <!-- Knee & Hip -->
+          <Card hover>
+            <h2 class="text-2xl font-bold text-ioc-gray-dark mb-4">Knee & Hip</h2>
+            <ul class="space-y-2 text-ioc-gray">
+              <li>• ACL/MCL/PCL tears</li>
+              <li>• Meniscus injuries</li>
+              <li>• Knee & hip arthritis</li>
+              <li>• Patellar dislocations</li>
+              <li>• Hip fractures</li>
+              <li>• Joint replacements</li>
+            </ul>
+          </Card>
+
+          <!-- Shoulder -->
+          <Card hover>
+            <h2 class="text-2xl font-bold text-ioc-gray-dark mb-4">Shoulder</h2>
+            <ul class="space-y-2 text-ioc-gray">
+              <li>• Rotator cuff tears</li>
+              <li>• Shoulder dislocations</li>
+              <li>• Frozen shoulder</li>
+              <li>• Shoulder impingement</li>
+              <li>• Labral tears</li>
+              <li>• Shoulder injections</li>
+            </ul>
+          </Card>
+
+          <!-- Elbow & Wrist -->
+          <Card hover>
+            <h2 class="text-2xl font-bold text-ioc-gray-dark mb-4">Elbow & Wrist</h2>
+            <ul class="space-y-2 text-ioc-gray">
+              <li>• Tennis elbow</li>
+              <li>• Golfer's elbow</li>
+              <li>• Wrist fractures</li>
+              <li>• Carpal tunnel syndrome</li>
+              <li>• De Quervain's tenosynovitis</li>
+              <li>• Trigger finger</li>
+            </ul>
+          </Card>
+
+          <!-- Sports Injuries -->
+          <Card hover>
+            <h2 class="text-2xl font-bold text-ioc-gray-dark mb-4">Sports Injuries</h2>
+            <ul class="space-y-2 text-ioc-gray">
+              <li>• Acute injuries</li>
+              <li>• Overuse injuries</li>
+              <li>• Return-to-play evaluations</li>
+              <li>• Performance optimization</li>
+              <li>• Injury prevention</li>
+            </ul>
+          </Card>
+
+          <!-- Chronic Pain -->
+          <Card hover>
+            <h2 class="text-2xl font-bold text-ioc-gray-dark mb-4">Chronic Pain</h2>
+            <ul class="space-y-2 text-ioc-gray">
+              <li>• Arthritis management</li>
+              <li>• Joint injections</li>
+              <li>• Treatment plans</li>
+              <li>• Pain management</li>
+              <li>• Physical therapy referrals</li>
+            </ul>
+          </Card>
+        </div>
+
+        <div class="text-center mt-12">
+          <Button href="/book" variant="primary" size="lg">
+            Book an Appointment
+          </Button>
+        </div>
+      </Container>
+    </Section>
+
+    <Footer />
+  </body>
+</html>
+

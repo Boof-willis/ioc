@@ -1,0 +1,111 @@
+---
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import Button from '@/components/ui/Button.astro';
+import Container from '@/components/ui/Container.astro';
+import Section from '@/components/ui/Section.astro';
+import '@/styles/global.css';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Visit Instant Orthopedic Care in Draper, Utah. Convenient location with easy parking. Walk-ins welcome." />
+    <title>Location & Hours - Instant Orthopedic Care</title>
+  </head>
+  <body>
+    <Header />
+    
+    <Section background="gray">
+      <Container>
+        <div class="text-center mb-12">
+          <h1 class="text-4xl md:text-5xl font-bold text-ioc-gray-dark mb-4">Visit Our Draper Clinic</h1>
+          <p class="text-xl text-ioc-gray">Convenient location with easy parking</p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 mb-12">
+          <div>
+            <h2 class="text-2xl font-bold text-ioc-gray-dark mb-6">Clinic Information</h2>
+            
+            <div class="space-y-6 mb-8">
+              <div>
+                <h3 class="font-semibold text-ioc-gray-dark mb-2">Address</h3>
+                <p class="text-ioc-gray text-lg mb-4">
+                  75 E 12300 S Suite 100<br />
+                  Draper, UT 84020
+                </p>
+                <Button href="https://maps.google.com" variant="primary" size="md">
+                  Get Directions
+                </Button>
+              </div>
+
+              <div>
+                <h3 class="font-semibold text-ioc-gray-dark mb-2">Phone</h3>
+                <a href="tel:3852752110" class="text-ioc-blue hover:text-ioc-blue-dark font-semibold text-lg">
+                  (385) 275-2110
+                </a>
+              </div>
+
+              <div>
+                <h3 class="font-semibold text-ioc-gray-dark mb-2">Email</h3>
+                <a href="mailto:info@instantorthocare.com" class="text-ioc-blue hover:text-ioc-blue-dark font-semibold text-lg">
+                  info@instantorthocare.com
+                </a>
+              </div>
+
+              <div>
+                <h3 class="font-semibold text-ioc-gray-dark mb-2">Hours</h3>
+                <ul class="text-ioc-gray space-y-2">
+                  <li class="flex justify-between">
+                    <span>Monday - Friday</span>
+                    <span class="font-semibold">9:00 AM - 6:30 PM</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span>Saturday</span>
+                    <span class="font-semibold">9:00 AM - 2:00 PM</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span>Sunday</span>
+                    <span class="font-semibold">9:00 AM - 12:00 PM</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 class="font-semibold text-ioc-gray-dark mb-2">Parking</h3>
+                <p class="text-ioc-gray">Free parking available in front of the clinic. Handicap accessible.</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <!-- Google Maps Embed -->
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d230.5013213331995!2d-111.8890543584764!3d40.52947107362816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sus!4v1763660368733!5m2!1sen!2sus"
+              width="100%" 
+              height="100%" 
+              style="border:0; min-height: 400px;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              class="rounded-lg mb-6"
+            ></iframe>
+            <p class="text-sm text-ioc-gray text-center">Click the map above or use the "Get Directions" button for turn-by-turn navigation.</p>
+          </div>
+        </div>
+
+        <div class="bg-ioc-blue text-white rounded-2xl p-8 text-center">
+          <h2 class="text-2xl font-bold mb-4">Walk-ins Welcome</h2>
+          <p class="text-lg opacity-90 mb-6">No appointment needed during business hours. Walk in and be seen in 15-30 minutes.</p>
+          <Button href="/book" variant="secondary" size="lg">
+            Or Book Online
+          </Button>
+        </div>
+      </Container>
+    </Section>
+
+    <Footer />
+  </body>
+</html>
+
