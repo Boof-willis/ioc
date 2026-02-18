@@ -2,7 +2,7 @@
 interface Props {
   class?: string;
   id?: string;
-  background?: 'white' | 'gray' | 'blue';
+  background?: 'white' | 'gray' | 'blue' | 'dark';
 }
 
 const { 
@@ -15,6 +15,7 @@ const backgrounds = {
   white: 'bg-white',
   gray: 'bg-ioc-gray-light',
   blue: 'bg-ioc-blue text-white',
+  dark: 'bg-slate-900 text-white',
 };
 
 const classes = `py-16 md:py-24 ${backgrounds[background]} ${className}`;

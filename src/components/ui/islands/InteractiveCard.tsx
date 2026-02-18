@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { Heart, Star } from 'lucide-react';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
@@ -9,23 +8,25 @@ interface InteractiveCardProps {
   className?: string;
 }
 
-export default function InteractiveCard({ 
-  title, 
-  description, 
-  className 
+export default function InteractiveCard({
+  title,
+  description,
+  className,
 }: InteractiveCardProps) {
   const [isLiked, setIsLiked] = useState(false);
   const [isStarred, setIsStarred] = useState(false);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3 }}
+    <div
       className={cn(
         'rounded-lg border bg-card p-6 shadow-sm',
         className
       )}
+      style={{
+        opacity: 1,
+        transform: 'translateY(0)',
+        transition: 'opacity 0.3s ease, transform 0.3s ease',
+      }}
     >
       <h3 className="text-xl font-semibold mb-2">{title}</h3>
       <p className="text-muted-foreground mb-4">{description}</p>
@@ -55,7 +56,6 @@ export default function InteractiveCard({
           <span>{isStarred ? 'Starred' : 'Star'}</span>
         </button>
       </div>
-    </motion.div>
+    </div>
   );
 }
-

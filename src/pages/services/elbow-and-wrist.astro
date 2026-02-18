@@ -1,0 +1,254 @@
+---
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import Container from '@/components/ui/Container.astro';
+import Section from '@/components/ui/Section.astro';
+import '@/styles/global.css';
+
+const faqs = [
+  { q: "Can I walk in for elbow or wrist pain without an appointment?", a: "Yes. Instant Orthopedic Care is a walk-in clinic—no appointment or referral needed. Our average wait time is under 15 minutes." },
+  { q: "Can you treat a broken wrist here?", a: "Absolutely. We provide same-day orthopedic evaluation and can recommend imaging pathways and stabilization strategies. The goal is to protect the injury early so healing happens correctly the first time." },
+  { q: "Do you diagnose carpal tunnel syndrome on-site?", a: "We assess nerve-related symptoms and guide conservative management options where appropriate. Early evaluation helps prevent progression and supports a better long-term outcome." },
+  { q: "What areas do you serve?", a: "Our Draper clinic serves patients throughout Salt Lake County and Utah County, including Sandy, South Jordan, Riverton, Lehi, Alpine, and surrounding communities." },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="Walk-in elbow and wrist injury treatment in Utah. Tennis elbow, fractures, and carpal tunnel—same-day orthopedic evaluation without ER delays." />
+    <title>Elbow & Wrist Injury Treatment in Utah | Instant Orthopedic Care</title>
+    <link rel="canonical" href="https://instantorthopediccare.com/services/elbow-and-wrist" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Instant Orthopedic Care" />
+    <meta property="og:title" content="Elbow & Wrist Injury Treatment in Utah | Instant Orthopedic Care" />
+    <meta property="og:description" content="Walk-in elbow and wrist injury treatment in Utah. Tennis elbow, fractures, and carpal tunnel—same-day orthopedic evaluation without ER delays." />
+    <meta property="og:url" content="https://instantorthopediccare.com/services/elbow-and-wrist" />
+    <meta property="og:image" content="https://cdn.midjourney.com/fbffde7d-2121-487d-ab23-a9dc0cad2adc/0_3.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Elbow & Wrist Injury Treatment in Utah | Instant Orthopedic Care" />
+    <meta name="twitter:description" content="Walk-in elbow and wrist injury treatment in Utah. Same-day orthopedic evaluation without ER delays." />
+
+    <meta name="geo.region" content="US-UT" />
+    <meta name="geo.placename" content="Draper, Utah" />
+
+    <link rel="icon" type="image/x-icon" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/favicon-96x96.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/site.webmanifest" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I need imaging for a wrist injury?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If there is swelling, bruising, deformity, severe pain, or pain that persists after a fall, imaging may be recommended to rule out a fracture and guide proper stabilization."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does tennis elbow take to heal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Recovery varies, but early evaluation and a structured plan often shorten downtime. Treatment may include activity modification, bracing, and guided rehab."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are signs of carpal tunnel syndrome?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Common signs include numbness or tingling in the hand, nighttime symptoms, and weakness with gripping. An orthopedic evaluation can confirm likely causes and next steps."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I go to the ER for an elbow or wrist injury?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Seek emergency care for uncontrolled bleeding, open fractures, severe deformity, or loss of circulation or sensation. Many other injuries can be evaluated at orthopedic urgent care."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalWebPage",
+      "name": "Elbow & Wrist Injury Treatment in Utah",
+      "description": "Walk-in elbow and wrist injury treatment in Utah. Tennis elbow, fractures, and carpal tunnel—same-day orthopedic evaluation without ER delays.",
+      "url": "https://instantorthopediccare.com/services/elbow-and-wrist",
+      "mainEntity": {
+        "@type": "MedicalCondition",
+        "name": "Elbow and Wrist Injuries",
+        "associatedAnatomy": { "@type": "AnatomicalStructure", "name": "Elbow and Wrist" },
+        "possibleTreatment": [
+          {"@type": "MedicalTherapy", "name": "Casting and Splinting"},
+          {"@type": "MedicalTherapy", "name": "Corticosteroid Injection"},
+          {"@type": "MedicalTherapy", "name": "Bracing"},
+          {"@type": "MedicalTherapy", "name": "Physical Therapy Referral"},
+          {"@type": "MedicalTherapy", "name": "Surgical Consultation"}
+        ]
+      },
+      "provider": {
+        "@type": "MedicalClinic",
+        "name": "Instant Orthopedic Care",
+        "telephone": "+1-385-386-7026",
+        "address": { "@type": "PostalAddress", "streetAddress": "75 E 12300 S Suite 100", "addressLocality": "Draper", "addressRegion": "UT", "postalCode": "84020" },
+        "areaServed": ["Draper", "Sandy", "South Jordan", "Riverton", "Lehi", "Highland", "Alpine", "Salt Lake County", "Utah County"]
+      }
+    }
+    </script>
+  </head>
+  <body class="bg-white text-slate-900 font-sans antialiased selection:bg-blue-500 selection:text-white">
+    <Header />
+
+    <!-- Hero -->
+    <Section background="white" class="pt-32 pb-20 relative overflow-hidden">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-100/40 rounded-full blur-[120px] pointer-events-none"></div>
+      <Container class="relative z-10">
+        <div class="max-w-3xl">
+          <a href="/#services" class="inline-flex items-center gap-2 text-sm text-blue-600 font-semibold mb-6 hover:text-blue-700 transition-colors">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+            All Services
+          </a>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight mb-6 leading-[1.05]">
+            Elbow & Wrist Injury Treatment in Utah – <span class="text-blue-600">Walk-In Orthopedic Care</span>
+          </h1>
+          <p class="text-lg md:text-xl text-slate-500 leading-relaxed max-w-2xl mb-4">
+            Pain in the elbow, wrist, or hand is more than inconvenient—it can stop you from working, training, driving, or even sleeping comfortably. Instant Orthopedic Care offers same-day elbow and wrist injury treatment in Utah so you don't have to wait through urgent care guesswork or weeks-long orthopedic scheduling.
+          </p>
+          <p class="text-lg md:text-xl text-slate-500 leading-relaxed max-w-2xl mb-8">
+            Upper-extremity injuries benefit from early, precise evaluation. The sooner you stabilize a fracture or address tendon/nerve irritation, the better your long-term function tends to be.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="https://pp-wfe-101.advancedmd.com/163338/onlineintake/demographic" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-bold rounded-full shadow-lg shadow-blue-600/25 hover:bg-blue-700 transition-all hover:scale-105 active:scale-95">Check In Now</a>
+            <a href="tel:3853867026" class="inline-flex items-center justify-center px-8 py-4 border border-slate-200 text-slate-700 font-bold rounded-full hover:border-blue-200 hover:text-blue-600 hover:bg-blue-50/50 transition-all">(385) 386-7026</a>
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Tennis/Golfer's Elbow -->
+    <Section background="gray" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-6">Tennis Elbow, Golfer's Elbow, and Overuse Tendon Injuries</h2>
+          <p class="text-lg text-slate-600 leading-relaxed mb-4">
+            Repetitive strain from lifting, typing, tools, or sports can inflame tendons around the elbow and forearm. Tennis elbow and golfer's elbow often begin as mild soreness, then progress until grip strength declines or everyday tasks become painful.
+          </p>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            We evaluate the pattern of pain, strength, and functional limitations to identify whether you're dealing with tendon irritation, strain, or a more complex injury. Early care typically means faster recovery and fewer setbacks—especially when combined with practical activity modifications and guided rehab steps.
+          </p>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Wrist Fractures -->
+    <Section background="white" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-6">Wrist Fractures, Sprains, and Hand Injuries</h2>
+          <p class="text-lg text-slate-600 leading-relaxed mb-4">
+            Wrist injuries are easy to underestimate—especially after a fall on an outstretched hand. But missed fractures or poorly stabilized injuries can lead to stiffness, persistent pain, and reduced strength.
+          </p>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            We provide same-day orthopedic evaluation and can recommend imaging pathways and stabilization strategies when needed. The goal is to protect the injury early so healing happens correctly the first time, not after weeks of compensating around it.
+          </p>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Carpal Tunnel -->
+    <Section background="gray" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-6">Carpal Tunnel and Nerve-Related Symptoms</h2>
+          <p class="text-lg text-slate-600 leading-relaxed mb-4">
+            Numbness, tingling, nighttime hand pain, or weakness can point to nerve compression—often carpal tunnel syndrome. Many patients wait until symptoms disrupt sleep or work, which can extend recovery timelines.
+          </p>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            We assess nerve-related symptoms and guide conservative management options where appropriate. Early evaluation helps prevent progression and supports a better long-term outcome.
+          </p>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Clinical Credibility -->
+    <Section background="white" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-6">Clinical Credibility and Evidence-Based Upper-Extremity Care</h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Utah orthopedic specialists often treat a wide range of conditions—sports injuries, fractures, and general hand issues—under a sports-medicine framework. Dr. James R. Meadows, MD treats general hand conditions and provides fracture care, alongside sports medicine and arthroscopic expertise. That broad, evidence-driven approach informs how we think: stabilize what's unstable, reduce inflammation, protect function, and guide return to activity safely.
+          </p>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- FAQ -->
+    <Section background="gray" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-12 text-center">Frequently Asked Questions</h2>
+          <div class="space-y-6">
+            {faqs.map((faq) => (
+              <div class="bg-white rounded-2xl p-8 border border-slate-100">
+                <h3 class="font-bold text-slate-900 mb-3">{faq.q}</h3>
+                <p class="text-slate-500 leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Serving Areas -->
+    <Section background="white" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-4">Serving Draper, Salt Lake County & Utah County</h2>
+          <p class="text-lg text-slate-500 mb-8">Same-day elbow and wrist orthopedic care for patients throughout the Wasatch Front.</p>
+          <div class="flex flex-wrap justify-center gap-3">
+            {["Draper", "Sandy", "South Jordan", "Riverton", "Herriman", "Lehi", "Alpine", "Highland", "American Fork", "Pleasant Grove", "Bluffdale", "Midvale"].map((city) => (
+              <span class="px-4 py-2 bg-slate-50 border border-slate-100 text-slate-700 text-sm font-semibold rounded-full">{city}</span>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- CTA -->
+    <Section background="white" class="pb-24 pt-0">
+      <Container>
+        <div class="bg-slate-900 rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"></div>
+          <div class="relative z-10 max-w-2xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight mb-6">Don't let pain hold you back.<br/><span class="text-blue-400">Walk in today.</span></h2>
+            <p class="text-slate-400 text-lg md:text-xl mb-10 leading-relaxed">Early, precise evaluation for better long-term function. No referral needed.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="https://pp-wfe-101.advancedmd.com/163338/onlineintake/demographic" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-500 hover:shadow-lg hover:shadow-blue-600/30 transition-all transform hover:-translate-y-1">Check In Now</a>
+              <a href="tel:3853867026" class="inline-flex items-center justify-center px-8 py-4 bg-white/5 text-white font-bold rounded-full hover:bg-white/10 transition-colors border border-white/10 backdrop-blur-sm">Call (385) 386-7026</a>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+    <Footer />
+  </body>
+</html>

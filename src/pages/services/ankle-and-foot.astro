@@ -1,0 +1,265 @@
+---
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import Container from '@/components/ui/Container.astro';
+import Section from '@/components/ui/Section.astro';
+import '@/styles/global.css';
+
+const conditions = [
+  { name: "Ankle Sprains & Ligament Tears", description: "From mild stretching to severe tears, we assess ligament integrity, joint stability, and fracture risk using on-site imaging to build a structured treatment plan." },
+  { name: "Foot & Ankle Fractures", description: "On-site X-ray diagnosis and immediate stabilization including casting, splinting, walking boots, and surgical referral when needed." },
+  { name: "Plantar Fasciitis", description: "Comprehensive evaluation to identify inflammation and structural stress, with bracing, injections when appropriate, and guided recovery protocols." },
+  { name: "Achilles Tendon Injuries", description: "Evaluation and management of tendonitis, partial tears, and ruptures—early intervention helps shorten healing time and prevent recurrence." },
+  { name: "Stress Fractures", description: "Early detection of overuse fractures in the metatarsals and calcaneus common in Utah runners, hikers, and athletes." },
+  { name: "Bunions & Toe Deformities", description: "Conservative management and surgical consultation for bunions, hammertoes, and other forefoot conditions affecting mobility." },
+];
+
+const faqs = [
+  { q: "Can I walk in for ankle or foot pain without an appointment?", a: "Yes. Instant Orthopedic Care is a walk-in clinic—no appointment or referral needed. We see patients on a first-come, first-served basis with an average wait time under 15 minutes." },
+  { q: "Do you take X-rays for ankle and foot injuries on-site?", a: "Absolutely. We have digital X-ray on-site so we can diagnose fractures, dislocations, and other bone injuries during your visit—no separate imaging appointment required." },
+  { q: "Why choose orthopedic urgent care instead of the ER?", a: "Emergency rooms are designed for life-threatening conditions, not specialized orthopedic evaluation. Our walk-in clinic means shorter wait times, lower out-of-pocket costs, and care delivered by providers trained specifically in musculoskeletal injuries." },
+  { q: "What should I do immediately after an ankle injury?", a: "Follow the RICE method: Rest, Ice, Compression, and Elevation. Then visit us for a professional evaluation to rule out fractures and get the right treatment plan—early evaluation can prevent long-term complications." },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="Same-day ankle and foot injury treatment in Utah. Sprains, fractures, plantar fasciitis & Achilles injuries treated without ER wait times." />
+    <title>Ankle & Foot Injury Treatment in Utah | Instant Orthopedic Care</title>
+    <link rel="canonical" href="https://instantorthopediccare.com/services/ankle-and-foot" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Instant Orthopedic Care" />
+    <meta property="og:title" content="Ankle & Foot Injury Treatment in Utah | Instant Orthopedic Care" />
+    <meta property="og:description" content="Same-day ankle and foot injury treatment in Utah. Sprains, fractures, plantar fasciitis & Achilles injuries treated without ER wait times." />
+    <meta property="og:url" content="https://instantorthopediccare.com/services/ankle-and-foot" />
+    <meta property="og:image" content="https://cdn.midjourney.com/fbffde7d-2121-487d-ab23-a9dc0cad2adc/0_3.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ankle & Foot Injury Treatment in Utah | Instant Orthopedic Care" />
+    <meta name="twitter:description" content="Same-day ankle and foot injury treatment in Utah. Walk in for expert orthopedic care without ER wait times." />
+
+    <meta name="geo.region" content="US-UT" />
+    <meta name="geo.placename" content="Draper, Utah" />
+
+    <link rel="icon" type="image/x-icon" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/favicon-96x96.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/site.webmanifest" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalWebPage",
+      "name": "Ankle & Foot Injury Treatment in Utah",
+      "description": "Same-day ankle and foot injury treatment in Utah. Sprains, fractures, plantar fasciitis and Achilles injuries treated without ER wait times.",
+      "url": "https://instantorthopediccare.com/services/ankle-and-foot",
+      "mainEntity": {
+        "@type": "MedicalCondition",
+        "name": "Ankle and Foot Injuries",
+        "associatedAnatomy": {
+          "@type": "AnatomicalStructure",
+          "name": "Ankle and Foot"
+        },
+        "possibleTreatment": [
+          {"@type": "MedicalTherapy", "name": "Casting and Splinting"},
+          {"@type": "MedicalTherapy", "name": "Corticosteroid Injection"},
+          {"@type": "MedicalTherapy", "name": "Physical Therapy Referral"},
+          {"@type": "MedicalTherapy", "name": "Orthotic Fitting"},
+          {"@type": "MedicalTherapy", "name": "Surgical Consultation"}
+        ]
+      },
+      "provider": {
+        "@type": "MedicalClinic",
+        "name": "Instant Orthopedic Care",
+        "telephone": "+1-385-386-7026",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "75 E 12300 S Suite 100",
+          "addressLocality": "Draper",
+          "addressRegion": "UT",
+          "postalCode": "84020"
+        },
+        "areaServed": ["Draper", "Sandy", "South Jordan", "Riverton", "Lehi", "Highland", "Alpine", "Salt Lake County", "Utah County"]
+      }
+    }
+    </script>
+  </head>
+  <body class="bg-white text-slate-900 font-sans antialiased selection:bg-blue-500 selection:text-white">
+    <Header />
+
+    <!-- Hero -->
+    <Section background="white" class="pt-32 pb-20 relative overflow-hidden">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-100/40 rounded-full blur-[120px] pointer-events-none"></div>
+      <Container class="relative z-10">
+        <div class="max-w-3xl">
+          <a href="/#services" class="inline-flex items-center gap-2 text-sm text-blue-600 font-semibold mb-6 hover:text-blue-700 transition-colors">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+            All Services
+          </a>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight mb-6 leading-[1.05]">
+            Ankle & Foot Injury Treatment in Utah – <span class="text-blue-600">Same-Day Orthopedic Care</span>
+          </h1>
+          <p class="text-lg md:text-xl text-slate-500 leading-relaxed max-w-2xl mb-4">
+            Foot and ankle injuries are one of the most common reasons Utah residents seek urgent medical attention. However, most ankle sprains, fractures, and tendon injuries do not require an emergency room visit.
+          </p>
+          <p class="text-lg md:text-xl text-slate-500 leading-relaxed max-w-2xl mb-8">
+            At Instant Orthopedic Care, we provide specialized ankle and foot injury treatment in Utah with immediate access to orthopedic providers who focus exclusively on musculoskeletal care. If you were injured hiking, skiing, running, or playing sports, early evaluation can prevent long-term complications.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="https://pp-wfe-101.advancedmd.com/163338/onlineintake/demographic" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-bold rounded-full shadow-lg shadow-blue-600/25 hover:bg-blue-700 transition-all hover:scale-105 active:scale-95">
+              Check In Now
+            </a>
+            <a href="tel:3853867026" class="inline-flex items-center justify-center px-8 py-4 border border-slate-200 text-slate-700 font-bold rounded-full hover:border-blue-200 hover:text-blue-600 hover:bg-blue-50/50 transition-all">
+              (385) 386-7026
+            </a>
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Walk-In Care -->
+    <Section background="gray" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-6">Walk-In Ankle Sprain & Fracture Care in Utah</h2>
+          <p class="text-lg text-slate-600 leading-relaxed mb-4">
+            Ankle sprains range from mild ligament stretching to severe tears that create long-term instability. Swelling, bruising, and difficulty bearing weight are signs that professional evaluation is necessary. Our providers assess ligament integrity, joint stability, and fracture risk using on-site imaging when appropriate.
+          </p>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Immediate stabilization improves recovery time and reduces reinjury risk. Rather than waiting days or weeks for a traditional orthopedic appointment, you can walk into our Utah clinic and leave with a clear, structured treatment plan.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {conditions.map((condition) => (
+            <div class="bg-white rounded-2xl p-8 border border-slate-100 hover:border-blue-200 hover:shadow-lg transition-all duration-300">
+              <h3 class="text-lg font-bold text-slate-900 mb-3">{condition.name}</h3>
+              <p class="text-sm text-slate-500 leading-relaxed">{condition.description}</p>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Plantar Fasciitis -->
+    <Section background="white" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-6">Plantar Fasciitis & Chronic Heel Pain Treatment in Utah</h2>
+          <p class="text-lg text-slate-600 leading-relaxed mb-4">
+            Chronic heel pain is common among active Utah residents. Plantar fasciitis and Achilles tendon injuries often develop gradually but worsen without targeted treatment. Many patients attempt rest alone, only to find symptoms return when activity resumes.
+          </p>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            We provide comprehensive orthopedic evaluation to identify inflammation, structural stress, or tendon degeneration. Early intervention — including bracing, injections when appropriate, and guided recovery protocols — helps shorten healing time and prevent recurrence.
+          </p>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Why IOC -->
+    <Section background="gray" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-6">Why Choose Orthopedic Urgent Care Instead of the ER?</h2>
+          <p class="text-lg text-slate-600 leading-relaxed mb-4">
+            Emergency rooms are designed for life-threatening conditions, not specialized orthopedic evaluation. Choosing a walk-in orthopedic clinic in Utah means shorter wait times, lower out-of-pocket costs, and care delivered by providers trained specifically in musculoskeletal injuries.
+          </p>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Our goal is simple: fast answers, expert treatment, and a faster return to normal activity — without unnecessary hospital expenses.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mx-auto mb-4">
+              <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            </div>
+            <h3 class="font-bold text-slate-900 mb-2">Under 15-Min Wait</h3>
+            <p class="text-sm text-slate-500">Average wait time is a fraction of the ER.</p>
+          </div>
+          <div class="text-center">
+            <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mx-auto mb-4">
+              <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+            </div>
+            <h3 class="font-bold text-slate-900 mb-2">Board-Certified</h3>
+            <p class="text-sm text-slate-500">Orthopedic surgeons & fellowship-trained specialists.</p>
+          </div>
+          <div class="text-center">
+            <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mx-auto mb-4">
+              <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v14a1 1 0 01-1 1H5a1 1 0 01-1-1V5z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 7v10M7 12h10" /></svg>
+            </div>
+            <h3 class="font-bold text-slate-900 mb-2">X-Ray On-Site</h3>
+            <p class="text-sm text-slate-500">Immediate imaging—no separate appointment needed.</p>
+          </div>
+          <div class="text-center">
+            <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mx-auto mb-4">
+              <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            </div>
+            <h3 class="font-bold text-slate-900 mb-2">75% Less Than ER</h3>
+            <p class="text-sm text-slate-500">Transparent pricing. Most insurance accepted.</p>
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- FAQ -->
+    <Section background="white" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-12 text-center">Frequently Asked Questions</h2>
+          <div class="space-y-6">
+            {faqs.map((faq) => (
+              <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100">
+                <h3 class="font-bold text-slate-900 mb-3">{faq.q}</h3>
+                <p class="text-slate-500 leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Serving Areas -->
+    <Section background="gray" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-4">Serving Draper, Salt Lake County & Utah County</h2>
+          <p class="text-lg text-slate-500 mb-8">Our walk-in orthopedic clinic eliminates referral delays so Utah residents can receive expert ankle and foot care the same day their injury occurs.</p>
+          <div class="flex flex-wrap justify-center gap-3">
+            {["Draper", "Sandy", "South Jordan", "Riverton", "Herriman", "Lehi", "Alpine", "Highland", "American Fork", "Pleasant Grove", "Bluffdale", "Midvale"].map((city) => (
+              <span class="px-4 py-2 bg-white border border-slate-100 text-slate-700 text-sm font-semibold rounded-full">{city}</span>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- CTA -->
+    <Section background="white" class="pb-24 pt-0">
+      <Container>
+        <div class="bg-slate-900 rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"></div>
+          <div class="relative z-10 max-w-2xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight mb-6">
+              Get back on your feet.<br/><span class="text-blue-400">Walk in today.</span>
+            </h2>
+            <p class="text-slate-400 text-lg md:text-xl mb-10 leading-relaxed">
+              Fast answers, expert treatment, and a faster return to normal activity — without unnecessary hospital expenses.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="https://pp-wfe-101.advancedmd.com/163338/onlineintake/demographic" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-500 hover:shadow-lg hover:shadow-blue-600/30 transition-all transform hover:-translate-y-1">Check In Now</a>
+              <a href="tel:3853867026" class="inline-flex items-center justify-center px-8 py-4 bg-white/5 text-white font-bold rounded-full hover:bg-white/10 transition-colors border border-white/10 backdrop-blur-sm">Call (385) 386-7026</a>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+    <Footer />
+  </body>
+</html>

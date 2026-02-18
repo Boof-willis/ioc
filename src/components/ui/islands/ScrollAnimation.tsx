@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { useInView } from '@/hooks/useInView';
 
 interface ScrollAnimationProps {
   children: React.ReactNode;
@@ -8,53 +7,49 @@ interface ScrollAnimationProps {
   direction?: 'up' | 'down' | 'left' | 'right' | 'fade' | 'scale';
 }
 
-export default function ScrollAnimation({ 
-  children, 
+const directionStyles: Record<string, { hidden: React.CSSProperties; visible: React.CSSProperties }> = {
+  up: {
+    hidden: { opacity: 0, transform: 'translateY(30px)' },
+    visible: { opacity: 1, transform: 'translateY(0)' },
+  },
+  down: {
+    hidden: { opacity: 0, transform: 'translateY(-30px)' },
+    visible: { opacity: 1, transform: 'translateY(0)' },
+  },
+  left: {
+    hidden: { opacity: 0, transform: 'translateX(30px)' },
+    visible: { opacity: 1, transform: 'translateX(0)' },
+  },
+  right: {
+    hidden: { opacity: 0, transform: 'translateX(-30px)' },
+    visible: { opacity: 1, transform: 'translateX(0)' },
+  },
+  fade: {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  },
+  scale: {
+    hidden: { opacity: 0, transform: 'scale(0.9)' },
+    visible: { opacity: 1, transform: 'scale(1)' },
+  },
+};
+
+export default function ScrollAnimation({
+  children,
   className = '',
   delay = 0,
-  direction = 'up'
+  direction = 'up',
 }: ScrollAnimationProps) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-
-  const variants = {
-    up: {
-      hidden: { opacity: 0, y: 30 },
-      visible: { opacity: 1, y: 0 },
-    },
-    down: {
-      hidden: { opacity: 0, y: -30 },
-      visible: { opacity: 1, y: 0 },
-    },
-    left: {
-      hidden: { opacity: 0, x: 30 },
-      visible: { opacity: 1, x: 0 },
-    },
-    right: {
-      hidden: { opacity: 0, x: -30 },
-      visible: { opacity: 1, x: 0 },
-    },
-    fade: {
-      hidden: { opacity: 0 },
-      visible: { opacity: 1 },
-    },
-    scale: {
-      hidden: { opacity: 0, scale: 0.9 },
-      visible: { opacity: 1, scale: 1 },
-    },
+  const { ref, isInView } = useInView({ once: true, margin: '-100px' });
+  const { hidden, visible } = directionStyles[direction];
+  const style = {
+    ...(isInView ? visible : hidden),
+    transition: `opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1) ${delay}s, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) ${delay}s`,
   };
 
   return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={isInView ? 'visible' : 'hidden'}
-      variants={variants[direction]}
-      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
-      className={className}
-    >
+    <div ref={ref} style={style} className={className}>
       {children}
-    </motion.div>
+    </div>
   );
 }
-

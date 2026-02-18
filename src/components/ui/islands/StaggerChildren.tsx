@@ -1,5 +1,4 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
+import { useInView } from '@/hooks/useInView';
 import { useRef, Children, isValidElement } from 'react';
 
 interface StaggerChildrenProps {
@@ -8,58 +7,33 @@ interface StaggerChildrenProps {
   staggerDelay?: number;
 }
 
-export default function StaggerChildren({ 
-  children, 
+export default function StaggerChildren({
+  children,
   className = '',
-  staggerDelay = 0.1
+  staggerDelay = 0.1,
 }: StaggerChildrenProps) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-50px' });
-
-  const container = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: staggerDelay,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: [0.22, 1, 0.36, 1],
-      },
-    },
-  };
-
-  // Wrap each child in a motion.div for stagger effect
+  const { ref, isInView } = useInView({ once: true, margin: '-50px' });
   const childrenArray = Children.toArray(children);
 
   return (
-    <motion.div
-      ref={ref}
-      variants={container}
-      initial="hidden"
-      animate={isInView ? 'visible' : 'hidden'}
-      className={className}
-    >
+    <div ref={ref} className={className}>
       {childrenArray.map((child, index) => {
         if (isValidElement(child)) {
           return (
-            <motion.div key={index} variants={item}>
+            <div
+              key={index}
+              style={{
+                opacity: isInView ? 1 : 0,
+                transform: isInView ? 'translateY(0)' : 'translateY(20px)',
+                transition: `opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1) ${index * staggerDelay}s, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1) ${index * staggerDelay}s`,
+              }}
+            >
               {child}
-            </motion.div>
+            </div>
           );
         }
         return child;
       })}
-    </motion.div>
+    </div>
   );
 }
-

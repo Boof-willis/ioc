@@ -1,0 +1,254 @@
+---
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import Container from '@/components/ui/Container.astro';
+import Section from '@/components/ui/Section.astro';
+import '@/styles/global.css';
+
+const faqs = [
+  { q: "Can I walk in for shoulder pain without an appointment?", a: "Yes. Instant Orthopedic Care is a walk-in clinic—no appointment or referral needed. We see patients on a first-come, first-served basis with an average wait time under 15 minutes." },
+  { q: "How do you diagnose rotator cuff injuries?", a: "We assess strength, range of motion, and functional stability to determine whether you're dealing with a strain, impingement, tendonitis, or a potential tear. When appropriate, we recommend next-step imaging and referral pathways." },
+  { q: "Do you offer shoulder injections on-site?", a: "Yes. Targeted injections can reduce inflammation and improve function so you can participate in physical therapy or daily activity with less pain. Injections can be especially helpful for flare-ups that limit sleep or keep you from working." },
+  { q: "What should I do if I dislocated my shoulder?", a: "If you felt a pop, noticed sudden deformity, or can't comfortably raise your arm, walk in promptly. We'll evaluate joint integrity and help you understand the safest path to recovery, including return-to-activity planning." },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="Same-day shoulder injury treatment in Utah. Rotator cuff injuries, dislocations, and injections—walk in for orthopedic care without ER wait times." />
+    <title>Shoulder Injury Treatment in Utah | Instant Orthopedic Care</title>
+    <link rel="canonical" href="https://instantorthopediccare.com/services/shoulder" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Instant Orthopedic Care" />
+    <meta property="og:title" content="Shoulder Injury Treatment in Utah | Instant Orthopedic Care" />
+    <meta property="og:description" content="Same-day shoulder injury treatment in Utah. Rotator cuff injuries, dislocations, and injections—walk in for orthopedic care without ER wait times." />
+    <meta property="og:url" content="https://instantorthopediccare.com/services/shoulder" />
+    <meta property="og:image" content="https://cdn.midjourney.com/fbffde7d-2121-487d-ab23-a9dc0cad2adc/0_3.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Shoulder Injury Treatment in Utah | Instant Orthopedic Care" />
+    <meta name="twitter:description" content="Same-day shoulder injury treatment in Utah. Walk in for expert orthopedic care without ER wait times." />
+
+    <meta name="geo.region" content="US-UT" />
+    <meta name="geo.placename" content="Draper, Utah" />
+
+    <link rel="icon" type="image/x-icon" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/favicon-96x96.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/site.webmanifest" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Should I go to the ER for a shoulder injury?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most shoulder injuries can be evaluated at a walk-in orthopedic clinic. Seek emergency care for severe deformity, loss of sensation, uncontrolled bleeding, or other life-threatening symptoms."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I know if I tore my rotator cuff?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Common signs include weakness lifting the arm, pain at night, and difficulty reaching overhead. A same-day orthopedic evaluation can determine severity and next steps."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do shoulder dislocations need follow-up after the initial injury?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Dislocations can lead to instability and repeat injuries. Follow-up evaluation helps guide stabilization, rehab, and safe return to activity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can injections help shoulder pain?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Injections can reduce inflammation and improve function for certain shoulder conditions. Your provider will determine whether it's appropriate based on your exam and symptoms."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalWebPage",
+      "name": "Shoulder Injury Treatment in Utah",
+      "description": "Same-day shoulder injury treatment in Utah. Rotator cuff injuries, dislocations, and injections—walk in for orthopedic care without ER wait times.",
+      "url": "https://instantorthopediccare.com/services/shoulder",
+      "mainEntity": {
+        "@type": "MedicalCondition",
+        "name": "Shoulder Injuries",
+        "associatedAnatomy": { "@type": "AnatomicalStructure", "name": "Shoulder Joint" },
+        "possibleTreatment": [
+          {"@type": "MedicalTherapy", "name": "Corticosteroid Injection"},
+          {"@type": "MedicalTherapy", "name": "Shoulder Reduction"},
+          {"@type": "MedicalTherapy", "name": "Physical Therapy Referral"},
+          {"@type": "MedicalTherapy", "name": "Arthroscopic Surgery Referral"},
+          {"@type": "MedicalTherapy", "name": "Immobilization and Bracing"}
+        ]
+      },
+      "provider": {
+        "@type": "MedicalClinic",
+        "name": "Instant Orthopedic Care",
+        "telephone": "+1-385-386-7026",
+        "address": { "@type": "PostalAddress", "streetAddress": "75 E 12300 S Suite 100", "addressLocality": "Draper", "addressRegion": "UT", "postalCode": "84020" },
+        "areaServed": ["Draper", "Sandy", "South Jordan", "Riverton", "Lehi", "Highland", "Alpine", "Salt Lake County", "Utah County"]
+      }
+    }
+    </script>
+  </head>
+  <body class="bg-white text-slate-900 font-sans antialiased selection:bg-blue-500 selection:text-white">
+    <Header />
+
+    <!-- Hero -->
+    <Section background="white" class="pt-32 pb-20 relative overflow-hidden">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-100/40 rounded-full blur-[120px] pointer-events-none"></div>
+      <Container class="relative z-10">
+        <div class="max-w-3xl">
+          <a href="/#services" class="inline-flex items-center gap-2 text-sm text-blue-600 font-semibold mb-6 hover:text-blue-700 transition-colors">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+            All Services
+          </a>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight mb-6 leading-[1.05]">
+            Shoulder Injury Treatment in Utah – <span class="text-blue-600">Same-Day Orthopedic Care</span>
+          </h1>
+          <p class="text-lg md:text-xl text-slate-500 leading-relaxed max-w-2xl mb-4">
+            Shoulder pain can derail work, sleep, and training fast—especially when lifting, reaching, or throwing becomes painful. Instant Orthopedic Care provides same-day shoulder injury treatment in Utah so you can get answers quickly instead of waiting weeks for a traditional orthopedic appointment.
+          </p>
+          <p class="text-lg md:text-xl text-slate-500 leading-relaxed max-w-2xl mb-8">
+            Whether your pain started after a fall, a heavy lift, or a sports collision, early evaluation helps prevent small problems from turning into long-term limitations. You'll leave with clear guidance, practical next steps, and a treatment plan aligned to your activity level.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="https://pp-wfe-101.advancedmd.com/163338/onlineintake/demographic" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-bold rounded-full shadow-lg shadow-blue-600/25 hover:bg-blue-700 transition-all hover:scale-105 active:scale-95">Check In Now</a>
+            <a href="tel:3853867026" class="inline-flex items-center justify-center px-8 py-4 border border-slate-200 text-slate-700 font-bold rounded-full hover:border-blue-200 hover:text-blue-600 hover:bg-blue-50/50 transition-all">(385) 386-7026</a>
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Rotator Cuff -->
+    <Section background="gray" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-6">Rotator Cuff Injuries and Tendon Pain</h2>
+          <p class="text-lg text-slate-600 leading-relaxed mb-4">
+            Rotator cuff injuries are common in Utah's active population—weightlifting, overhead work, and sports can irritate or tear shoulder tendons. Typical symptoms include night pain, weakness lifting the arm, or sharp pain when reaching overhead. Getting evaluated early matters because persistent inflammation can reduce mobility and increase compensation injuries in the neck or upper back.
+          </p>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            We assess strength, range of motion, and functional stability to determine whether you're dealing with a strain, impingement, tendonitis, or a potential tear. When appropriate, we can recommend bracing, targeted rehab guidance, or next-step imaging and referral pathways—without the referral maze that slows care.
+          </p>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Dislocations -->
+    <Section background="white" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-6">Shoulder Dislocations, Instability, and Acute Injuries</h2>
+          <p class="text-lg text-slate-600 leading-relaxed mb-4">
+            A shoulder dislocation is painful and time-sensitive. After the initial injury, instability can linger, raising the risk of repeat dislocations during sports or daily activity. Same-day evaluation helps guide proper stabilization and prevents the "wait it out" cycle that often leads to chronic shoulder problems.
+          </p>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            If you felt a pop, noticed sudden deformity, or can't comfortably raise your arm, walk in promptly. We'll evaluate joint integrity and help you understand the safest path to recovery, including return-to-activity planning.
+          </p>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Injections -->
+    <Section background="gray" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-6">Injections and Non-Surgical Relief Options</h2>
+          <p class="text-lg text-slate-600 leading-relaxed mb-4">
+            Not every shoulder problem needs surgery. For many patients, targeted injections can reduce inflammation and improve function so you can participate in physical therapy or daily activity with less pain. Injections can be especially helpful for flare-ups that limit sleep or keep you from working.
+          </p>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            We focus on practical, evidence-guided care that reduces downtime—because the best outcome is a shoulder that works reliably, not one that simply "hurts less."
+          </p>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Clinical Credibility -->
+    <Section background="white" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-6">Clinical Credibility and Evidence-Based Shoulder Care</h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Our care philosophy aligns with the evidence-based approach used by Utah orthopedic sports medicine physicians. Dr. James R. Meadows, MD is board-certified with sports medicine subspecialty certification, emphasizing arthroscopic shoulder care and treating fractures and joint conditions in the Sandy/Draper area. We use those same sports-medicine principles: evaluate accurately, treat conservatively when appropriate, escalate when necessary, and prioritize safe return to function.
+          </p>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- FAQ -->
+    <Section background="gray" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-12 text-center">Frequently Asked Questions</h2>
+          <div class="space-y-6">
+            {faqs.map((faq) => (
+              <div class="bg-white rounded-2xl p-8 border border-slate-100">
+                <h3 class="font-bold text-slate-900 mb-3">{faq.q}</h3>
+                <p class="text-slate-500 leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Serving Areas -->
+    <Section background="white" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-4">Serving Draper, Salt Lake County & Utah County</h2>
+          <p class="text-lg text-slate-500 mb-8">Our walk-in model is built for real life: injuries happen today, and you deserve a plan today.</p>
+          <div class="flex flex-wrap justify-center gap-3">
+            {["Draper", "Sandy", "South Jordan", "Riverton", "Herriman", "Lehi", "Alpine", "Highland", "American Fork", "Pleasant Grove", "Bluffdale", "Midvale"].map((city) => (
+              <span class="px-4 py-2 bg-slate-50 border border-slate-100 text-slate-700 text-sm font-semibold rounded-full">{city}</span>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- CTA -->
+    <Section background="white" class="pb-24 pt-0">
+      <Container>
+        <div class="bg-slate-900 rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"></div>
+          <div class="relative z-10 max-w-2xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight mb-6">Shoulder pain slowing you down?<br/><span class="text-blue-400">Walk in today.</span></h2>
+            <p class="text-slate-400 text-lg md:text-xl mb-10 leading-relaxed">Same-day evaluation. Evidence-based treatment. No referral needed.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="https://pp-wfe-101.advancedmd.com/163338/onlineintake/demographic" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-500 hover:shadow-lg hover:shadow-blue-600/30 transition-all transform hover:-translate-y-1">Check In Now</a>
+              <a href="tel:3853867026" class="inline-flex items-center justify-center px-8 py-4 bg-white/5 text-white font-bold rounded-full hover:bg-white/10 transition-colors border border-white/10 backdrop-blur-sm">Call (385) 386-7026</a>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+    <Footer />
+  </body>
+</html>

@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 interface MobileMenuProps {
   className?: string;
@@ -7,23 +6,47 @@ interface MobileMenuProps {
 
 export default function MobileMenu({ className }: MobileMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [isExiting, setIsExiting] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      setIsExiting(false);
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
+  const closeMenu = () => {
+    setIsExiting(true);
+    setTimeout(() => {
+      setIsOpen(false);
+    }, 280);
+  };
 
   const navItems = [
-    { label: 'Services', href: '/services' },
-    { label: 'How It Works', href: '/how-it-works' },
-    { label: 'Insurance', href: '/insurance' },
-    { label: 'Providers', href: '/providers' },
-    { label: 'Location', href: '/location' },
+    { label: 'Services', href: '/#services' },
+    { label: 'Our Team', href: '/team' },
+    { label: 'Insurance', href: '/#insurance' },
+    { label: 'Location', href: '/#location' },
+    { label: 'Reviews', href: '/#testimonials' },
+    { label: 'Login', href: 'https://pp-wfe-102.advancedmd.com/156528/account/logon' },
   ];
+
+  const showOverlay = isOpen || isExiting;
+  const overlayClosing = isExiting;
+  const panelClosing = isExiting;
 
   return (
     <div className={className} style={{ display: 'block' }}>
       <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="lg:hidden p-2"
+        onClick={() => (isOpen ? closeMenu() : setIsOpen(true))}
+        className="lg:hidden relative w-10 h-10 flex items-center justify-center"
         aria-label="Toggle menu"
         style={{
-          color: '#1F2937',
           background: 'transparent',
           border: 'none',
           outline: 'none',
@@ -31,14 +54,30 @@ export default function MobileMenu({ className }: MobileMenuProps) {
           WebkitTapHighlightColor: 'transparent',
         }}
       >
-        {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        <div className="relative w-6 h-5">
+          <span
+            className="absolute left-0 w-full h-0.5 bg-ioc-gray-dark transition-all duration-300 ease-in-out"
+            style={{
+              top: isOpen ? '50%' : '25%',
+              transform: isOpen ? 'translateY(-50%) rotate(45deg)' : 'none',
+            }}
+          />
+          <span
+            className="absolute left-0 w-full h-0.5 bg-ioc-gray-dark transition-all duration-300 ease-in-out"
+            style={{
+              bottom: isOpen ? '50%' : '25%',
+              transform: isOpen ? 'translateY(50%) rotate(-45deg)' : 'none',
+            }}
+          />
+        </div>
       </button>
 
-      {isOpen && (
+      {showOverlay && (
         <>
           {/* Backdrop */}
           <div
-            onClick={() => setIsOpen(false)}
+            role="presentation"
+            onClick={closeMenu}
             style={{
               position: 'fixed',
               top: '80px',
@@ -47,9 +86,11 @@ export default function MobileMenu({ className }: MobileMenuProps) {
               bottom: 0,
               backgroundColor: 'rgba(0, 0, 0, 0.5)',
               zIndex: 40,
+              opacity: overlayClosing ? 0 : 1,
+              transition: 'opacity 0.2s ease',
             }}
           />
-          
+
           {/* Mobile Menu */}
           <nav
             style={{
@@ -57,29 +98,36 @@ export default function MobileMenu({ className }: MobileMenuProps) {
               top: '80px',
               left: 0,
               right: 0,
+              bottom: 0,
               backgroundColor: '#ffffff',
               zIndex: 50,
-              borderTop: '1px solid #9ca3af',
-              borderBottom: 'none',
-              borderLeft: 'none',
-              borderRight: 'none',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+              border: 'none',
               boxShadow: 'none',
               outline: 'none',
               transform: 'translateZ(0)',
               WebkitBackfaceVisibility: 'hidden',
               backfaceVisibility: 'hidden',
+              clipPath: panelClosing ? 'inset(0 0 100% 0)' : 'inset(0 0 0% 0)',
+              opacity: panelClosing ? 0 : 1,
+              transition: 'clip-path 0.3s ease-in-out, opacity 0.3s ease-in-out',
             }}
           >
-            <div style={{ padding: '24px 16px' }}>
+            <div style={{ padding: '24px 16px', width: '100%', maxWidth: '400px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  onClick={() => setIsOpen(false)}
+                  onClick={closeMenu}
                   style={{
                     display: 'block',
+                    width: '100%',
+                    textAlign: 'center',
                     padding: '12px 0',
-                    fontSize: '18px',
+                    fontSize: '20px',
                     fontWeight: 600,
                     color: '#1F2937',
                     textDecoration: 'none',
@@ -92,14 +140,16 @@ export default function MobileMenu({ className }: MobileMenuProps) {
                   {item.label}
                 </a>
               ))}
-              
+
               <a
-                href="tel:3852752110"
-                onClick={() => setIsOpen(false)}
+                href="tel:3853867026"
+                onClick={closeMenu}
                 style={{
                   display: 'block',
+                  width: '100%',
+                  textAlign: 'center',
                   padding: '12px 0',
-                  fontSize: '18px',
+                  fontSize: '20px',
                   fontWeight: 600,
                   color: '#4A90E2',
                   textDecoration: 'none',
@@ -109,19 +159,20 @@ export default function MobileMenu({ className }: MobileMenuProps) {
                   WebkitTapHighlightColor: 'transparent',
                 }}
               >
-                (385) 275-2110
+                (385) 386-7026
               </a>
-              
+
               <a
-                href="/book"
-                onClick={() => setIsOpen(false)}
+                href="https://pp-wfe-101.advancedmd.com/163338/onlineintake/demographic"
+                onClick={closeMenu}
                 style={{
                   display: 'block',
                   width: '100%',
-                  padding: '12px 24px',
-                  marginTop: '8px',
+                  maxWidth: '280px',
+                  padding: '16px 24px',
+                  marginTop: '16px',
                   textAlign: 'center',
-                  fontSize: '16px',
+                  fontSize: '18px',
                   fontWeight: 600,
                   color: '#ffffff',
                   backgroundColor: '#4A90E2',

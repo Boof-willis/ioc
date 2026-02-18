@@ -1,0 +1,254 @@
+---
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import Container from '@/components/ui/Container.astro';
+import Section from '@/components/ui/Section.astro';
+import '@/styles/global.css';
+
+const faqs = [
+  { q: "Can athletes walk in for sports injuries without an appointment?", a: "Yes. Instant Orthopedic Care is a walk-in clinic—no appointment or referral needed. We understand athletes need fast diagnosis and treatment, and our average wait is under 15 minutes." },
+  { q: "Do you provide return-to-play clearance?", a: "Yes. A return-to-play evaluation considers strength, stability, range of motion, and sport-specific demands. We provide practical guidance on safe progression back to activity so athletes return with confidence and reduced risk of repeat injury." },
+  { q: "Can you treat my child's sports injury?", a: "Absolutely. We treat patients of all ages including children and adolescents. Pediatric sports injuries, growth plate concerns, and youth-specific conditions are a core part of our practice." },
+  { q: "Why choose orthopedic urgent care over the ER for a sports injury?", a: "Fast evaluation isn't just convenient—it can reduce swelling complications, prevent repeat injury, and speed the return-to-play timeline when managed correctly. You'll see an orthopedic specialist, not a general ER doctor." },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="Same-day sports injury treatment in Utah. Sprains, fractures, overuse injuries, and return-to-play evaluations—walk in without ER waits." />
+    <title>Sports Injury Treatment in Utah | Instant Orthopedic Care</title>
+    <link rel="canonical" href="https://instantorthopediccare.com/services/sports-injuries" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Instant Orthopedic Care" />
+    <meta property="og:title" content="Sports Injury Treatment in Utah | Instant Orthopedic Care" />
+    <meta property="og:description" content="Same-day sports injury treatment in Utah. Sprains, fractures, overuse injuries, and return-to-play evaluations—walk in without ER waits." />
+    <meta property="og:url" content="https://instantorthopediccare.com/services/sports-injuries" />
+    <meta property="og:image" content="https://cdn.midjourney.com/fbffde7d-2121-487d-ab23-a9dc0cad2adc/0_3.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sports Injury Treatment in Utah | Instant Orthopedic Care" />
+    <meta name="twitter:description" content="Same-day sports injury treatment in Utah. Walk in without ER waits." />
+
+    <meta name="geo.region" content="US-UT" />
+    <meta name="geo.placename" content="Draper, Utah" />
+
+    <link rel="icon" type="image/x-icon" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/favicon-96x96.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/site.webmanifest" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "When should an athlete get evaluated after an injury?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Same-day evaluation is recommended when there is swelling, instability, significant pain, limited range of motion, or inability to bear weight or use the limb normally."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is included in a return-to-play evaluation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Return-to-play evaluation typically reviews strength, stability, range of motion, and sport-specific function, along with guidance on a safe progression back to full activity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do overuse injuries require rest only?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not always. Many overuse injuries improve with targeted load management, technique adjustments, and structured rehab guidance rather than complete inactivity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is orthopedic urgent care a good alternative to the ER for sports injuries?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For many non-life-threatening injuries, orthopedic urgent care can provide specialized musculoskeletal evaluation and guidance with less waiting than an emergency room."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalWebPage",
+      "name": "Sports Injury Treatment in Utah",
+      "description": "Same-day sports injury treatment in Utah. Sprains, fractures, overuse injuries, and return-to-play evaluations.",
+      "url": "https://instantorthopediccare.com/services/sports-injuries",
+      "mainEntity": {
+        "@type": "MedicalCondition",
+        "name": "Sports Injuries",
+        "possibleTreatment": [
+          {"@type": "MedicalTherapy", "name": "Fracture Treatment"},
+          {"@type": "MedicalTherapy", "name": "Joint Stabilization"},
+          {"@type": "MedicalTherapy", "name": "Concussion Protocol"},
+          {"@type": "MedicalTherapy", "name": "Physical Therapy Referral"},
+          {"@type": "MedicalTherapy", "name": "Return-to-Play Evaluation"},
+          {"@type": "MedicalTherapy", "name": "Arthroscopic Surgery Referral"}
+        ]
+      },
+      "provider": {
+        "@type": "MedicalClinic",
+        "name": "Instant Orthopedic Care",
+        "telephone": "+1-385-386-7026",
+        "address": { "@type": "PostalAddress", "streetAddress": "75 E 12300 S Suite 100", "addressLocality": "Draper", "addressRegion": "UT", "postalCode": "84020" },
+        "areaServed": ["Draper", "Sandy", "South Jordan", "Riverton", "Lehi", "Highland", "Alpine", "Salt Lake County", "Utah County"]
+      }
+    }
+    </script>
+  </head>
+  <body class="bg-white text-slate-900 font-sans antialiased selection:bg-blue-500 selection:text-white">
+    <Header />
+
+    <!-- Hero -->
+    <Section background="white" class="pt-32 pb-20 relative overflow-hidden">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-100/40 rounded-full blur-[120px] pointer-events-none"></div>
+      <Container class="relative z-10">
+        <div class="max-w-3xl">
+          <a href="/#services" class="inline-flex items-center gap-2 text-sm text-blue-600 font-semibold mb-6 hover:text-blue-700 transition-colors">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+            All Services
+          </a>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight mb-6 leading-[1.05]">
+            Sports Injury Treatment in Utah – <span class="text-blue-600">Same-Day Orthopedic Evaluation</span>
+          </h1>
+          <p class="text-lg md:text-xl text-slate-500 leading-relaxed max-w-2xl mb-4">
+            Utah is built for movement—skiing, snowboarding, hiking, cycling, youth sports, and weekend leagues. But when injuries happen, the "traditional" path often means an ER visit or weeks waiting for orthopedics.
+          </p>
+          <p class="text-lg md:text-xl text-slate-500 leading-relaxed max-w-2xl mb-8">
+            Instant Orthopedic Care provides same-day sports injury treatment in Utah so athletes and active families can get answers immediately. Fast evaluation isn't just convenient—it can reduce swelling complications, prevent repeat injury, and speed the return-to-play timeline when managed correctly.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="https://pp-wfe-101.advancedmd.com/163338/onlineintake/demographic" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-bold rounded-full shadow-lg shadow-blue-600/25 hover:bg-blue-700 transition-all hover:scale-105 active:scale-95">Check In Now</a>
+            <a href="tel:3853867026" class="inline-flex items-center justify-center px-8 py-4 border border-slate-200 text-slate-700 font-bold rounded-full hover:border-blue-200 hover:text-blue-600 hover:bg-blue-50/50 transition-all">(385) 386-7026</a>
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Acute -->
+    <Section background="gray" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-6">Acute Sports Injuries (Sprains, Fractures, Strains)</h2>
+          <p class="text-lg text-slate-600 leading-relaxed mb-4">
+            Acute sports injuries often happen in an instant: a twisted knee, a rolled ankle, a fall on the wrist, or a shoulder collision. Many athletes try to push through and "see how it feels tomorrow," but delayed care can lead to longer recoveries—especially if instability or fracture is involved.
+          </p>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            We evaluate function, stability, swelling, and pain patterns and guide next steps the same day. When needed, we outline stabilization and recovery steps clearly so you know what to do now—not after multiple appointments.
+          </p>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Overuse -->
+    <Section background="white" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-6">Overuse Injuries and Gradual Pain</h2>
+          <p class="text-lg text-slate-600 leading-relaxed mb-4">
+            Overuse injuries often build quietly: shin splints, tendon irritation, joint inflammation, or stress reactions that worsen with training volume. The earlier you identify the root cause, the more likely you can fix it with conservative changes instead of forced rest for weeks.
+          </p>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            We help athletes understand what's happening, why it's happening, and how to adjust training and recovery to protect performance while healing.
+          </p>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Return to Play -->
+    <Section background="gray" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-6">Return-to-Play Evaluations in Utah</h2>
+          <p class="text-lg text-slate-600 leading-relaxed mb-4">
+            Returning too soon is one of the biggest causes of reinjury. A return-to-play evaluation is more than "does it still hurt?"—it should consider strength, stability, range of motion, and sport-specific demands.
+          </p>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            We provide practical guidance on safe progression back to activity so athletes return with confidence and reduced risk of repeat injury.
+          </p>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Clinical Credibility -->
+    <Section background="white" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-6">Clinical Credibility for Athletes and Active Utah Families</h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Sports medicine orthopedic care emphasizes function, stability, and safe return to performance. Dr. James R. Meadows, MD is fellowship-trained in sports medicine with emphasis on arthroscopic treatment of major joints and experience working with high-level athletes (including the U.S. Men's Alpine Ski team during fellowship training). That's the model we align with: athlete-focused evaluation, evidence-based treatment, and a plan that prioritizes both healing and performance.
+          </p>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- FAQ -->
+    <Section background="gray" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-12 text-center">Frequently Asked Questions</h2>
+          <div class="space-y-6">
+            {faqs.map((faq) => (
+              <div class="bg-white rounded-2xl p-8 border border-slate-100">
+                <h3 class="font-bold text-slate-900 mb-3">{faq.q}</h3>
+                <p class="text-slate-500 leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Serving Areas -->
+    <Section background="white" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-4">Serving Draper, Salt Lake County & Utah County</h2>
+          <p class="text-lg text-slate-500 mb-8">Our Draper clinic is conveniently located for athletes and active families throughout the Wasatch Front.</p>
+          <div class="flex flex-wrap justify-center gap-3">
+            {["Draper", "Sandy", "South Jordan", "Riverton", "Herriman", "Lehi", "Alpine", "Highland", "American Fork", "Pleasant Grove", "Bluffdale", "Midvale"].map((city) => (
+              <span class="px-4 py-2 bg-slate-50 border border-slate-100 text-slate-700 text-sm font-semibold rounded-full">{city}</span>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- CTA -->
+    <Section background="white" class="pb-24 pt-0">
+      <Container>
+        <div class="bg-slate-900 rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"></div>
+          <div class="relative z-10 max-w-2xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight mb-6">Get back in the game.<br/><span class="text-blue-400">Walk in today.</span></h2>
+            <p class="text-slate-400 text-lg md:text-xl mb-10 leading-relaxed">Athlete-focused evaluation, evidence-based treatment, and a plan that prioritizes both healing and performance.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="https://pp-wfe-101.advancedmd.com/163338/onlineintake/demographic" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-500 hover:shadow-lg hover:shadow-blue-600/30 transition-all transform hover:-translate-y-1">Check In Now</a>
+              <a href="tel:3853867026" class="inline-flex items-center justify-center px-8 py-4 bg-white/5 text-white font-bold rounded-full hover:bg-white/10 transition-colors border border-white/10 backdrop-blur-sm">Call (385) 386-7026</a>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+    <Footer />
+  </body>
+</html>

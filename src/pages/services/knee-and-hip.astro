@@ -1,0 +1,256 @@
+---
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import Container from '@/components/ui/Container.astro';
+import Section from '@/components/ui/Section.astro';
+import '@/styles/global.css';
+
+const conditions = [
+  { name: "ACL, MCL & Ligament Tears", description: "Early diagnosis allows for proper bracing, stabilization, and referral planning. Delayed care can increase joint damage and prolong recovery." },
+  { name: "Meniscus Injuries", description: "Focused assessments to determine whether conservative management or surgical consultation is appropriate for meniscal tears." },
+  { name: "Knee & Hip Arthritis", description: "Structured treatment including targeted joint injections, bracing strategies, and recovery plans tailored to each patient's activity level and goals." },
+  { name: "Patellar Disorders", description: "Treatment for patellar tendonitis, runner's knee, dislocations, and tracking issues causing anterior knee pain." },
+  { name: "Hip Bursitis & Tendonitis", description: "Targeted relief for trochanteric bursitis, hip flexor strains, labral tears, and IT band syndrome with injections and therapy protocols." },
+  { name: "Joint Replacement Evaluation", description: "Pre-surgical evaluation and referral for knee and hip replacement when conservative options have been exhausted." },
+];
+
+const faqs = [
+  { q: "Can I walk in for knee or hip pain without an appointment?", a: "Yes. Instant Orthopedic Care is a walk-in clinic—no appointment or referral needed. Instead of waiting weeks to see a specialist, patients can walk in and receive comprehensive joint evaluation immediately." },
+  { q: "How do you diagnose ligament tears?", a: "Ligament tears often present with swelling, instability, or a popping sensation. Our orthopedic providers perform focused assessments and use on-site X-ray to evaluate. If an MRI is needed, we can order one and review results quickly." },
+  { q: "Do you offer knee and hip injections?", a: "Yes. We offer targeted joint injections, bracing strategies, and structured recovery plans. Treatment plans may include injections that dramatically improve mobility and comfort." },
+  { q: "What areas do you serve?", a: "Our Draper clinic serves patients throughout Salt Lake County and Utah County, including Sandy, South Jordan, Riverton, Lehi, Alpine, and surrounding communities." },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="Walk-in knee and hip injury treatment in Utah. ACL tears, meniscus injuries, arthritis & joint pain treated same-day." />
+    <title>Knee & Hip Injury Treatment in Utah | Instant Orthopedic Care</title>
+    <link rel="canonical" href="https://instantorthopediccare.com/services/knee-and-hip" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Instant Orthopedic Care" />
+    <meta property="og:title" content="Knee & Hip Injury Treatment in Utah | Instant Orthopedic Care" />
+    <meta property="og:description" content="Walk-in knee and hip injury treatment in Utah. ACL tears, meniscus injuries, arthritis & joint pain treated same-day." />
+    <meta property="og:url" content="https://instantorthopediccare.com/services/knee-and-hip" />
+    <meta property="og:image" content="https://cdn.midjourney.com/fbffde7d-2121-487d-ab23-a9dc0cad2adc/0_3.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Knee & Hip Injury Treatment in Utah | Instant Orthopedic Care" />
+    <meta name="twitter:description" content="Walk-in knee and hip injury treatment in Utah. ACL tears, meniscus injuries, arthritis & joint pain treated same-day." />
+
+    <meta name="geo.region" content="US-UT" />
+    <meta name="geo.placename" content="Draper, Utah" />
+
+    <link rel="icon" type="image/x-icon" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/favicon-96x96.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/site.webmanifest" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "When should I see an orthopedist for knee pain in Utah?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If knee pain persists for more than a few days, causes swelling, instability, locking, or limits walking, a same-day orthopedic evaluation can help identify the cause and guide treatment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are signs of an ACL or meniscus injury?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Common signs include a popping sensation at injury, swelling, instability, pain with twisting, or locking/catching. Early evaluation helps prevent further joint damage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is hip pain always arthritis?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Hip pain can also be caused by bursitis, muscle strain, labral tears, or other conditions. A focused orthopedic exam helps identify likely causes and next steps."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can joint injections help knee or hip pain?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Injections may reduce inflammation and improve function for certain conditions. Your provider will determine whether injections are appropriate based on symptoms and exam findings."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalWebPage",
+      "name": "Knee & Hip Injury Treatment in Utah",
+      "description": "Walk-in knee and hip injury treatment in Utah. ACL tears, meniscus injuries, arthritis and joint pain treated same-day.",
+      "url": "https://instantorthopediccare.com/services/knee-and-hip",
+      "mainEntity": {
+        "@type": "MedicalCondition",
+        "name": "Knee and Hip Injuries",
+        "associatedAnatomy": {
+          "@type": "AnatomicalStructure",
+          "name": "Knee and Hip Joints"
+        },
+        "possibleTreatment": [
+          {"@type": "MedicalTherapy", "name": "Joint Injection"},
+          {"@type": "MedicalTherapy", "name": "Bracing and Stabilization"},
+          {"@type": "MedicalTherapy", "name": "Arthroscopic Surgery Referral"},
+          {"@type": "MedicalTherapy", "name": "Physical Therapy Referral"},
+          {"@type": "MedicalTherapy", "name": "Joint Replacement Evaluation"}
+        ]
+      },
+      "provider": {
+        "@type": "MedicalClinic",
+        "name": "Instant Orthopedic Care",
+        "telephone": "+1-385-386-7026",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "75 E 12300 S Suite 100",
+          "addressLocality": "Draper",
+          "addressRegion": "UT",
+          "postalCode": "84020"
+        },
+        "areaServed": ["Draper", "Sandy", "South Jordan", "Riverton", "Lehi", "Highland", "Alpine", "Salt Lake County", "Utah County"]
+      }
+    }
+    </script>
+  </head>
+  <body class="bg-white text-slate-900 font-sans antialiased selection:bg-blue-500 selection:text-white">
+    <Header />
+
+    <!-- Hero -->
+    <Section background="white" class="pt-32 pb-20 relative overflow-hidden">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-100/40 rounded-full blur-[120px] pointer-events-none"></div>
+      <Container class="relative z-10">
+        <div class="max-w-3xl">
+          <a href="/#services" class="inline-flex items-center gap-2 text-sm text-blue-600 font-semibold mb-6 hover:text-blue-700 transition-colors">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+            All Services
+          </a>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight mb-6 leading-[1.05]">
+            Knee & Hip Injury Treatment in Utah – <span class="text-blue-600">Immediate Orthopedic Access</span>
+          </h1>
+          <p class="text-lg md:text-xl text-slate-500 leading-relaxed max-w-2xl mb-4">
+            Knee and hip pain can significantly limit mobility and daily function. Whether caused by sports activity, a workplace injury, or gradual degeneration, prompt orthopedic evaluation improves long-term outcomes.
+          </p>
+          <p class="text-lg md:text-xl text-slate-500 leading-relaxed max-w-2xl mb-8">
+            At Instant Orthopedic Care, we provide same-day knee and hip injury treatment in Utah without referral delays. Instead of waiting weeks to see a specialist, patients can walk in and receive comprehensive joint evaluation immediately.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="https://pp-wfe-101.advancedmd.com/163338/onlineintake/demographic" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-bold rounded-full shadow-lg shadow-blue-600/25 hover:bg-blue-700 transition-all hover:scale-105 active:scale-95">Check In Now</a>
+            <a href="tel:3853867026" class="inline-flex items-center justify-center px-8 py-4 border border-slate-200 text-slate-700 font-bold rounded-full hover:border-blue-200 hover:text-blue-600 hover:bg-blue-50/50 transition-all">(385) 386-7026</a>
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- ACL & Ligament -->
+    <Section background="gray" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-6">ACL, Meniscus & Ligament Injuries</h2>
+          <p class="text-lg text-slate-600 leading-relaxed mb-4">
+            Ligament tears often present with swelling, instability, or a popping sensation at the time of injury. Early diagnosis allows for proper bracing, stabilization, and referral planning when needed. Delayed care can increase joint damage and prolong recovery.
+          </p>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Our orthopedic providers perform focused assessments to determine whether conservative management or surgical consultation is appropriate.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {conditions.map((condition) => (
+            <div class="bg-white rounded-2xl p-8 border border-slate-100 hover:border-blue-200 hover:shadow-lg transition-all duration-300">
+              <h3 class="text-lg font-bold text-slate-900 mb-3">{condition.name}</h3>
+              <p class="text-sm text-slate-500 leading-relaxed">{condition.description}</p>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Hip Pain -->
+    <Section background="white" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-6">Hip Pain & Arthritis Management</h2>
+          <p class="text-lg text-slate-600 leading-relaxed mb-4">
+            Hip pain may stem from labral tears, bursitis, muscle strain, or degenerative arthritis. Many patients attribute symptoms to aging, but structured treatment can dramatically improve mobility and comfort.
+          </p>
+          <p class="text-lg text-slate-600 leading-relaxed mb-4">
+            We offer targeted joint injections, bracing strategies, and structured recovery plans tailored to each patient's activity level and goals.
+          </p>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Dr. Meadows is a board-certified orthopedic surgeon with subspecialty certification in sports medicine, fellowship-trained, with emphasis on arthroscopic shoulder/hip/knee, plus fracture care and joint replacement, practicing in the Sandy/Draper area and affiliated with Lone Peak Hospital.
+          </p>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- FAQ -->
+    <Section background="gray" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-12 text-center">Frequently Asked Questions</h2>
+          <div class="space-y-6">
+            {faqs.map((faq) => (
+              <div class="bg-white rounded-2xl p-8 border border-slate-100">
+                <h3 class="font-bold text-slate-900 mb-3">{faq.q}</h3>
+                <p class="text-slate-500 leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Serving Areas -->
+    <Section background="white" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-4">Serving Draper, Salt Lake County & Utah County</h2>
+          <p class="text-lg text-slate-500 mb-8">Our Draper clinic provides same-day knee and hip orthopedic care to patients throughout the Wasatch Front.</p>
+          <div class="flex flex-wrap justify-center gap-3">
+            {["Draper", "Sandy", "South Jordan", "Riverton", "Herriman", "Lehi", "Alpine", "Highland", "American Fork", "Pleasant Grove", "Bluffdale", "Midvale"].map((city) => (
+              <span class="px-4 py-2 bg-slate-50 border border-slate-100 text-slate-700 text-sm font-semibold rounded-full">{city}</span>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- CTA -->
+    <Section background="white" class="pb-24 pt-0">
+      <Container>
+        <div class="bg-slate-900 rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"></div>
+          <div class="relative z-10 max-w-2xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight mb-6">Don't live with joint pain.<br/><span class="text-blue-400">Walk in today.</span></h2>
+            <p class="text-slate-400 text-lg md:text-xl mb-10 leading-relaxed">Same-day knee and hip evaluation without referral delays.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="https://pp-wfe-101.advancedmd.com/163338/onlineintake/demographic" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-500 hover:shadow-lg hover:shadow-blue-600/30 transition-all transform hover:-translate-y-1">Check In Now</a>
+              <a href="tel:3853867026" class="inline-flex items-center justify-center px-8 py-4 bg-white/5 text-white font-bold rounded-full hover:bg-white/10 transition-colors border border-white/10 backdrop-blur-sm">Call (385) 386-7026</a>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+    <Footer />
+  </body>
+</html>

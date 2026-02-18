@@ -1,0 +1,254 @@
+---
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import Container from '@/components/ui/Container.astro';
+import Section from '@/components/ui/Section.astro';
+import '@/styles/global.css';
+
+const faqs = [
+  { q: "Can I walk in for chronic pain without an appointment?", a: "Yes. Instant Orthopedic Care is a walk-in clinic—no appointment or referral needed. Whether your pain is new or long-standing, we can evaluate and begin treatment the same day." },
+  { q: "Do you offer joint injections for arthritis?", a: "Yes. For certain patients, joint injections can reduce inflammation and improve function, especially during flare-ups that affect sleep or daily activity. We'll discuss whether injections make sense based on your symptoms, goals, and functional exam." },
+  { q: "What if I've been living with pain for months or years?", a: "Chronic pain deserves expert attention. If pain is limiting your walking, sleep, workouts, or workday, it's worth evaluating now. Small improvements in function and inflammation control can compound into big quality-of-life gains." },
+  { q: "Do you accept insurance for chronic pain treatment?", a: "Yes. We accept most major insurance plans including Blue Cross Blue Shield, Aetna, Cigna, UnitedHealthcare, Medicaid, Medicare, and workers' compensation." },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="Chronic joint pain and arthritis treatment in Utah. Walk-in orthopedic evaluation, joint injections, and personalized treatment plans—same-day access." />
+    <title>Chronic Joint Pain Treatment in Utah | Instant Orthopedic Care</title>
+    <link rel="canonical" href="https://instantorthopediccare.com/services/chronic-pain" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Instant Orthopedic Care" />
+    <meta property="og:title" content="Chronic Joint Pain Treatment in Utah | Instant Orthopedic Care" />
+    <meta property="og:description" content="Chronic joint pain and arthritis treatment in Utah. Walk-in orthopedic evaluation, joint injections, and personalized treatment plans—same-day access." />
+    <meta property="og:url" content="https://instantorthopediccare.com/services/chronic-pain" />
+    <meta property="og:image" content="https://cdn.midjourney.com/fbffde7d-2121-487d-ab23-a9dc0cad2adc/0_3.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Chronic Joint Pain Treatment in Utah | Instant Orthopedic Care" />
+    <meta name="twitter:description" content="Chronic joint pain and arthritis treatment in Utah. Walk-in same-day access." />
+
+    <meta name="geo.region" content="US-UT" />
+    <meta name="geo.placename" content="Draper, Utah" />
+
+    <link rel="icon" type="image/x-icon" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/favicon-96x96.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/site.webmanifest" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "When should I see an orthopedic provider for chronic joint pain?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If joint pain persists for weeks, limits daily activity, affects sleep, or repeatedly flares, a same-day orthopedic evaluation can help clarify causes and guide treatment options."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do joint injections help arthritis pain?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Injections can reduce inflammation and improve function for some patients. A provider will determine appropriateness based on symptoms, exam findings, and goals."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can chronic joint pain be treated without surgery?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Many cases can improve with conservative care such as guided rehab, bracing, activity modifications, and targeted inflammation control. Surgery is considered when conservative options don't provide adequate function or relief."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why choose orthopedic urgent care for chronic pain in Utah?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Orthopedic urgent care can provide faster access to musculoskeletal-focused evaluation and practical treatment planning without prolonged referral delays."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalWebPage",
+      "name": "Chronic Joint Pain Treatment in Utah",
+      "description": "Chronic joint pain and arthritis treatment in Utah. Walk-in orthopedic evaluation, joint injections, and personalized treatment plans.",
+      "url": "https://instantorthopediccare.com/services/chronic-pain",
+      "mainEntity": {
+        "@type": "MedicalCondition",
+        "name": "Chronic Musculoskeletal Pain",
+        "possibleTreatment": [
+          {"@type": "MedicalTherapy", "name": "Corticosteroid Injection"},
+          {"@type": "MedicalTherapy", "name": "Hyaluronic Acid Injection"},
+          {"@type": "MedicalTherapy", "name": "Physical Therapy Referral"},
+          {"@type": "MedicalTherapy", "name": "Bracing and Orthotics"},
+          {"@type": "MedicalTherapy", "name": "Medication Management"},
+          {"@type": "MedicalTherapy", "name": "Joint Replacement Consultation"}
+        ]
+      },
+      "provider": {
+        "@type": "MedicalClinic",
+        "name": "Instant Orthopedic Care",
+        "telephone": "+1-385-386-7026",
+        "address": { "@type": "PostalAddress", "streetAddress": "75 E 12300 S Suite 100", "addressLocality": "Draper", "addressRegion": "UT", "postalCode": "84020" },
+        "areaServed": ["Draper", "Sandy", "South Jordan", "Riverton", "Lehi", "Highland", "Alpine", "Salt Lake County", "Utah County"]
+      }
+    }
+    </script>
+  </head>
+  <body class="bg-white text-slate-900 font-sans antialiased selection:bg-blue-500 selection:text-white">
+    <Header />
+
+    <!-- Hero -->
+    <Section background="white" class="pt-32 pb-20 relative overflow-hidden">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-100/40 rounded-full blur-[120px] pointer-events-none"></div>
+      <Container class="relative z-10">
+        <div class="max-w-3xl">
+          <a href="/#services" class="inline-flex items-center gap-2 text-sm text-blue-600 font-semibold mb-6 hover:text-blue-700 transition-colors">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+            All Services
+          </a>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight mb-6 leading-[1.05]">
+            Chronic Joint Pain Treatment in Utah – <span class="text-blue-600">Walk-In Orthopedic Care</span>
+          </h1>
+          <p class="text-lg md:text-xl text-slate-500 leading-relaxed max-w-2xl mb-4">
+            Chronic joint pain doesn't just "come with age"—it often comes with untreated inflammation, mechanical stress, or progressive degeneration that can be managed earlier than most people realize.
+          </p>
+          <p class="text-lg md:text-xl text-slate-500 leading-relaxed max-w-2xl mb-8">
+            Instant Orthopedic Care provides same-day chronic joint pain treatment in Utah, helping patients regain mobility and reduce daily discomfort without waiting weeks for a specialist visit. If pain is limiting your walking, sleep, workouts, or workday, it's worth evaluating now.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="https://pp-wfe-101.advancedmd.com/163338/onlineintake/demographic" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-bold rounded-full shadow-lg shadow-blue-600/25 hover:bg-blue-700 transition-all hover:scale-105 active:scale-95">Check In Now</a>
+            <a href="tel:3853867026" class="inline-flex items-center justify-center px-8 py-4 border border-slate-200 text-slate-700 font-bold rounded-full hover:border-blue-200 hover:text-blue-600 hover:bg-blue-50/50 transition-all">(385) 386-7026</a>
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Arthritis -->
+    <Section background="gray" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-6">Arthritis Management and Long-Term Mobility</h2>
+          <p class="text-lg text-slate-600 leading-relaxed mb-4">
+            Arthritis pain often fluctuates—good days followed by flare-ups that derail activity and motivation. A clear plan matters because "rest and hope" can lead to deconditioning that worsens symptoms.
+          </p>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            We evaluate symptoms, movement patterns, and functional limitations to guide next steps. Treatment plans may include bracing strategies, activity modifications, and rehabilitation guidance focused on preserving mobility—not just masking pain.
+          </p>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Injections -->
+    <Section background="white" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-6">Joint Injections for Inflammation and Pain Relief</h2>
+          <p class="text-lg text-slate-600 leading-relaxed mb-4">
+            For certain patients, joint injections can reduce inflammation and improve function, especially during flare-ups that affect sleep or daily activity. Injections can also create a window to participate in strengthening and mobility work with less discomfort.
+          </p>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            We'll discuss whether injections make sense based on your symptoms, goals, and functional exam. When used appropriately, they can be a practical tool in a broader, long-term plan.
+          </p>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Personalized Plans -->
+    <Section background="gray" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-6">Personalized Treatment Plans That Fit Real Life</h2>
+          <p class="text-lg text-slate-600 leading-relaxed mb-4">
+            Chronic pain care should be realistic. People have jobs, kids, training schedules, and lives that don't pause for a months-long referral process. We emphasize practical plans you can actually follow—clear steps, measurable goals, and options that match your lifestyle.
+          </p>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            This approach helps reduce repeat urgent visits and prevents chronic pain from turning into chronic limitations.
+          </p>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Clinical Credibility -->
+    <Section background="white" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-6">Clinical Credibility and Evidence-Based Joint Care</h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Evidence-based orthopedic care often blends conservative management with clear escalation pathways. Dr. James R. Meadows, MD performs joint replacement and treats shoulder/hip/knee conditions, reflecting broad expertise in both conservative and advanced joint care. We align with that same clinical mindset: start with the right diagnosis, pursue the least invasive effective option, and guide next steps when advanced care is appropriate.
+          </p>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- FAQ -->
+    <Section background="gray" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-12 text-center">Frequently Asked Questions</h2>
+          <div class="space-y-6">
+            {faqs.map((faq) => (
+              <div class="bg-white rounded-2xl p-8 border border-slate-100">
+                <h3 class="font-bold text-slate-900 mb-3">{faq.q}</h3>
+                <p class="text-slate-500 leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Serving Areas -->
+    <Section background="white" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-4">Serving Draper, Salt Lake County & Utah County</h2>
+          <p class="text-lg text-slate-500 mb-8">Same-day chronic joint pain evaluation and treatment for patients throughout the Wasatch Front.</p>
+          <div class="flex flex-wrap justify-center gap-3">
+            {["Draper", "Sandy", "South Jordan", "Riverton", "Herriman", "Lehi", "Alpine", "Highland", "American Fork", "Pleasant Grove", "Bluffdale", "Midvale"].map((city) => (
+              <span class="px-4 py-2 bg-slate-50 border border-slate-100 text-slate-700 text-sm font-semibold rounded-full">{city}</span>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- CTA -->
+    <Section background="white" class="pb-24 pt-0">
+      <Container>
+        <div class="bg-slate-900 rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"></div>
+          <div class="relative z-10 max-w-2xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight mb-6">Reclaim your life.<br/><span class="text-blue-400">Walk in today.</span></h2>
+            <p class="text-slate-400 text-lg md:text-xl mb-10 leading-relaxed">Small improvements in function and inflammation control can compound into big quality-of-life gains.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="https://pp-wfe-101.advancedmd.com/163338/onlineintake/demographic" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-500 hover:shadow-lg hover:shadow-blue-600/30 transition-all transform hover:-translate-y-1">Check In Now</a>
+              <a href="tel:3853867026" class="inline-flex items-center justify-center px-8 py-4 bg-white/5 text-white font-bold rounded-full hover:bg-white/10 transition-colors border border-white/10 backdrop-blur-sm">Call (385) 386-7026</a>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,95 @@
+---
+import Container from "./Container.astro";
+import { 
+  Footprints, 
+  Move, 
+  User, 
+  Hand, 
+  Trophy, 
+  HeartPulse
+} from "lucide-react";
+
+const services = [
+  {
+    title: "Ankle & Foot",
+    description: "Comprehensive care for sprains, fractures, plantar fasciitis, and Achilles tendon injuries to get you back on your feet.",
+    icon: Footprints,
+    href: "/services/ankle-and-foot",
+  },
+  {
+    title: "Knee & Hip",
+    description: "Specialized treatment for joint pain, ligament tears, and mobility issues, including arthroscopy and non-surgical solutions.",
+    icon: Move,
+    href: "/services/knee-and-hip",
+  },
+  {
+    title: "Shoulder",
+    description: "Expert diagnosis and relief for rotator cuff injuries, dislocations, and frozen shoulder using advanced imaging and injections.",
+    icon: User,
+    href: "/services/shoulder",
+  },
+  {
+    title: "Elbow & Wrist",
+    description: "Targeted treatment for tennis elbow, carpal tunnel syndrome, and fractures affecting your hands and arms.",
+    icon: Hand,
+    href: "/services/elbow-and-wrist",
+  },
+  {
+    title: "Sports Injuries",
+    description: "Acute and overuse injury management for athletes, including concussion protocols and return-to-play evaluations.",
+    icon: Trophy,
+    href: "/services/sports-injuries",
+  },
+  {
+    title: "Chronic Pain",
+    description: "Long-term pain management strategies, including arthritis care, joint injections, and personalized treatment plans.",
+    icon: HeartPulse,
+    href: "/services/chronic-pain",
+  },
+];
+---
+
+<section id="services" class="lg:py-32 bg-slate-900 w-full z-10 border-slate-800 border-t pt-24 pb-24 relative overflow-hidden">
+  <!-- Glow Effect -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"></div>
+
+  <!-- Background Grid (Subtle) -->
+  <div class="absolute inset-0 pointer-events-none hidden lg:block z-0 opacity-20">
+    <div class="absolute top-0 bottom-0 left-[6%] w-[1px] bg-slate-700"></div>
+    <div class="absolute top-0 bottom-0 left-[28%] w-[1px] bg-slate-700"></div>
+    <div class="absolute top-0 bottom-0 left-[62%] w-[1px] bg-slate-700"></div>
+    <div class="absolute top-0 bottom-0 right-[6%] w-[1px] bg-slate-700"></div>
+  </div>
+
+  <Container class="relative z-10">
+    <div class="text-left md:text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight mb-6">
+        Comprehensive Orthopedic Services
+      </h2>
+      <p class="text-lg text-slate-400">
+        From diagnosis to treatment, our board-certified specialists handle a wide range of orthopedic conditions on-site—same day, no referral needed.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      {services.map((service) => (
+        <a href={service.href} class="block bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:border-blue-600 hover:shadow-[0_10px_25px_-5px_rgba(74,144,226,0.4)] hover:-translate-y-1 transition-all duration-300 group no-underline cursor-pointer">
+          <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 pointer-events-none">
+            <service.icon class="w-6 h-6" />
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-3 pointer-events-none">{service.title}</h3>
+          <p class="text-sm text-gray-500 leading-relaxed mb-4 pointer-events-none">{service.description}</p>
+          <span class="text-sm font-semibold text-blue-600 inline-flex items-center gap-1 group-hover:gap-2 transition-all pointer-events-none">
+            Learn more
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+          </span>
+        </a>
+      ))}
+    </div>
+
+    <!-- Triage Call-to-Action -->
+    <p class="text-center text-slate-400 mt-8 text-lg">
+      <span class="font-semibold text-white">Not sure if we are the right fit?</span> Call us at <a href="tel:3853867026" class="text-blue-400 font-bold hover:text-blue-300 hover:underline transition-colors">(385) 386-7026</a> and we'll help you decide the best place for your care.
+    </p>
+  </Container>
+</section>

@@ -1,0 +1,103 @@
+---
+import { Star, ArrowRight } from "lucide-react";
+---
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="overflow-hidden lg:py-32 w-full z-20 pt-24 pb-24 relative bg-white">
+  <!-- Grid Lines -->
+  <div class="absolute inset-0 w-full h-full pointer-events-none hidden lg:block">
+    <div class="absolute h-full w-px bg-slate-100" style="left: 6%"></div>
+    <div class="absolute h-full w-px bg-slate-100" style="left: 28%"></div>
+    <div class="absolute h-full w-px bg-slate-100" style="left: 62%"></div>
+    <div class="absolute h-full w-px bg-slate-100" style="right: 6%"></div>
+    <div class="absolute w-full h-px bg-slate-100" style="top: 0"></div>
+    <div class="absolute w-full h-px bg-slate-100" style="bottom: 0"></div>
+  </div>
+
+  <div class="lg:px-[6%] max-w-[1600px] z-10 mr-auto ml-auto pr-6 pl-6 relative">
+    
+    <!-- Section Header -->
+    <div class="mb-16 text-center max-w-3xl mx-auto">
+      <h2 class="leading-[0.95] lg:text-5xl text-4xl font-semibold text-slate-900 tracking-tight mb-4">
+        Care that puts <span class="text-ioc-blue">you first.</span>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 mb-16 items-stretch">
+      <!-- Left: Image (Full Height) -->
+      <div class="lg:col-span-7 h-full aspect-video lg:aspect-auto lg:min-h-[500px]">
+        <div class="h-full w-full overflow-hidden group border-slate-200 border rounded-3xl relative shadow-sm">
+          <img src="/images/orthopedic%20doctor%20and%20patient.png" alt="Orthopedic doctor consulting with patient about treatment options at Instant Orthopedic Care in Draper, Utah" class="transition-transform duration-1000 group-hover:scale-105 w-full h-full object-cover absolute top-0 left-0">
+          <div class="absolute bottom-10 right-10 text-right bg-white/90 backdrop-blur-sm p-5 rounded-2xl shadow-lg border border-white/50">
+            <span class="block text-4xl font-bold text-slate-900 tracking-tight">
+              98%
+            </span>
+            <span class="block text-slate-500 font-mono text-xs uppercase tracking-widest mt-1 font-semibold">
+              Patient Satisfaction
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Featured Review -->
+      <div class="lg:col-span-5 h-full">
+        <div class="bg-white p-10 lg:p-12 rounded-3xl border border-slate-200 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-300 h-full flex flex-col justify-between relative group">
+          <!-- Quote Icon -->
+          <div class="absolute top-10 right-10 text-slate-100 group-hover:text-blue-50 transition-colors duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/>
+              <path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/>
+            </svg>
+          </div>
+
+          <div class="relative z-10">
+            <div class="flex gap-1.5 text-yellow-400 mb-8">
+              <Star className="w-6 h-6 fill-current" fill="currentColor" />
+              <Star className="w-6 h-6 fill-current" fill="currentColor" />
+              <Star className="w-6 h-6 fill-current" fill="currentColor" />
+              <Star className="w-6 h-6 fill-current" fill="currentColor" />
+              <Star className="w-6 h-6 fill-current" fill="currentColor" />
+            </div>
+            <p class="text-xl md:text-2xl font-medium leading-relaxed mb-8 text-slate-800 tracking-tight">
+              "The level of attention to detail was unmatched. I've never felt so heard by a medical provider before. They actually explained what was happening instead of rushing me out the door."
+            </p>
+          </div>
+
+          <div class="flex items-center gap-5 border-t border-slate-100 pt-8 mt-auto">
+            <div class="w-14 h-14 rounded-full bg-blue-600 flex items-center justify-center ring-4 ring-slate-50">
+              <span class="text-white font-bold text-lg">SF</span>
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-base mb-0.5">
+                Sarah Farr
+              </h4>
+              <span class="text-sm text-slate-500 font-medium">Patient since 2024</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Banner -->
+    <div class="bg-gradient-to-r from-ioc-blue to-blue-900 rounded-3xl p-8 lg:px-12 lg:py-10 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden group shadow-2xl shadow-blue-900/20">
+      <!-- Decorative Glass Overlay -->
+      <div class="absolute inset-0 bg-white/5 pointer-events-none"></div>
+
+      <div class="relative z-10 text-center md:text-left">
+        <h3 class="text-3xl font-bold text-white tracking-tight mb-2">
+          Ready to prioritize your recovery?
+        </h3>
+        <p class="text-white/90 text-base font-medium">
+          Join over 5,000 patients trusting IOC.
+        </p>
+      </div>
+
+      <a href="https://pp-wfe-101.advancedmd.com/163338/onlineintake/demographic" target="_blank" rel="noopener noreferrer" class="relative z-10 bg-white text-slate-900 pl-8 pr-6 py-4 rounded-full font-semibold text-xs uppercase tracking-widest hover:bg-slate-100 transition-all flex items-center gap-4 group/btn shadow-lg">
+        Book Online
+        <div class="w-6 h-6 bg-ioc-blue text-white rounded-full flex items-center justify-center group-hover/btn:scale-110 transition-transform">
+          <ArrowRight class="w-3.5 h-3.5" />
+        </div>
+      </a>
+    </div>
+  </div>
+</section>

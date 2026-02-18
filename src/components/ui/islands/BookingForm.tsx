@@ -78,7 +78,7 @@ export default function BookingForm({ className, onSuccess }: BookingFormProps) 
           onChange={handleChange}
           className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gray-400 focus:ring-0 focus:outline-none transition-colors"
           style={{ outline: 'none', boxShadow: 'none' }}
-          placeholder="(385) 275-2110"
+          placeholder="(385) 386-7026"
         />
       </div>
 

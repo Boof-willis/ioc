@@ -1,0 +1,321 @@
+---
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import Container from '@/components/ui/Container.astro';
+import Section from '@/components/ui/Section.astro';
+import '@/styles/global.css';
+
+// Team members data
+const doctors = [
+  {
+    name: "Dr. James R. Meadows",
+    title: "Orthopedic Surgeon",
+    credentials: "MD",
+    image: "/images/dr-james-r-meadows-md.webp",
+    bio: "Dr. James R. Meadows is a board-certified, fellowship-trained orthopedic surgeon specializing in sports medicine and musculoskeletal care. He earned his medical degree from The Ohio State University College of Medicine, completed his orthopedic surgery residency at the University of Texas Health Science Center at San Antonio, and completed fellowship training in sports medicine at Tahoe Orthopedics and Sports Medicine. His training and clinical experience include advanced arthroscopic procedures, ligament reconstruction, joint preservation, and comprehensive care for sports-related and degenerative orthopedic conditions. Dr. Meadows is known for his evidence-based approach and commitment to high clinical standards.",
+    specialties: ["Sports Medicine", "Joint Preservation", "Ligament Reconstruction"],
+  },
+  {
+    name: "Dr. Christian Sybowsky",
+    title: "Orthopedic Physician",
+    credentials: "MD",
+    image: "/images/dr-christian-sybowsky-md.webp",
+    bio: "Dr. Christian Sybowsky is a board-certified orthopedic physician with fellowship training in sports medicine. He earned his medical degree from the University of Utah School of Medicine, completed his orthopedic surgery residency at the University of Washington, and completed fellowship training in orthopedic sports medicine at the University of Iowa Hospitals and Clinics. His clinical background includes fracture care, sports-related injuries, joint conditions, and non-operative orthopedic management. Dr. Sybowsky is known for a patient-centered approach that emphasizes clear communication, timely diagnosis, and evidence-based treatment.",
+    specialties: ["Sports Medicine", "Fracture Care", "Non-operative Management"],
+  },
+];
+
+const physicianAssistants = [
+  {
+    name: "McKay Milne",
+    title: "Physician Assistant",
+    credentials: "PA-C",
+    image: "/images/mckay-milne-pa-c.webp",
+    bio: "McKay Milne, PA-C is an orthopedic Physician Assistant with a strong focus in sports medicine and musculoskeletal injury care. He specializes in evaluating and treating acute and chronic orthopedic conditions, including the use of diagnostic ultrasound and ultrasound-guided procedures. At Instant Orthopedic Care, McKay is committed to helping patients return to activity quickly through accurate diagnosis and efficient, evidence-based care.",
+    specialties: ["Sports Medicine", "Diagnostic Ultrasound", "Musculoskeletal Care"],
+  },
+  {
+    name: "Cole Mitchell",
+    title: "Physician Assistant",
+    credentials: "PA-C",
+    image: "/images/cole-mitchell-pa-c.webp",
+    bio: "Cole Mitchell, PA-C is an orthopedic Physician Assistant with a strong focus in sports medicine and musculoskeletal injury care. He has extensive experience evaluating and treating orthopedic conditions including fractures, acute injuries, and sports-related complaints, as well as performing injections and assisting with orthopedic procedures. At Instant Orthopedic Care, Cole is focused on accurate diagnosis, efficient treatment, and helping patients return to activity as quickly and safely as possible.",
+    specialties: ["Fractures & Acute Injuries", "Sports Medicine", "Injections"],
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="Meet the board-certified orthopedic surgeons and physician assistants at Instant Orthopedic Care in Draper, UT. Fellowship-trained specialists in sports medicine, fracture care & joint preservation." />
+    <title>Our Orthopedic Specialists & Providers | Instant Orthopedic Care – Draper, UT</title>
+    <link rel="canonical" href="https://instantorthopediccare.com/team" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Instant Orthopedic Care" />
+    <meta property="og:title" content="Our Orthopedic Specialists & Providers | Instant Orthopedic Care" />
+    <meta property="og:description" content="Board-certified orthopedic surgeons and experienced physician assistants specializing in sports medicine, fracture care, and musculoskeletal treatment in Draper, Utah." />
+    <meta property="og:url" content="https://instantorthopediccare.com/team" />
+    <meta property="og:image" content="https://cdn.midjourney.com/fbffde7d-2121-487d-ab23-a9dc0cad2adc/0_3.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Orthopedic care team at Instant Orthopedic Care in Draper, Utah" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Our Orthopedic Specialists & Providers | Instant Orthopedic Care" />
+    <meta name="twitter:description" content="Board-certified orthopedic surgeons and physician assistants in Draper, UT. Fellowship-trained in sports medicine, fracture care & joint preservation." />
+    <meta name="twitter:image" content="https://cdn.midjourney.com/fbffde7d-2121-487d-ab23-a9dc0cad2adc/0_3.png" />
+    <meta name="twitter:image:alt" content="Orthopedic care team at Instant Orthopedic Care in Draper, Utah" />
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/favicon-96x96.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/favicon/site.webmanifest" />
+
+    <!-- Schema.org JSON-LD – Medical Organization with Physicians -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalOrganization",
+      "name": "Instant Orthopedic Care",
+      "url": "https://instantorthopediccare.com/team",
+      "telephone": "+1-385-386-7026",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "75 E 12300 S Suite 100",
+        "addressLocality": "Draper",
+        "addressRegion": "UT",
+        "postalCode": "84020",
+        "addressCountry": "US"
+      },
+      "medicalSpecialty": "Orthopedic",
+      "member": [
+        {
+          "@type": "Physician",
+          "name": "Dr. James R. Meadows",
+          "jobTitle": "Orthopedic Surgeon",
+          "medicalSpecialty": ["Orthopedic Surgery", "Sports Medicine"],
+          "description": "Board-certified, fellowship-trained orthopedic surgeon specializing in sports medicine, ligament reconstruction, and joint preservation.",
+          "image": "https://instantorthopediccare.com/images/dr-james-r-meadows-md.webp",
+          "memberOf": {
+            "@type": "MedicalOrganization",
+            "name": "Instant Orthopedic Care"
+          }
+        },
+        {
+          "@type": "Physician",
+          "name": "Dr. Christian Sybowsky",
+          "jobTitle": "Orthopedic Physician",
+          "medicalSpecialty": ["Orthopedic Surgery", "Sports Medicine"],
+          "description": "Board-certified orthopedic physician with fellowship training in sports medicine, specializing in fracture care and non-operative management.",
+          "image": "https://instantorthopediccare.com/images/dr-christian-sybowsky-md.webp",
+          "memberOf": {
+            "@type": "MedicalOrganization",
+            "name": "Instant Orthopedic Care"
+          }
+        },
+        {
+          "@type": "Physician",
+          "name": "McKay Milne",
+          "jobTitle": "Physician Assistant (PA-C)",
+          "medicalSpecialty": ["Sports Medicine", "Musculoskeletal Care"],
+          "description": "Orthopedic physician assistant specializing in sports medicine, diagnostic ultrasound, and musculoskeletal injury care.",
+          "image": "https://instantorthopediccare.com/images/mckay-milne-pa-c.webp",
+          "memberOf": {
+            "@type": "MedicalOrganization",
+            "name": "Instant Orthopedic Care"
+          }
+        },
+        {
+          "@type": "Physician",
+          "name": "Cole Mitchell",
+          "jobTitle": "Physician Assistant (PA-C)",
+          "medicalSpecialty": ["Sports Medicine", "Fracture Care"],
+          "description": "Orthopedic physician assistant with extensive experience in fractures, acute injuries, sports medicine, and injection procedures.",
+          "image": "https://instantorthopediccare.com/images/cole-mitchell-pa-c.webp",
+          "memberOf": {
+            "@type": "MedicalOrganization",
+            "name": "Instant Orthopedic Care"
+          }
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body class="bg-white">
+    <Header />
+    
+    <!-- Hero Section -->
+    <Section background="white" class="pt-32 pb-24 relative overflow-hidden">
+      
+      <Container class="relative z-10">
+        <div class="text-center max-w-3xl mx-auto">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 font-bold text-[10px] uppercase tracking-widest mb-6">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+            </span>
+            World-Class Care
+          </div>
+          
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 tracking-tight mb-8 leading-[0.95]">
+            Meet the <span class="text-blue-600">Experts.</span>
+          </h1>
+          <p class="text-xl md:text-2xl text-slate-500 leading-relaxed font-medium max-w-2xl mx-auto">
+            Our board-certified specialists and experienced providers are dedicated to getting you back to what you love—faster.
+          </p>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Doctors Section -->
+    <Section background="gray" class="py-24">
+      <Container>
+        <div class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-3">Orthopedic Physicians</h2>
+            <p class="text-lg text-slate-500 max-w-xl">Board-certified specialists with decades of combined experience in sports medicine, surgery, and joint reconstruction.</p>
+          </div>
+        </div>
+        
+        <div class="flex flex-col gap-8">
+          {doctors.map((doctor) => (
+            <div class="bg-white rounded-[2.5rem] border border-slate-100/60 shadow-xl shadow-slate-200/40 overflow-hidden hover:shadow-2xl hover:shadow-blue-900/5 hover:border-blue-100 transition-all duration-500 group">
+              <div class="flex flex-col md:flex-row items-stretch">
+                <!-- Image -->
+                <div class="md:w-2/5 lg:w-1/3 min-h-[320px] relative overflow-hidden">
+                  <img 
+                    src={doctor.image} 
+                    alt={`${doctor.name}, ${doctor.credentials} – ${doctor.title} at Instant Orthopedic Care in Draper, Utah`}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 absolute inset-0"
+                  />
+                  <!-- Overlay for text legibility on mobile if needed, though we stack -->
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                
+                <!-- Content -->
+                <div class="md:w-3/5 lg:w-2/3 p-8 md:p-12 flex flex-col justify-center">
+                  <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 mb-6">
+                    <div>
+                      <h3 class="text-3xl font-bold text-slate-900 tracking-tight mb-2 group-hover:text-blue-600 transition-colors">{doctor.name}</h3>
+                      <div class="flex flex-wrap items-center gap-3 text-sm">
+                         <span class="font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">{doctor.credentials}</span>
+                         <span class="text-slate-500 font-medium border-l border-slate-200 pl-3">{doctor.title}</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <p class="text-slate-600 text-sm leading-relaxed mb-8 max-w-3xl">
+                    {doctor.bio}
+                  </p>
+                  
+                  <div>
+                    <p class="text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-3">Specialties</p>
+                    <div class="flex flex-wrap gap-2">
+                      {doctor.specialties.map((specialty) => (
+                        <span class="inline-flex items-center px-4 py-2 bg-slate-50 border border-slate-100 text-slate-700 text-sm font-semibold rounded-full hover:bg-white hover:border-blue-200 hover:text-blue-600 transition-all duration-300">
+                          {specialty}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Physician Assistants Section -->
+    <Section background="white" class="py-24">
+      <Container>
+        <div class="mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-3">Physician Assistants</h2>
+          <p class="text-lg text-slate-500 max-w-xl">Skilled providers delivering expert orthopedic care, casting, and rehabilitation support.</p>
+        </div>
+        
+        <div class="grid lg:grid-cols-2 gap-8">
+          {physicianAssistants.map((pa) => (
+            <div class="bg-slate-50 rounded-[2rem] border border-slate-100 overflow-hidden hover:shadow-xl hover:shadow-slate-200/50 hover:bg-white hover:border-blue-100 transition-all duration-300 group">
+              <div class="flex flex-col h-full">
+                <!-- Header with Image -->
+                <div class="p-2">
+                  <div class="relative h-96 w-full overflow-hidden rounded-[1.5rem]">
+                    <img 
+                      src={pa.image} 
+                      alt={`${pa.name}, ${pa.credentials} – ${pa.title} at Instant Orthopedic Care in Draper, Utah`}
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                </div>
+                
+                <!-- Content -->
+                <div class="p-8 pt-6 flex-1 flex flex-col">
+                  <div class="mb-6">
+                    <div class="flex items-center justify-between mb-2">
+                       <h3 class="text-2xl font-bold text-slate-900 tracking-tight group-hover:text-blue-600 transition-colors">{pa.name}</h3>
+                       <span class="text-blue-600 font-bold bg-blue-100/50 px-3 py-1 rounded-full text-xs">{pa.credentials}</span>
+                    </div>
+                    <p class="text-slate-500 font-medium text-sm">{pa.title}</p>
+                  </div>
+                  
+                  <p class="text-slate-600 leading-relaxed mb-8 text-sm flex-1">
+                    {pa.bio}
+                  </p>
+                  
+                  <div class="pt-6 border-t border-slate-200/50">
+                    <div class="flex flex-wrap gap-2">
+                      {pa.specialties.map((specialty) => (
+                        <span class="inline-block px-3 py-1 bg-white border border-slate-200 text-slate-600 text-xs font-semibold rounded-full group-hover:border-blue-200 group-hover:text-blue-600 transition-colors">
+                          {specialty}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Simple CTA -->
+    <Section background="white" class="pb-24 pt-0">
+      <Container>
+        <div class="bg-slate-900 rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
+          <!-- Glow effect -->
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"></div>
+          
+          <div class="relative z-10 max-w-2xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight mb-6">
+              Skip the ER. <br/><span class="text-blue-400">See a specialist today.</span>
+            </h2>
+            <p class="text-slate-400 text-lg md:text-xl mb-10 leading-relaxed">
+              Same-day appointments available for fractures, sprains, and sports injuries.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="https://pp-wfe-101.advancedmd.com/163338/onlineintake/demographic" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-500 hover:shadow-lg hover:shadow-blue-600/30 transition-all transform hover:-translate-y-1">
+                Check In Now
+              </a>
+              <a href="tel:3853867026" class="inline-flex items-center justify-center px-8 py-4 bg-white/5 text-white font-bold rounded-full hover:bg-white/10 transition-colors border border-white/10 backdrop-blur-sm">
+                Call (385) 386-7026
+              </a>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+    <Footer />
+  </body>
+</html>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -34,22 +34,25 @@
   html {
     overflow-x: hidden;
     max-width: 100%;
-    /* Remove smooth scroll on iOS - causes flicker */
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
   body {
     @apply bg-ioc-gray-light text-ioc-gray-dark;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
     max-width: 100%;
     position: relative;
     min-height: 100vh;
   }
+  /* Offset anchor targets so the sticky navbar doesn't cover them */
+  [id] {
+    scroll-margin-top: 6rem;
+  }
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Manrope', system-ui, sans-serif;
     font-weight: 700;
     line-height: 1.2;
   }
@@ -62,6 +65,15 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  
+  /* Hide scrollbar for horizontal scroll containers */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }
 

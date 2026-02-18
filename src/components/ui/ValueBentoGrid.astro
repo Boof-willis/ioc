@@ -1,0 +1,130 @@
+---
+import Container from "./Container.astro";
+import { Clock, Wallet, Scan } from "lucide-react";
+---
+
+<section class="bg-white lg:bg-white py-24 relative overflow-hidden">
+  <Container>
+    <div class="mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight max-w-2xl">
+        Why choose IOC for your<br/>orthopedic care?
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Card 1: Speed -->
+      <div class="group relative bg-[#F8FAFC] rounded-[2.5rem] p-8 h-[28rem] flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+        <div>
+          <div class="flex justify-between items-start mb-12">
+            <h3 class="text-2xl font-bold text-slate-900 max-w-[8rem] leading-tight">Skip the Waiting Room</h3>
+            <span class="px-4 py-1.5 rounded-full border border-slate-200 text-sm font-medium text-slate-600">Explore</span>
+          </div>
+        </div>
+        
+        <div>
+          <div class="w-full h-px bg-slate-200 mb-6"></div>
+          <p class="text-slate-500 text-sm leading-relaxed mb-8 max-w-[80%]">
+            Direct access to specialists without the hospital wait or referral runaround.
+          </p>
+          
+          <div class="flex items-center justify-between">
+            <div class="bg-slate-900 p-3 rounded-full text-white">
+              <Clock class="w-6 h-6" />
+            </div>
+            <p class="text-5xl font-bold text-slate-900 tracking-tight">&lt; 15m</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Tech (Center Visual) -->
+      <div class="group relative bg-gradient-to-br from-blue-50 to-blue-100 rounded-[2.5rem] p-8 h-[28rem] flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+        <!-- Background Decoration/Image Placeholder -->
+        <div class="absolute inset-0 opacity-40">
+            <svg class="w-full h-full text-blue-200/50" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 100 C 20 0 50 0 100 100 Z" fill="currentColor" />
+            </svg>
+        </div>
+
+        <div class="relative z-10">
+          <div class="bg-white px-6 py-3 rounded-full inline-block shadow-sm">
+            <h3 class="text-lg font-bold text-slate-900">Advanced On-Site Tech</h3>
+          </div>
+        </div>
+
+        <div class="relative flex-1 flex items-center justify-center">
+          <!-- Central Icon -->
+          <div class="relative z-10">
+            <Scan class="w-32 h-32 text-blue-600 drop-shadow-2xl opacity-80" stroke-width="1" />
+          </div>
+
+          <!-- Floating Tags -->
+          <div class="absolute inset-0 w-full h-full pointer-events-none">
+            <!-- Tag 1 -->
+            <div class="absolute bottom-24 left-4 bg-white/80 backdrop-blur-md px-5 py-2 rounded-full text-sm font-medium text-slate-700 shadow-sm animate-float-slow">
+              Digital X-Ray
+            </div>
+            <!-- Tag 2 -->
+            <div class="absolute bottom-8 right-8 bg-slate-900/10 backdrop-blur-md px-5 py-2 rounded-full text-sm font-medium text-slate-700 shadow-sm animate-float-delayed border border-white/20">
+              MRI
+            </div>
+            <!-- Tag 3 -->
+            <div class="absolute top-1/2 right-4 bg-white/80 backdrop-blur-md px-5 py-2 rounded-full text-sm font-medium text-slate-700 shadow-sm animate-float">
+              Ultrasound
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Cost -->
+      <div class="group relative bg-[#F8FAFC] rounded-[2.5rem] p-8 h-[28rem] flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+        <div>
+          <div class="flex justify-between items-start mb-12">
+            <h3 class="text-2xl font-bold text-slate-900 max-w-[8rem] leading-tight">Wallet Friendly</h3>
+            <span class="px-4 py-1.5 rounded-full border border-slate-200 text-sm font-medium text-slate-600">Explore</span>
+          </div>
+        </div>
+        
+        <div>
+          <div class="w-full h-px bg-slate-200 mb-6"></div>
+          <p class="text-slate-500 text-sm leading-relaxed mb-8 max-w-[80%]">
+            Top-tier specialist care for a fraction of the cost of an ER visit.
+          </p>
+          
+          <div class="flex items-center justify-between">
+            <div class="bg-slate-900 p-3 rounded-full text-white">
+              <Wallet class="w-6 h-6" />
+            </div>
+            <p class="text-5xl font-bold text-slate-900 tracking-tight">90%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<style>
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes float-delayed {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+  }
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+  }
+  
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+  .animate-float-delayed {
+    animation: float-delayed 5s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+  .animate-float-slow {
+    animation: float-slow 6s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+</style>
