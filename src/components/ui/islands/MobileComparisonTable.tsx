@@ -25,7 +25,7 @@ const MobileComparisonTable = () => {
       id: 'imaging',
       label: 'Imaging',
       icon: ScanLine,
-      ioc: { text: 'X-Ray & CT', highlight: true },
+      ioc: { text: 'X-ray', highlight: true },
     },
     {
       id: 'experience',
@@ -62,7 +62,7 @@ const MobileComparisonTable = () => {
             {/* Rows */}
             {benefits.map((benefit) => (
               <div key={benefit.id} className="h-16 flex items-center px-4 border-b border-slate-200 last:border-0">
-                <span className="text-xs font-bold text-slate-700 leading-tight">
+                <span className="text-sm font-bold text-slate-700 leading-tight">
                   {benefit.label}
                 </span>
               </div>
