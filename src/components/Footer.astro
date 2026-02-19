@@ -4,9 +4,9 @@ import Container from '@/components/ui/Container.astro';
 
 <footer class="bg-slate-900 text-white">
   <Container>
-    <div class="py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+    <div class="py-12 grid grid-cols-2 md:grid-cols-4 gap-8">
       <!-- About -->
-      <div>
+      <div class="col-span-2 md:col-span-1">
         <img 
           src="https://pub-6e52b1646d124a3f98c52980e22c87e2.r2.dev/Untitled%20design%20(49).png" 
           alt="Instant Orthopedic Care – Orthopedic Urgent Care Clinic in Draper, Utah" 
@@ -31,17 +31,6 @@ import Container from '@/components/ui/Container.astro';
         </ul>
       </div>
 
-      <!-- Information -->
-      <div>
-        <h4 class="font-semibold mb-4">Information</h4>
-        <ul class="space-y-2 text-sm text-slate-400">
-          <li><a href="/team" class="hover:text-white transition-colors">Our Team</a></li>
-          <li><a href="/#location" class="hover:text-white transition-colors">Location & Hours</a></li>
-          <li><a href="https://pp-wfe-101.advancedmd.com/163338/onlineintake/demographic" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Book Online</a></li>
-          <li><a href="https://pp-wfe-102.advancedmd.com/156528/account/logon" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Patient Login</a></li>
-        </ul>
-      </div>
-
       <!-- Contact -->
       <div>
         <h4 class="font-semibold mb-4">Contact</h4>
@@ -63,6 +52,17 @@ import Container from '@/components/ui/Container.astro';
           <li class="pt-2">
             <span class="text-ioc-green font-semibold">Walk-ins welcome</span>
           </li>
+        </ul>
+      </div>
+
+      <!-- Information -->
+      <div class="col-span-2 md:col-span-1">
+        <h4 class="font-semibold mb-4">Information</h4>
+        <ul class="space-y-2 text-sm text-slate-400">
+          <li><a href="/team" class="hover:text-white transition-colors">Our Team</a></li>
+          <li><a href="/#location" class="hover:text-white transition-colors">Location & Hours</a></li>
+          <li><a href="https://pp-wfe-101.advancedmd.com/163338/onlineintake/demographic" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Book Online</a></li>
+          <li><a href="https://pp-wfe-102.advancedmd.com/156528/account/logon" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Patient Login</a></li>
         </ul>
       </div>
     </div>

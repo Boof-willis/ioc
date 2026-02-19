@@ -29,11 +29,11 @@ export default function FAQAccordion({ items }: FAQAccordionProps) {
         >
           <button
             onClick={() => toggleItem(index)}
-            className={`w-full text-left py-5 px-8 flex justify-between items-center cursor-pointer focus:outline-none transition-colors duration-300 ${
+            className={`w-full text-left px-6 md:px-8 flex justify-between items-center cursor-pointer focus:outline-none transition-colors duration-300 h-[72px] md:h-auto md:py-5 ${
               openIndex === index ? 'bg-blue-50' : 'bg-white hover:bg-blue-50'
             }`}
           >
-            <span className="font-semibold text-lg pr-4 text-gray-900">{item.question}</span>
+            <span className="font-semibold text-sm md:text-lg pr-4 text-gray-900 leading-snug line-clamp-2 md:line-clamp-none">{item.question}</span>
             <svg
               className={`w-6 h-6 text-blue-600 flex-shrink-0 transition-transform duration-500 ${
                 openIndex === index ? 'rotate-180' : ''
@@ -50,8 +50,8 @@ export default function FAQAccordion({ items }: FAQAccordionProps) {
               openIndex === index ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
             }`}
           >
-            <div className="p-8 bg-white text-gray-700 border-t border-blue-100">
-              <p className="text-lg leading-relaxed">{item.answer}</p>
+            <div className="px-6 md:px-8 py-6 bg-white text-gray-700 border-t border-blue-100">
+              <p className="text-base md:text-lg leading-relaxed">{item.answer}</p>
             </div>
           </div>
         </div>

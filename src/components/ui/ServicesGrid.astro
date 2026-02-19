@@ -1,49 +1,41 @@
 ---
 import Container from "./Container.astro";
-import { 
-  Footprints, 
-  Move, 
-  User, 
-  Hand, 
-  Trophy, 
-  HeartPulse
-} from "lucide-react";
 
 const services = [
   {
     title: "Ankle & Foot",
     description: "Comprehensive care for sprains, fractures, plantar fasciitis, and Achilles tendon injuries to get you back on your feet.",
-    icon: Footprints,
+    svgPath: "/images/SVG/foot-ankle.svg",
     href: "/services/ankle-and-foot",
   },
   {
     title: "Knee & Hip",
     description: "Specialized treatment for joint pain, ligament tears, and mobility issues, including arthroscopy and non-surgical solutions.",
-    icon: Move,
+    svgPath: "/images/SVG/knee-hip.svg",
     href: "/services/knee-and-hip",
   },
   {
     title: "Shoulder",
     description: "Expert diagnosis and relief for rotator cuff injuries, dislocations, and frozen shoulder using advanced imaging and injections.",
-    icon: User,
+    svgPath: "/images/SVG/shoulder.svg",
     href: "/services/shoulder",
   },
   {
     title: "Elbow & Wrist",
     description: "Targeted treatment for tennis elbow, carpal tunnel syndrome, and fractures affecting your hands and arms.",
-    icon: Hand,
+    svgPath: "/images/SVG/elbow-wrist.svg",
     href: "/services/elbow-and-wrist",
   },
   {
     title: "Sports Injuries",
     description: "Acute and overuse injury management for athletes, including concussion protocols and return-to-play evaluations.",
-    icon: Trophy,
+    svgPath: "/images/SVG/sports-injury.svg",
     href: "/services/sports-injuries",
   },
   {
     title: "Chronic Pain",
     description: "Long-term pain management strategies, including arthritis care, joint injections, and personalized treatment plans.",
-    icon: HeartPulse,
+    svgPath: "/images/SVG/chronic-pain.svg",
     href: "/services/chronic-pain",
   },
 ];
@@ -73,13 +65,13 @@ const services = [
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
       {services.map((service) => (
-        <a href={service.href} class="block bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:border-blue-600 hover:shadow-[0_10px_25px_-5px_rgba(74,144,226,0.4)] hover:-translate-y-1 transition-all duration-300 group no-underline cursor-pointer">
-          <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 pointer-events-none">
-            <service.icon class="w-6 h-6" />
+        <a href={service.href} class="block rounded-2xl p-8 border border-slate-200 bg-white hover:border-blue-300 hover:shadow-[0_10px_40px_-5px_rgba(59,130,246,0.2)] hover:-translate-y-1 transition-all duration-300 group no-underline cursor-pointer">
+          <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-500 transition-all duration-300 pointer-events-none border border-blue-100 group-hover:border-blue-500 service-icon-wrap">
+            <img src={service.svgPath} alt={service.title} class="w-8 h-8 object-contain transition-all duration-300 service-icon" />
           </div>
-          <h3 class="text-lg font-bold text-gray-900 mb-3 pointer-events-none">{service.title}</h3>
-          <p class="text-sm text-gray-500 leading-relaxed mb-4 pointer-events-none">{service.description}</p>
-          <span class="text-sm font-semibold text-blue-600 inline-flex items-center gap-1 group-hover:gap-2 transition-all pointer-events-none">
+          <h3 class="text-lg font-bold text-slate-900 mb-3 pointer-events-none">{service.title}</h3>
+          <p class="text-sm text-slate-500 leading-relaxed mb-4 pointer-events-none">{service.description}</p>
+          <span class="text-sm font-semibold text-blue-500 inline-flex items-center gap-1 group-hover:gap-2 group-hover:text-blue-600 transition-all pointer-events-none">
             Learn more
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
           </span>
@@ -93,3 +85,12 @@ const services = [
     </p>
   </Container>
 </section>
+
+<style>
+  .service-icon {
+    filter: brightness(0) saturate(100%) invert(18%) sepia(97%) saturate(620%) hue-rotate(205deg) brightness(90%) contrast(100%);
+  }
+  a:hover .service-icon {
+    filter: brightness(0) invert(1);
+  }
+</style>
