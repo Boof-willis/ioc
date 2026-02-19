@@ -67,8 +67,12 @@ import Container from '@/components/ui/Container.astro';
       </div>
     </div>
 
-    <div class="border-t border-slate-800 py-6 text-center text-sm text-slate-500">
+    <div class="border-t border-slate-800 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-slate-500">
       <p>&copy; {new Date().getFullYear()} Instant Orthopedic Care. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="/privacy-policy" class="hover:text-white transition-colors">Privacy Policy</a>
+        <a href="/terms-of-service" class="hover:text-white transition-colors">Terms of Service</a>
+      </div>
     </div>
   </Container>
 </footer>
