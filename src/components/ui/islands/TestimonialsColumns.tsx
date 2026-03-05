@@ -205,8 +205,11 @@ export default function TestimonialsColumns() {
           />
         </div>
 
-        {/* CTA Banner — Solid blue with blended right image */}
-        <div className="mt-16 rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/20 relative bg-blue-600">
+        {/* CTA Banner — Solid dark with blended right image */}
+        <div className="mt-16 rounded-3xl overflow-hidden shadow-2xl relative bg-slate-900">
+          {/* Subtle blue glow to keep brand presence */}
+          <div className="absolute top-1/2 -translate-y-1/2 left-0 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[100px] pointer-events-none mix-blend-screen"></div>
+
           {/* Right image positioned absolutely behind everything */}
           <div className="absolute inset-0 hidden md:block">
             <img
@@ -219,11 +222,11 @@ export default function TestimonialsColumns() {
                 WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 40%)",
               }}
             />
-            {/* Blue overlay: transparent on right, solid blue on left */}
+            {/* Dark overlay: transparent on right, solid dark on left */}
             <div
               className="absolute inset-0"
               style={{
-                background: "linear-gradient(to right, #2563eb 0%, rgba(37,99,235,0.9) 35%, rgba(37,99,235,0.5) 60%, rgba(37,99,235,0.2) 80%, transparent 100%)",
+                background: "linear-gradient(to right, #0f172a 0%, rgba(15,23,42,0.95) 40%, rgba(15,23,42,0.6) 65%, rgba(15,23,42,0.1) 85%, transparent 100%)",
               }}
             ></div>
           </div>
@@ -242,7 +245,7 @@ export default function TestimonialsColumns() {
                   href="https://pp-wfe-101.advancedmd.com/163338/onlineintake/demographic"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center bg-white text-slate-900 px-8 py-4 rounded-full font-semibold text-xs uppercase tracking-widest hover:bg-slate-100 transition-all gap-3 shadow-lg"
+                  className="inline-flex items-center bg-blue-600 text-white px-8 py-4 rounded-full font-semibold text-xs uppercase tracking-widest hover:bg-blue-500 transition-all gap-3 shadow-lg shadow-blue-500/25 border border-blue-500/50"
                 >
                   Book Online
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

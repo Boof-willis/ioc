@@ -238,12 +238,12 @@ import '@/styles/global.css';
         </div>
 
         <!-- Overlays: mobile -->
-        <div class="absolute inset-0 bg-slate-900/40 lg:hidden"></div>
-        <div class="absolute inset-0 lg:hidden" style="background: radial-gradient(circle at 20% 50%, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%);"></div>
-        <div class="absolute inset-0 lg:hidden" style="background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.4) 50%, transparent 100%);"></div>
-        <!-- Overlays: desktop (original) -->
-        <div class="absolute inset-0 hidden lg:block" style="background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 40%, transparent 100%);"></div>
-        <div class="absolute inset-0 hidden lg:block" style="background: radial-gradient(ellipse at center, transparent 0%, transparent 20%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.9) 75%, rgba(0,0,0,1) 100%);"></div>
+        <div class="absolute inset-0 bg-slate-900/50 lg:hidden"></div>
+        <div class="absolute inset-0 lg:hidden bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent"></div>
+        
+        <!-- Overlays: desktop (cleaner linear gradient) -->
+        <div class="absolute inset-0 hidden lg:block" style="background: linear-gradient(to right, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.8) 35%, rgba(15, 23, 42, 0.2) 70%, transparent 100%);"></div>
+        <div class="absolute inset-0 hidden lg:block bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
 
         <!-- Content -->
         <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-1 flex items-center">
@@ -262,17 +262,17 @@ import '@/styles/global.css';
                     </div>
 
                     <!-- Headline -->
-                    <h1 class="text-[2.75rem] sm:text-6xl lg:text-7xl font-semibold tracking-tight text-white mb-4 lg:mb-6 leading-[1.1] lg:leading-[1] animate-fade-in-up text-balance">
+                    <h1 class="text-[2.75rem] sm:text-6xl lg:text-7xl font-bold tracking-tighter text-white mb-4 lg:mb-6 leading-[1.05] lg:leading-[1] animate-fade-in-up text-balance drop-shadow-sm">
                         Walk-In Orthopedic Care in Utah. <br />
-                        <span class="hero-green-text text-[#8ed109] lg:text-[#8cc608] font-bold relative inline-block">
+                        <span class="hero-green-text text-[#8ed109] lg:text-[#8cc608] font-extrabold relative inline-block drop-shadow-md">
                             Faster Than the ER.
                             <!-- Subtle Glow Effect -->
-                            <span class="absolute inset-0 blur-3xl opacity-10 lg:blur-2xl lg:opacity-30 bg-ioc-green/50 mix-blend-screen pointer-events-none" aria-hidden="true"></span>
+                            <span class="absolute inset-0 blur-[40px] opacity-20 bg-[#8cc608]/40 mix-blend-screen pointer-events-none" aria-hidden="true"></span>
                         </span>
                     </h1>
 
                     <!-- Subhead -->
-                    <p class="text-base sm:text-xl text-slate-200 font-medium mb-14 lg:mb-10 leading-relaxed max-w-xl animate-fade-in-up stagger-1 mx-auto lg:mx-0 text-shadow-sm">
+                    <p class="text-base sm:text-xl text-white/90 font-medium mb-14 lg:mb-10 leading-relaxed max-w-xl animate-fade-in-up stagger-1 mx-auto lg:mx-0 text-shadow-sm">
                         Board-certified orthopedic specialists in Draper, UT treating fractures, sprains, and sports injuries same-day. On-site X-ray, answers in minutes. No appointment. No runaround.
                     </p>
 
@@ -333,7 +333,7 @@ import '@/styles/global.css';
 
                 <!-- Right Side - Floating Status Card -->
                 <div class="hidden lg:flex lg:col-span-5 justify-end">
-                    <div class="bg-slate-900/80 backdrop-blur-2xl border border-white/10 p-6 rounded-2xl w-96 transform transition-all hover:scale-[1.02] duration-300 shadow-2xl shadow-black/50 ring-1 ring-white/5">
+                    <div class="bg-slate-900/60 backdrop-blur-3xl border border-white/10 p-8 rounded-3xl w-96 transform transition-all hover:scale-[1.02] duration-300 shadow-2xl shadow-black/50">
                         <div class="flex items-center justify-between mb-4 pb-4 border-b border-white/10">
                                 <div>
                                 <p class="text-xs font-bold text-blue-400 uppercase tracking-widest mb-1 shadow-sm">CLINIC STATUS</p>
