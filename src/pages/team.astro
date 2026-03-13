@@ -25,7 +25,7 @@ const doctors = [
   },
 ];
 
-const physicianAssistants = [
+const providers = [
   {
     name: "McKay Milne",
     title: "Physician Assistant",
@@ -41,6 +41,15 @@ const physicianAssistants = [
     image: "/images/cole-mitchell-pa-c.webp",
     bio: "Cole Mitchell, PA-C is an orthopedic Physician Assistant with a strong focus in sports medicine and musculoskeletal injury care. He has extensive experience evaluating and treating orthopedic conditions including fractures, acute injuries, and sports-related complaints, as well as performing injections and assisting with orthopedic procedures. At Instant Orthopedic Care, Cole is focused on accurate diagnosis, efficient treatment, and helping patients return to activity as quickly and safely as possible.",
     specialties: ["Fractures & Acute Injuries", "Sports Medicine", "Injections"],
+  },
+  {
+    name: "Nate Littlefield",
+    title: "Nurse Practitioner",
+    credentials: "FNP-C",
+    image: "/images/nate-littlefield-fnp-c.png",
+    imagePosition: "object-[center_25%]",
+    bio: "Nate Littlefield, FNP-C is an orthopedic Nurse Practitioner with a strong focus on sports medicine and musculoskeletal injury care. He has extensive experience evaluating and treating fractures, acute sports injuries, ligament and tendon injuries, and other orthopedic conditions affecting active patients. Nate is skilled in injury evaluation, imaging interpretation, bracing, injections, and non-surgical treatment strategies designed to get patients moving again quickly and safely. At Instant Orthopedic Care, Nate focuses on rapid diagnosis, efficient treatment, and helping athletes and active individuals return to work, sports, and daily activity as quickly as possible.",
+    specialties: ["Sports Medicine", "Fracture Care", "Injections & Bracing"],
   },
 ];
 ---
@@ -152,6 +161,18 @@ const physicianAssistants = [
             "@type": "MedicalOrganization",
             "name": "Instant Orthopedic Care"
           }
+        },
+        {
+          "@type": "Physician",
+          "name": "Nate Littlefield",
+          "jobTitle": "Nurse Practitioner (FNP-C)",
+          "medicalSpecialty": ["Sports Medicine", "Musculoskeletal Care"],
+          "description": "Orthopedic nurse practitioner specializing in sports medicine, fracture care, imaging interpretation, injections, and non-surgical treatment strategies.",
+          "image": "https://instantorthopediccare.com/images/nate-littlefield-fnp-c.png",
+          "memberOf": {
+            "@type": "MedicalOrganization",
+            "name": "Instant Orthopedic Care"
+          }
         }
       ]
     }
@@ -246,47 +267,47 @@ const physicianAssistants = [
       </Container>
     </Section>
 
-    <!-- Physician Assistants Section -->
+    <!-- Advanced Practice Providers Section -->
     <Section background="white" class="py-24">
       <Container>
         <div class="mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-3">Physician Assistants</h2>
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-3">Advanced Practice Providers</h2>
           <p class="text-lg text-slate-500 max-w-xl">Skilled providers delivering expert orthopedic care, casting, and rehabilitation support.</p>
         </div>
         
-        <div class="grid lg:grid-cols-2 gap-8">
-          {physicianAssistants.map((pa) => (
-            <div class="bg-slate-50 rounded-[2rem] border border-slate-100 overflow-hidden hover:shadow-xl hover:shadow-slate-200/50 hover:bg-white hover:border-blue-100 transition-all duration-300 group">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {providers.map((pa) => (
+            <div class="bg-slate-50 rounded-[1.75rem] border border-slate-100 overflow-hidden hover:shadow-xl hover:shadow-slate-200/50 hover:bg-white hover:border-blue-100 transition-all duration-300 group">
               <div class="flex flex-col h-full">
                 <!-- Header with Image -->
-                <div class="p-2">
-                  <div class="relative h-96 w-full overflow-hidden rounded-[1.5rem]">
+                <div class="p-1.5">
+                  <div class="relative h-72 w-full overflow-hidden rounded-[1.25rem]">
                     <img 
                       src={pa.image} 
                       alt={`${pa.name}, ${pa.credentials} – ${pa.title} at Instant Orthopedic Care in Draper, Utah`}
-                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      class={`w-full h-full object-cover ${pa.imagePosition || 'object-top'} group-hover:scale-105 transition-transform duration-700`}
                     />
                   </div>
                 </div>
                 
                 <!-- Content -->
-                <div class="p-8 pt-6 flex-1 flex flex-col">
-                  <div class="mb-6">
-                    <div class="flex items-center justify-between mb-2">
-                       <h3 class="text-2xl font-bold text-slate-900 tracking-tight group-hover:text-blue-600 transition-colors">{pa.name}</h3>
-                       <span class="text-blue-600 font-bold bg-blue-100/50 px-3 py-1 rounded-full text-xs">{pa.credentials}</span>
+                <div class="p-6 pt-4 flex-1 flex flex-col">
+                  <div class="mb-4">
+                    <div class="flex items-center justify-between mb-1.5">
+                       <h3 class="text-lg font-bold text-slate-900 tracking-tight group-hover:text-blue-600 transition-colors">{pa.name}</h3>
+                       <span class="text-blue-600 font-bold bg-blue-100/50 px-2.5 py-0.5 rounded-full text-[10px]">{pa.credentials}</span>
                     </div>
-                    <p class="text-slate-500 font-medium text-sm">{pa.title}</p>
+                    <p class="text-slate-500 font-medium text-xs">{pa.title}</p>
                   </div>
                   
-                  <p class="text-slate-600 leading-relaxed mb-8 text-sm flex-1">
+                  <p class="text-slate-600 leading-relaxed mb-6 text-xs flex-1">
                     {pa.bio}
                   </p>
                   
-                  <div class="pt-6 border-t border-slate-200/50">
-                    <div class="flex flex-wrap gap-2">
+                  <div class="pt-4 border-t border-slate-200/50">
+                    <div class="flex flex-wrap gap-1.5">
                       {pa.specialties.map((specialty) => (
-                        <span class="inline-block px-3 py-1 bg-white border border-slate-200 text-slate-600 text-xs font-semibold rounded-full group-hover:border-blue-200 group-hover:text-blue-600 transition-colors">
+                        <span class="inline-block px-2.5 py-1 bg-white border border-slate-200 text-slate-600 text-[11px] font-semibold rounded-full group-hover:border-blue-200 group-hover:text-blue-600 transition-colors">
                           {specialty}
                         </span>
                       ))}
