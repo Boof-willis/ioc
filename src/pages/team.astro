@@ -51,6 +51,14 @@ const providers = [
     bio: "Nate Littlefield, FNP-C is an orthopedic Nurse Practitioner with a strong focus on sports medicine and musculoskeletal injury care. He has extensive experience evaluating and treating fractures, acute sports injuries, ligament and tendon injuries, and other orthopedic conditions affecting active patients. Nate is skilled in injury evaluation, imaging interpretation, bracing, injections, and non-surgical treatment strategies designed to get patients moving again quickly and safely. At Instant Orthopedic Care, Nate focuses on rapid diagnosis, efficient treatment, and helping athletes and active individuals return to work, sports, and daily activity as quickly as possible.",
     specialties: ["Sports Medicine", "Fracture Care", "Injections & Bracing"],
   },
+  {
+    name: "Brent Mains",
+    title: "Physician Assistant",
+    credentials: "PA-C",
+    image: "/images/brent-mains-pa-c.webp",
+    bio: "Brent Mains, PA-C is an orthopedic Physician Assistant focused on sports medicine and musculoskeletal injury care. He specializes in evaluating and treating fractures, acute sports injuries, ligament and tendon injuries, and other orthopedic conditions affecting active patients. Brent is trained in injury evaluation, imaging interpretation, bracing, injections, and non surgical treatment strategies aimed at restoring function and accelerating recovery. At Instant Orthopedic Care, Brent is dedicated to delivering rapid diagnosis, efficient treatment, and helping patients return to work, sports, and daily activity as quickly and safely as possible.",
+    specialties: ["Sports Medicine", "Fracture Care", "Injury Evaluation"],
+  },
 ];
 ---
 
@@ -169,6 +177,18 @@ const providers = [
           "medicalSpecialty": ["Sports Medicine", "Musculoskeletal Care"],
           "description": "Orthopedic nurse practitioner specializing in sports medicine, fracture care, imaging interpretation, injections, and non-surgical treatment strategies.",
           "image": "https://instantorthopediccare.com/images/nate-littlefield-fnp-c.png",
+          "memberOf": {
+            "@type": "MedicalOrganization",
+            "name": "Instant Orthopedic Care"
+          }
+        },
+        {
+          "@type": "Physician",
+          "name": "Brent Mains",
+          "jobTitle": "Physician Assistant (PA-C)",
+          "medicalSpecialty": ["Sports Medicine", "Musculoskeletal Care"],
+          "description": "Orthopedic physician assistant focused on sports medicine, fracture care, ligament and tendon injuries, and non-surgical treatment strategies.",
+          "image": "https://instantorthopediccare.com/images/brent-mains-pa-c.webp",
           "memberOf": {
             "@type": "MedicalOrganization",
             "name": "Instant Orthopedic Care"
