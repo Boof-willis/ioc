@@ -25,3 +25,9 @@ pnpm-debug.log*
 # Astro
 .astro/
 
+# Design source files (Illustrator, Photoshop, etc.)
+*.ai
+*.psd
+*.sketch
+*.fig
+
