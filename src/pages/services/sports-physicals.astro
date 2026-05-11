@@ -1,0 +1,372 @@
+---
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import Container from '@/components/ui/Container.astro';
+import Section from '@/components/ui/Section.astro';
+import '@/styles/global.css';
+
+const faqs = [
+  { q: "Do I need an appointment for a sports physical?", a: "No. Sports physicals are walk-in friendly at Instant Orthopedic Care, and same-day appointments are available if you'd prefer to lock in a time. Most physicals are completed in a single visit." },
+  { q: "Will you sign my school or league participation forms?", a: "Yes. Our providers complete and sign school, club, and travel team participation forms on the spot, so athletes are ready to start practice or tryouts without delay." },
+  { q: "What's the difference between a sports physical and a regular physical?", a: "A sports physical focuses on musculoskeletal readiness for athletic participation—joint mobility, strength, prior injuries, and functional movement. It's not a replacement for a full annual physical with a primary care provider, but it's the right evaluation for sports clearance." },
+  { q: "What is a return-to-play assessment?", a: "A return-to-play assessment is a structured evaluation after an injury or surgery to determine whether an athlete is ready to safely resume sport. We look at healing, strength, stability, range of motion, and sport-specific movement before issuing clearance." },
+  { q: "Do you treat concussions?", a: "We provide initial concussion screening and guidance. If specialized neurologic care or further imaging is needed, we coordinate referrals so families aren't left navigating the system alone." },
+  { q: "How much does a sports physical cost?", a: "Most insurance plans cover sports physicals. We accept most major insurers and offer transparent self-pay pricing for families without coverage. Call (385) 386-7026 to verify your specific plan." },
+];
+
+const physicalIncludes = [
+  "Review of medical history",
+  "Orthopedic and musculoskeletal evaluation",
+  "Joint and mobility assessment",
+  "Strength and functional movement screening",
+  "Injury history review",
+  "Completion of school and athletic participation forms",
+];
+
+const physicalIdealFor = [
+  "School sports participation",
+  "Club and travel teams",
+  "Recreational athletes",
+  "Preseason athletic clearance",
+  "Annual athletic physicals",
+];
+
+const rtpConditions = [
+  "Sprains and strains",
+  "Fractures and broken bones",
+  "Concussions (initial screening and referral)",
+  "Knee injuries",
+  "Shoulder injuries",
+  "Ankle injuries",
+  "Post-surgical recovery progression",
+  "Sports-related overuse injuries",
+];
+
+const rtpAssessment = [
+  "Functional movement testing",
+  "Strength and balance evaluation",
+  "Range of motion assessment",
+  "Sport-specific movement evaluation",
+  "X-rays if clinically indicated",
+  "Return-to-sport recommendations",
+];
+
+const whyChooseUs = [
+  "Same-day orthopedic evaluation",
+  "Walk-in availability",
+  "On-site X-ray",
+  "Experienced sports medicine providers",
+  "Faster access than the ER or traditional orthopedic offices",
+  "Convenient care for athletes, parents, and coaches",
+];
+---
+
+<html lang="en">
+  <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-52DJTWGN');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="Same-day sports physicals and return-to-play assessments in Draper, Utah. Walk-ins welcome. School forms completed on site. Orthopedic-trained providers for youth, high school, college, and adult athletes." />
+    <title>Sports Physicals & Return-to-Play Assessments in Utah | Instant Orthopedic Care</title>
+    <link rel="canonical" href="https://instantorthopediccare.com/services/sports-physicals" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Instant Orthopedic Care" />
+    <meta property="og:title" content="Sports Physicals & Return-to-Play Assessments in Utah | Instant Orthopedic Care" />
+    <meta property="og:description" content="Same-day sports physicals and return-to-play assessments in Utah. Walk-ins welcome. School forms completed on site." />
+    <meta property="og:url" content="https://instantorthopediccare.com/services/sports-physicals" />
+    <meta property="og:image" content="https://cdn.midjourney.com/fbffde7d-2121-487d-ab23-a9dc0cad2adc/0_3.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sports Physicals & Return-to-Play Assessments in Utah | Instant Orthopedic Care" />
+    <meta name="twitter:description" content="Same-day sports physicals and return-to-play assessments. Walk-ins welcome." />
+
+    <meta name="geo.region" content="US-UT" />
+    <meta name="geo.placename" content="Draper, Utah" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I need an appointment for a sports physical?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Sports physicals are walk-in friendly at Instant Orthopedic Care, and same-day appointments are available if you'd prefer to lock in a time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will you sign school and league participation forms?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Our providers complete and sign school, club, and travel team participation forms during the visit so athletes are cleared and ready to play."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a return-to-play assessment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A return-to-play assessment is a structured evaluation after an injury or surgery that reviews healing, strength, stability, range of motion, and sport-specific function before clearing an athlete to resume practice or competition."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between a sports physical and an annual physical?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A sports physical focuses on musculoskeletal readiness for athletic participation, while an annual physical with a primary care provider addresses broader preventive health. Many athletes complete both."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalWebPage",
+      "name": "Sports Physicals & Return-to-Play Assessments in Utah",
+      "description": "Same-day sports physicals and return-to-play assessments at Instant Orthopedic Care in Draper, Utah.",
+      "url": "https://instantorthopediccare.com/services/sports-physicals",
+      "mainEntity": {
+        "@type": "MedicalProcedure",
+        "name": "Sports Physical and Return-to-Play Evaluation",
+        "procedureType": {
+          "@type": "MedicalProcedureType",
+          "name": "Preventive medical examination"
+        }
+      },
+      "provider": {
+        "@type": "MedicalClinic",
+        "name": "Instant Orthopedic Care",
+        "telephone": "+1-385-386-7026",
+        "address": { "@type": "PostalAddress", "streetAddress": "75 E 12300 S Suite 100", "addressLocality": "Draper", "addressRegion": "UT", "postalCode": "84020" },
+        "areaServed": ["Draper", "Sandy", "South Jordan", "Riverton", "Lehi", "Highland", "Alpine", "Salt Lake County", "Utah County"]
+      }
+    }
+    </script>
+  </head>
+  <body class="bg-white text-slate-900 font-sans antialiased selection:bg-blue-500 selection:text-white">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-52DJTWGN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <Header />
+
+    <!-- Hero -->
+    <Section background="white" class="pt-32 pb-20 relative overflow-hidden">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-100/40 rounded-full blur-[120px] pointer-events-none"></div>
+      <Container class="relative z-10">
+        <div class="max-w-3xl">
+          <a href="/#services" class="inline-flex items-center gap-2 text-sm text-blue-600 font-semibold mb-6 hover:text-blue-700 transition-colors">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+            All Services
+          </a>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-[10px] font-bold uppercase tracking-widest mb-6">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+            </span>
+            Same-Day Sports Clearance
+          </div>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight mb-6 leading-[1.05]">
+            Sports Physicals & <span class="text-blue-600">Return-to-Play Assessments</span>
+          </h1>
+          <p class="text-lg md:text-xl text-slate-500 leading-relaxed max-w-2xl mb-4">
+            Get cleared for the season—or cleared to return after injury—quickly and confidently at Instant Orthopedic Care. We provide comprehensive sports physicals and structured return-to-play assessments for athletes of all ages, including youth, high school, college, and adult recreational sports.
+          </p>
+          <p class="text-lg md:text-xl text-slate-500 leading-relaxed max-w-2xl mb-8">
+            Our orthopedic-trained providers evaluate overall musculoskeletal health, mobility, strength, previous injuries, and readiness for athletic participation—helping keep athletes safe on the field, court, slope, or track.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="https://pp-wfe-101.advancedmd.com/163338/onlineintake/demographic" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-bold rounded-full shadow-lg shadow-blue-600/25 hover:bg-blue-700 transition-all hover:scale-105 active:scale-95">Check In Now</a>
+            <a href="tel:3853867026" class="inline-flex items-center justify-center px-8 py-4 border border-slate-200 text-slate-700 font-bold rounded-full hover:border-blue-200 hover:text-blue-600 hover:bg-blue-50/50 transition-all">(385) 386-7026</a>
+          </div>
+          <p class="text-sm text-slate-500 mt-6 font-medium">Same-day appointments and walk-ins available. Most insurance accepted.</p>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Sports Physicals -->
+    <Section background="gray" class="py-24">
+      <Container>
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-12">
+            <span class="inline-block text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Sports Physicals</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-4">Fast, convenient sports physicals in Draper, Utah</h2>
+            <p class="text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto">
+              Whether your athlete needs preseason clearance for school sports, a club tryout, or an annual athletic physical, our team gets it done in a single same-day visit—including signed participation forms.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm">
+              <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <svg class="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" /></svg>
+                What's included
+              </h3>
+              <ul class="space-y-3">
+                {physicalIncludes.map((item) => (
+                  <li class="flex items-start gap-3 text-slate-600">
+                    <svg class="w-5 h-5 text-ioc-green flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm">
+              <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <svg class="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                Ideal for
+              </h3>
+              <ul class="space-y-3">
+                {physicalIdealFor.map((item) => (
+                  <li class="flex items-start gap-3 text-slate-600">
+                    <svg class="w-5 h-5 text-ioc-green flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Return to Play -->
+    <Section background="white" class="py-24">
+      <Container>
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-12">
+            <span class="inline-block text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Return-to-Play Assessments</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-4">Expert return-to-play evaluations</h2>
+            <p class="text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto">
+              Recovering from an injury and not sure if it's safe to return to sport? Returning too soon is one of the biggest causes of reinjury. Our return-to-play assessments help athletes safely transition back to competition after injury or surgery.
+            </p>
+            <p class="text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto mt-4">
+              Our orthopedic-trained providers perform a detailed evaluation of healing, strength, stability, mobility, and functional performance before clearing an athlete to return to practice or competition.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100">
+              <h3 class="text-xl font-bold text-slate-900 mb-6">Common conditions we evaluate</h3>
+              <ul class="space-y-3">
+                {rtpConditions.map((item) => (
+                  <li class="flex items-start gap-3 text-slate-600">
+                    <svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100">
+              <h3 class="text-xl font-bold text-slate-900 mb-6">Assessment may include</h3>
+              <ul class="space-y-3">
+                {rtpAssessment.map((item) => (
+                  <li class="flex items-start gap-3 text-slate-600">
+                    <svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Why Athletes Choose IOC -->
+    <Section background="gray" class="py-24">
+      <Container>
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-4">Why athletes choose Instant Orthopedic Care</h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto">Athlete-focused evaluation, evidence-based treatment, and a plan that prioritizes both healing and performance.</p>
+          </div>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {whyChooseUs.map((item) => (
+              <div class="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm flex items-start gap-3">
+                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-slate-700 font-medium">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- FAQ -->
+    <Section background="white" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-12 text-center">Frequently Asked Questions</h2>
+          <div class="space-y-6">
+            {faqs.map((faq) => (
+              <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100">
+                <h3 class="font-bold text-slate-900 mb-3">{faq.q}</h3>
+                <p class="text-slate-500 leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- Serving Areas -->
+    <Section background="gray" class="py-24">
+      <Container>
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-4">Serving Draper, Salt Lake County & Utah County</h2>
+          <p class="text-lg text-slate-500 mb-8">Our Draper clinic is conveniently located for athletes and active families throughout the Wasatch Front.</p>
+          <div class="flex flex-wrap justify-center gap-3">
+            {["Draper", "Sandy", "South Jordan", "Riverton", "Herriman", "Lehi", "Alpine", "Highland", "American Fork", "Pleasant Grove", "Bluffdale", "Midvale"].map((city) => (
+              <span class="px-4 py-2 bg-white border border-slate-100 text-slate-700 text-sm font-semibold rounded-full">{city}</span>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+    <!-- CTA -->
+    <Section background="white" class="pb-24 pt-0">
+      <Container>
+        <div class="bg-slate-900 rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"></div>
+          <div class="relative z-10 max-w-2xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight mb-6">Need a sports physical or<br/><span class="text-blue-400">injury clearance?</span></h2>
+            <p class="text-slate-400 text-lg md:text-xl mb-10 leading-relaxed">Visit Instant Orthopedic Care today for same-day orthopedic and sports medicine evaluation. Most insurances accepted. Walk-ins welcome.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="https://pp-wfe-101.advancedmd.com/163338/onlineintake/demographic" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-500 hover:shadow-lg hover:shadow-blue-600/30 transition-all transform hover:-translate-y-1">Check In Now</a>
+              <a href="tel:3853867026" class="inline-flex items-center justify-center px-8 py-4 bg-white/5 text-white font-bold rounded-full hover:bg-white/10 transition-colors border border-white/10 backdrop-blur-sm">Call (385) 386-7026</a>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+    <Footer />
+  </body>
+</html>
