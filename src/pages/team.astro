@@ -59,6 +59,14 @@ const providers = [
     bio: "Brent Mains, PA-C is an orthopedic Physician Assistant focused on sports medicine and musculoskeletal injury care. He specializes in evaluating and treating fractures, acute sports injuries, ligament and tendon injuries, and other orthopedic conditions affecting active patients. Brent is trained in injury evaluation, imaging interpretation, bracing, injections, and non surgical treatment strategies aimed at restoring function and accelerating recovery. At Instant Orthopedic Care, Brent is dedicated to delivering rapid diagnosis, efficient treatment, and helping patients return to work, sports, and daily activity as quickly and safely as possible.",
     specialties: ["Sports Medicine", "Fracture Care", "Injury Evaluation"],
   },
+  {
+    name: "Ashly Peck",
+    title: "Physician Assistant",
+    credentials: "PA-C",
+    image: "/images/ashly-peck-pa-c.png",
+    bio: "Ashly Peck, PA-C is an orthopedic Physician Assistant with a strong background in sports medicine, athletic training, and musculoskeletal injury care. Prior to becoming a Physician Assistant, Ashly worked as a Certified Athletic Trainer at Brigham Young University, providing care for Division I athletes and coordinating injury evaluation, rehabilitation, and return-to-play programs. She has extensive experience evaluating and treating orthopedic injuries, fractures, sprains, sports-related conditions, and other musculoskeletal complaints. At Instant Orthopedic Care, Ashly is focused on delivering high quality orthopedic care, helping patients recover quickly, and getting them back to the activities they enjoy.",
+    specialties: ["Sports Medicine", "Athletic Training", "Return-to-Play"],
+  },
 ];
 ---
 
@@ -189,6 +197,18 @@ const providers = [
           "medicalSpecialty": ["Sports Medicine", "Musculoskeletal Care"],
           "description": "Orthopedic physician assistant focused on sports medicine, fracture care, ligament and tendon injuries, and non-surgical treatment strategies.",
           "image": "https://instantorthopediccare.com/images/brent-mains-pa-c.webp",
+          "memberOf": {
+            "@type": "MedicalOrganization",
+            "name": "Instant Orthopedic Care"
+          }
+        },
+        {
+          "@type": "Physician",
+          "name": "Ashly Peck",
+          "jobTitle": "Physician Assistant (PA-C)",
+          "medicalSpecialty": ["Sports Medicine", "Athletic Training", "Musculoskeletal Care"],
+          "description": "Orthopedic physician assistant with a background in Division I athletic training at BYU, specializing in sports medicine, injury evaluation, and return-to-play programs.",
+          "image": "https://instantorthopediccare.com/images/ashly-peck-pa-c.png",
           "memberOf": {
             "@type": "MedicalOrganization",
             "name": "Instant Orthopedic Care"
