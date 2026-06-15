@@ -280,8 +280,9 @@ import '@/styles/global.css';
                         <span class="hero-green-text text-[#8ed109] lg:text-[#8cc608] font-extrabold relative inline-block drop-shadow-md">
                             <span
                                 id="rotating-headline"
+                                class="hero-rotate-text"
                                 data-phrases='["Faster Than the ER.","More Affordable Than the ER.","More Specialized Than the ER.","Less Waiting Than the ER."]'
-                            >Faster Than the ER.</span><span class="hero-type-cursor" aria-hidden="true"></span>
+                            >Faster Than the ER.</span>
                             <!-- Subtle Glow Effect -->
                             <span class="absolute inset-0 blur-[40px] opacity-20 bg-[#8cc608]/40 mix-blend-screen pointer-events-none" aria-hidden="true"></span>
                         </span>
@@ -1051,7 +1052,7 @@ import '@/styles/global.css';
       setInterval(updateWaitTime, 60000);
     </script>
 
-    <!-- Rotating Headline Typewriter -->
+    <!-- Rotating Headline (fade in / out) -->
     <script>
       (function () {
         const el = document.getElementById('rotating-headline');
@@ -1069,15 +1070,11 @@ import '@/styles/global.css';
         const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         if (prefersReduced) {
           el.textContent = phrases[0];
-          const c = el.parentElement && el.parentElement.querySelector('.hero-type-cursor');
-          if (c) c.remove();
           return;
         }
 
-        const TYPE_SPEED = 70;    // ms per character typed
-        const DELETE_SPEED = 40;  // ms per character deleted
-        const HOLD_FULL = 1800;   // pause once a phrase is fully typed
-        const HOLD_EMPTY = 350;   // pause before typing the next phrase
+        const FADE_MS = 600;   // duration of each fade in / fade out
+        const HOLD = 2400;     // time a phrase stays fully visible
 
         // Reserve the height of the tallest phrase so wrapping never shifts the layout.
         // On desktop (>=1024px) the line is set to never wrap, so no reservation is needed.
@@ -1113,34 +1110,33 @@ import '@/styles/global.css';
         });
 
         let phraseIndex = 0;
-        let charIndex = phrases[0].length; // start fully typed on the initial phrase
-        let deleting = false;
 
-        function tick() {
-          const current = phrases[phraseIndex];
+        function cycle() {
+          // Fade the current phrase out (and drift up slightly).
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(-0.18em)';
 
-          if (!deleting) {
-            charIndex++;
-            el.textContent = current.slice(0, charIndex);
-            if (charIndex >= current.length) {
-              deleting = true;
-              return setTimeout(tick, HOLD_FULL);
-            }
-            return setTimeout(tick, TYPE_SPEED);
-          }
-
-          charIndex--;
-          el.textContent = current.slice(0, charIndex);
-          if (charIndex <= 0) {
-            deleting = false;
+          setTimeout(function () {
+            // Swap in the next phrase while invisible, positioned to enter from below.
             phraseIndex = (phraseIndex + 1) % phrases.length;
-            return setTimeout(tick, HOLD_EMPTY);
-          }
-          return setTimeout(tick, DELETE_SPEED);
+            el.style.transition = 'none';
+            el.textContent = phrases[phraseIndex];
+            el.style.transform = 'translateY(0.18em)';
+            // Force a reflow so the next transition animates from this start state.
+            void el.offsetWidth;
+            el.style.transition = 'opacity ' + FADE_MS + 'ms ease, transform ' + FADE_MS + 'ms ease';
+            // Fade the new phrase in.
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+            setTimeout(cycle, HOLD);
+          }, FADE_MS);
         }
 
-        // Kick off after the initial phrase has been shown for a beat.
-        setTimeout(tick, HOLD_FULL);
+        // Prime the transition + visible state, then start the loop after the first hold.
+        el.style.transition = 'opacity ' + FADE_MS + 'ms ease, transform ' + FADE_MS + 'ms ease';
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+        setTimeout(cycle, HOLD);
       })();
     </script>
   </body>
@@ -1172,24 +1168,9 @@ import '@/styles/global.css';
     }
   }
 
-  /* Blinking caret for the rotating headline */
-  .hero-type-cursor {
+  /* Rotating headline: fades in/out with a subtle vertical drift */
+  .hero-rotate-text {
     display: inline-block;
-    width: 0.06em;
-    height: 0.95em;
-    margin-left: 0.06em;
-    background-color: currentColor;
-    vertical-align: baseline;
-    transform: translateY(0.1em);
-    animation: hero-caret-blink 1s steps(1) infinite;
-  }
-  @keyframes hero-caret-blink {
-    0%, 50% { opacity: 1; }
-    50.01%, 100% { opacity: 0; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .hero-type-cursor {
-      display: none;
-    }
+    will-change: opacity, transform;
   }
 </style>
