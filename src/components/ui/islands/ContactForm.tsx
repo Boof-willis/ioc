@@ -8,6 +8,7 @@ interface ContactFormProps {
 export default function ContactForm({ className }: ContactFormProps) {
   const [formData, setFormData] = useState({
     name: '',
+    email: '',
     phone: '',
   });
   const [marketingConsent, setMarketingConsent] = useState(false);
@@ -74,16 +75,35 @@ export default function ContactForm({ className }: ContactFormProps) {
 
       <div>
         <label
+          htmlFor="email"
+          className="block text-sm font-semibold text-ioc-gray-dark mb-2"
+        >
+          Email *
+        </label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          value={formData.email}
+          onChange={handleChange}
+          className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gray-400 focus:ring-0 focus:outline-none transition-colors"
+          style={{ outline: 'none', boxShadow: 'none' }}
+          placeholder="john@example.com"
+        />
+      </div>
+
+      <div>
+        <label
           htmlFor="phone"
           className="block text-sm font-semibold text-ioc-gray-dark mb-2"
         >
-          Phone Number *
+          Phone Number
         </label>
         <input
           type="tel"
           id="phone"
           name="phone"
-          required
           value={formData.phone}
           onChange={handleChange}
           className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gray-400 focus:ring-0 focus:outline-none transition-colors"
