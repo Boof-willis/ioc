@@ -1,0 +1,91 @@
+---
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import Container from '@/components/ui/Container.astro';
+import A2PCompliance from '@/components/A2PCompliance.astro';
+import ContactForm from '@/components/ui/islands/ContactForm';
+import '@/styles/global.css';
+---
+
+<html lang="en">
+  <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-52DJTWGN');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="Contact Instant Orthopedic Care in Draper, Utah. Send us a message or call (385) 386-7026. Walk-ins welcome." />
+    <title>Contact Us | Instant Orthopedic Care – Draper, UT</title>
+    <link rel="canonical" href="https://instantorthopediccare.com/contact" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <A2PCompliance />
+  </head>
+  <body class="bg-white text-slate-700 font-sans">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-52DJTWGN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <Header />
+
+    <main class="pt-32 pb-20">
+      <Container>
+        <div class="max-w-3xl mx-auto text-center mb-12">
+          <h1 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4">Contact Us</h1>
+          <p class="text-lg text-slate-500 max-w-2xl mx-auto">
+            Have a question or need to reach our team? Send us a message using the form below, or call us directly. Walk-ins are always welcome.
+          </p>
+        </div>
+
+        <div class="max-w-5xl mx-auto grid md:grid-cols-5 gap-10 items-start">
+          <!-- Contact details -->
+          <div class="md:col-span-2 space-y-6">
+            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-5">
+              <div>
+                <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-400 mb-1">Phone</h2>
+                <a href="tel:3853867026" class="text-lg font-semibold text-slate-900 hover:text-blue-600 transition-colors">(385) 386-7026</a>
+              </div>
+              <div>
+                <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-400 mb-1">Email</h2>
+                <a href="mailto:info@instantorthocare.com" class="text-lg font-semibold text-slate-900 hover:text-blue-600 transition-colors break-all">info@instantorthocare.com</a>
+              </div>
+              <div>
+                <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-400 mb-1">Location</h2>
+                <p class="text-slate-700 leading-relaxed">
+                  75 E 12300 S, Suite 100<br />
+                  Draper, UT 84020
+                </p>
+              </div>
+              <div class="pt-1">
+                <span class="inline-block bg-ioc-green/15 text-ioc-gray-dark text-sm font-semibold px-3 py-1 rounded-full">Walk-ins welcome</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form -->
+          <div class="md:col-span-3">
+            <div class="bg-white border border-slate-200 rounded-2xl shadow-card p-6 md:p-8">
+              <h2 class="text-2xl font-bold text-slate-900 mb-1">Send us a message</h2>
+              <p class="text-sm text-slate-500 mb-6">We'll get back to you as soon as possible.</p>
+              <ContactForm client:load />
+            </div>
+          </div>
+        </div>
+      </Container>
+    </main>
+
+    <Footer />
+  </body>
+</html>
