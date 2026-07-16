@@ -173,7 +173,7 @@ import '@/styles/global.css';
           "name": "What insurance do you accept?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We accept most major insurance plans including Blue Cross Blue Shield, UnitedHealthcare, Aetna, Cigna, SelectHealth, Medicare, Medicaid, and workers' compensation. Call (385) 386-7026 if you're unsure about your specific plan."
+            "text": "We accept most major insurance plans including Blue Cross Blue Shield, Aetna, Cigna, Medicare, Medicaid, and workers' compensation. Call (385) 386-7026 if you're unsure about your specific plan."
           }
         },
         {
@@ -635,7 +635,7 @@ import '@/styles/global.css';
 
             <!-- Insurance Logos (Horizontal Scroll) -->
             <div id="insurance-pills-scroll" class="flex flex-nowrap gap-3 overflow-x-auto pb-2 -mb-2 scrollbar-hide">
-              {["BlueCross", "United", "Aetna", "Cigna", "Medicare", "SelectHealth", "EMI"].map((name) => (
+              {["BlueCross", "Aetna", "Cigna", "Medicare", "EMI"].map((name) => (
                 <div class="bg-slate-50 h-10 px-4 rounded-full border border-slate-200 flex items-center gap-2 text-xs font-semibold text-slate-600 cursor-default flex-shrink-0">
                   <CheckCircle client:load className="w-3.5 h-3.5 text-ioc-green flex-shrink-0" />
                   {name}
@@ -907,7 +907,7 @@ import '@/styles/global.css';
             },
             {
               question: "What insurance do you accept?",
-              answer: "We accept most major insurance plans including Blue Cross Blue Shield, UnitedHealthcare, Aetna, Cigna, SelectHealth, Medicare, Medicaid, and workers' compensation. Call (385) 386-7026 if you're unsure about your specific plan."
+              answer: "We accept most major insurance plans including Blue Cross Blue Shield, Aetna, Cigna, Medicare, Medicaid, and workers' compensation. Call (385) 386-7026 if you're unsure about your specific plan."
             },
             {
               question: "How much does orthopedic urgent care cost vs. the ER?",
