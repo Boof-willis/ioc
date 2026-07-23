@@ -5,7 +5,7 @@
 Instant Orthopedic Care (IOC) is a walk-in orthopedic urgent care clinic located at 75 E 12300 S Suite 100, Draper, UT 84020. We serve patients throughout Salt Lake County and Utah County, including Sandy, South Jordan, Riverton, Herriman, Lehi, Alpine, Highland, American Fork, Pleasant Grove, Bluffdale, and Midvale.
 
 - Phone: (385) 386-7026
-- Email: info@instantorthopediccare.com
+- Email: info@instantorthocare.com
 - Hours: Mon–Fri 9:00 AM – 6:30 PM, Sat 9:00 AM – 2:00 PM, Sun 9:00 AM – 12:00 PM
 - Walk-ins welcome. No appointment or referral needed.
 - Most major insurance accepted including BCBS, Aetna, Cigna, Medicaid, Medicare, and workers' compensation.
@@ -15,18 +15,18 @@ Instant Orthopedic Care (IOC) is a walk-in orthopedic urgent care clinic located
 
 ## Main Pages
 
-- [Home](https://instantorthopediccare.com/): Overview of the clinic, comparison to ER and urgent care, testimonials, location, insurance info, and FAQs.
-- [Our Team](https://instantorthopediccare.com/team): Meet our board-certified orthopedic surgeons and physician assistants.
+- [Home](https://instantorthocare.com/): Overview of the clinic, comparison to ER and urgent care, testimonials, location, insurance info, and FAQs.
+- [Our Team](https://instantorthocare.com/team): Meet our board-certified orthopedic surgeons and physician assistants.
 - [Book Online](https://pp-wfe-101.advancedmd.com/163338/onlineintake/demographic): Online check-in and appointment scheduling.
 
 ## Services
 
-- [Ankle & Foot Care](https://instantorthopediccare.com/services/ankle-and-foot): Treatment for ankle sprains, foot fractures, plantar fasciitis, Achilles tendon injuries, stress fractures, and bunions.
-- [Knee & Hip Care](https://instantorthopediccare.com/services/knee-and-hip): Treatment for ACL/MCL tears, meniscus injuries, knee and hip arthritis, patellar disorders, hip bursitis, and joint replacement evaluation.
-- [Shoulder Care](https://instantorthopediccare.com/services/shoulder): Treatment for rotator cuff injuries, shoulder dislocations, frozen shoulder, labral (SLAP) tears, AC joint injuries, and shoulder arthritis.
-- [Elbow & Wrist Care](https://instantorthopediccare.com/services/elbow-and-wrist): Treatment for tennis elbow, golfer's elbow, carpal tunnel syndrome, wrist and hand fractures, De Quervain's tenosynovitis, and trigger finger.
-- [Sports Injury Treatment](https://instantorthopediccare.com/services/sports-injuries): Treatment for ACL and ligament tears, sprains and strains, fractures, concussion evaluation, dislocations, and overuse injuries. Return-to-play clearance for athletes of all ages.
-- [Chronic Pain Management](https://instantorthopediccare.com/services/chronic-pain): Treatment for osteoarthritis, inflammatory arthritis, joint injections (corticosteroid and hyaluronic acid), tendonitis, bursitis, back and neck pain, and post-surgical pain management.
+- [Ankle & Foot Care](https://instantorthocare.com/services/ankle-and-foot): Treatment for ankle sprains, foot fractures, plantar fasciitis, Achilles tendon injuries, stress fractures, and bunions.
+- [Knee & Hip Care](https://instantorthocare.com/services/knee-and-hip): Treatment for ACL/MCL tears, meniscus injuries, knee and hip arthritis, patellar disorders, hip bursitis, and joint replacement evaluation.
+- [Shoulder Care](https://instantorthocare.com/services/shoulder): Treatment for rotator cuff injuries, shoulder dislocations, frozen shoulder, labral (SLAP) tears, AC joint injuries, and shoulder arthritis.
+- [Elbow & Wrist Care](https://instantorthocare.com/services/elbow-and-wrist): Treatment for tennis elbow, golfer's elbow, carpal tunnel syndrome, wrist and hand fractures, De Quervain's tenosynovitis, and trigger finger.
+- [Sports Injury Treatment](https://instantorthocare.com/services/sports-injuries): Treatment for ACL and ligament tears, sprains and strains, fractures, concussion evaluation, dislocations, and overuse injuries. Return-to-play clearance for athletes of all ages.
+- [Chronic Pain Management](https://instantorthocare.com/services/chronic-pain): Treatment for osteoarthritis, inflammatory arthritis, joint injections (corticosteroid and hyaluronic acid), tendonitis, bursitis, back and neck pain, and post-surgical pain management.
 
 ## Our Providers
 
