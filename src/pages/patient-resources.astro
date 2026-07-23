@@ -1,0 +1,162 @@
+---
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import Container from '@/components/ui/Container.astro';
+import A2PCompliance from '@/components/A2PCompliance.astro';
+import {
+  UserCheck,
+  ShieldCheck,
+  MessageSquareWarning,
+  Siren,
+  BadgeCheck,
+  RotateCcw,
+  Download,
+} from 'lucide-react';
+import '@/styles/global.css';
+
+const resources = [
+  {
+    title: 'Patient Rights & Responsibilities',
+    description:
+      'Understand your rights as a patient at Instant Orthopedic Care and the responsibilities that help us provide you with safe, high-quality care.',
+    file: '/patient-resources/patient-rights-and-responsibilities.pdf',
+    size: '73 KB',
+    icon: UserCheck,
+  },
+  {
+    title: 'Notice of Privacy Practices (HIPAA)',
+    description:
+      'Learn how your protected health information may be used and disclosed, and how you can access your medical records under HIPAA.',
+    file: '/patient-resources/notice-of-privacy-practices-hipaa.pdf',
+    size: '86 KB',
+    icon: ShieldCheck,
+  },
+  {
+    title: 'Complaint & Grievance Process',
+    description:
+      'Find out how to share a concern or file a formal grievance, and what to expect from our review and response process.',
+    file: '/patient-resources/complaint-and-grievance-process.pdf',
+    size: '80 KB',
+    icon: MessageSquareWarning,
+  },
+  {
+    title: 'Emergency Preparedness Information',
+    description:
+      'Important guidance on how our clinic prepares for emergencies and what patients should know to stay safe.',
+    file: '/patient-resources/emergency-preparedness-information.pdf',
+    size: '77 KB',
+    icon: Siren,
+  },
+  {
+    title: 'Medicare DMEPOS Supplier Standards',
+    description:
+      'A patient notice covering the Medicare DMEPOS Supplier Standards, with a direct link to the official standards on the CMS website.',
+    file: '/patient-resources/medicare-dmepos-supplier-standards.pdf',
+    size: '64 KB',
+    icon: BadgeCheck,
+  },
+  {
+    title: 'Product Return & Warranty Policy',
+    description:
+      'Review our policy for returns and warranty coverage on durable medical equipment, braces, and other products.',
+    file: '/patient-resources/product-return-and-warranty-policy.pdf',
+    size: '80 KB',
+    icon: RotateCcw,
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-52DJTWGN');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="Download important patient resource documents from Instant Orthopedic Care in Draper, Utah, including your Patient Rights, HIPAA Notice of Privacy Practices, grievance process, and Medicare supplier standards." />
+    <title>Patient Resources | Instant Orthopedic Care – Draper, UT</title>
+    <link rel="canonical" href="https://instantorthopediccare.com/patient-resources" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <A2PCompliance />
+  </head>
+  <body class="bg-white text-slate-700 font-sans">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-52DJTWGN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <Header />
+
+    <main class="pt-32 pb-20">
+      <Container>
+        <!-- Header -->
+        <div class="max-w-3xl mx-auto text-center">
+          <span class="inline-block text-sm font-bold uppercase tracking-wide text-blue-600 mb-3">Patient Resources</span>
+          <h1 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4">
+            Documents & Downloads
+          </h1>
+          <p class="text-lg text-slate-500 leading-relaxed">
+            Below are important documents about your rights, privacy, and care at Instant Orthopedic Care. Click any document to download it as a PDF.
+          </p>
+        </div>
+
+        <!-- Resource Grid -->
+        <div class="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          {resources.map((r) => {
+            const Icon = r.icon;
+            return (
+              <a
+                href={r.file}
+                download
+                class="group flex items-start gap-5 bg-white border border-slate-200 rounded-2xl p-6 shadow-card hover:shadow-card-hover hover:border-blue-300 transition-all"
+              >
+                <div class="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                  <Icon class="w-6 h-6" stroke-width={2} />
+                </div>
+
+                <div class="flex-1 min-w-0">
+                  <h2 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                    {r.title}
+                  </h2>
+                  <p class="mt-1.5 text-sm text-slate-500 leading-relaxed">
+                    {r.description}
+                  </p>
+                  <span class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-blue-600">
+                    <Download class="w-4 h-4" stroke-width={2} />
+                    Download PDF
+                    <span class="font-medium text-slate-400">· {r.size}</span>
+                  </span>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+
+        <!-- Help note -->
+        <div class="mt-14 max-w-3xl mx-auto bg-slate-50 border border-slate-200 rounded-2xl p-6 text-center">
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Need a printed copy or have questions about any of these documents? Contact us at
+            <a href="tel:3853867026" class="text-blue-600 font-semibold hover:underline">(385) 386-7026</a>
+            or
+            <a href="mailto:info@instantorthocare.com" class="text-blue-600 font-semibold hover:underline">info@instantorthocare.com</a>.
+            A printed copy will be provided at no charge upon request.
+          </p>
+        </div>
+      </Container>
+    </main>
+
+    <Footer />
+  </body>
+</html>

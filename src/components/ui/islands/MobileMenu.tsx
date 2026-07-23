@@ -33,6 +33,7 @@ export default function MobileMenu({ className }: MobileMenuProps) {
     { label: 'Insurance', href: '/#insurance' },
     { label: 'Location', href: '/#location' },
     { label: 'Reviews', href: '/#testimonials' },
+    { label: 'Patient Resources', href: '/patient-resources' },
     { label: 'Contact', href: '/contact' },
     { label: 'Login', href: 'https://pp-wfe-102.advancedmd.com/156528/account/logon' },
   ];
