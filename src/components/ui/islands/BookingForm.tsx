@@ -116,8 +116,10 @@ export default function BookingForm({ className, onSuccess }: BookingFormProps) 
           <option value="aetna">Aetna</option>
           <option value="cigna">Cigna</option>
           <option value="united">UnitedHealthcare</option>
+          <option value="selecthealth">SelectHealth</option>
           <option value="medicaid">Medicaid</option>
           <option value="medicare">Medicare</option>
+          <option value="tricare">TRICARE</option>
           <option value="other">Other</option>
         </select>
       </div>
