@@ -436,33 +436,6 @@ import '@/styles/global.css';
     <!-- Content Sections with White Background -->
     <div class="bg-white text-slate-600">
 
-    <!-- Commercial Video Section -->
-    <Section background="white" id="video" class="w-full z-10 pt-24 pb-8 lg:pt-32 lg:pb-12 relative !bg-transparent">
-      <Container class="relative z-10">
-        <div class="text-center mb-10">
-          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4 leading-tight max-w-2xl mx-auto">
-            See IOC in action
-          </h2>
-          <p class="text-lg text-slate-600 max-w-xl mx-auto">
-            Orthopedic injury care without the ER wait.
-          </p>
-        </div>
-        <div class="max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-xl ring-1 ring-slate-200">
-          <video
-            controls
-            playsinline
-            preload="metadata"
-            poster="/videos/ioc-commercial-poster.jpg"
-            class="w-full h-auto block"
-            aria-label="Instant Orthopedic Care commercial"
-          >
-            <source src="/videos/ioc-blue-white-game-commercial.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </Container>
-    </Section>
-
     <!-- Comparison Section -->
     <Section background="white" id="comparison" class="lg:py-32 w-full z-10 border-slate-100 border-t pt-24 pb-24 relative overflow-visible !bg-transparent">
       <!-- Subtle Blue Bloom from Left Edge -->
@@ -800,6 +773,71 @@ import '@/styles/global.css';
         </div>
         </div>
     </section>
+
+    <!-- Commercial Video Section -->
+    <Section background="white" id="video" class="w-full z-10 pt-24 pb-24 lg:pt-28 lg:pb-28 relative !bg-transparent">
+      <Container class="relative z-10">
+        <div class="text-center mb-10">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4 leading-tight max-w-2xl mx-auto">
+            See IOC in action
+          </h2>
+          <p class="text-lg text-slate-600 max-w-xl mx-auto">
+            Orthopedic injury care without the ER wait.
+          </p>
+        </div>
+        <div id="commercial-player" class="group relative max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-xl ring-1 ring-slate-200 cursor-pointer">
+          <video
+            id="commercial-video"
+            playsinline
+            preload="metadata"
+            poster="/videos/ioc-commercial-poster.jpg"
+            class="w-full h-auto block"
+            aria-label="Instant Orthopedic Care commercial"
+          >
+            <source src="/videos/ioc-blue-white-game-commercial.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <!-- Play Overlay -->
+          <button
+            id="commercial-play-btn"
+            type="button"
+            aria-label="Play video"
+            class="absolute inset-0 flex items-center justify-center bg-slate-900/20 transition-opacity duration-300"
+          >
+            <span class="flex items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-full bg-ioc-blue shadow-2xl shadow-ioc-blue/40 ring-4 ring-white/30 transition-transform duration-300 group-hover:scale-110">
+              <svg class="w-8 h-8 md:w-10 md:h-10 text-white ml-1" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M8 5.14v13.72c0 .84.93 1.35 1.64.9l10.78-6.86a1.07 1.07 0 0 0 0-1.8L9.64 4.24A1.07 1.07 0 0 0 8 5.14z"/>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </Container>
+    </Section>
+    <script>
+      const playerEl = document.getElementById('commercial-player');
+      const videoEl = document.getElementById('commercial-video') as HTMLVideoElement | null;
+      const playBtn = document.getElementById('commercial-play-btn');
+      if (playerEl && videoEl && playBtn) {
+        const showOverlay = () => {
+          playBtn.classList.remove('opacity-0', 'pointer-events-none');
+          videoEl.removeAttribute('controls');
+          playerEl.classList.add('cursor-pointer');
+        };
+        const hideOverlay = () => {
+          playBtn.classList.add('opacity-0', 'pointer-events-none');
+          videoEl.setAttribute('controls', '');
+          playerEl.classList.remove('cursor-pointer');
+        };
+        playBtn.addEventListener('click', () => {
+          hideOverlay();
+          videoEl.play();
+        });
+        videoEl.addEventListener('ended', () => {
+          videoEl.currentTime = 0;
+          showOverlay();
+        });
+      }
+    </script>
 
     <!-- Location & Hours -->
     <Section background="gray" id="location">
