@@ -23,6 +23,20 @@ import BadgeCheck from '@/components/ui/icons/BadgeCheck';
 import Award from '@/components/ui/icons/Award';
 import A2PCompliance from '@/components/A2PCompliance.astro';
 import '@/styles/global.css';
+
+const insurancePlans = [
+  "Blue Cross Blue Shield / Regence",
+  "UnitedHealthcare",
+  "Select Health",
+  "UMR",
+  "Aetna",
+  "Cigna",
+  "University of Utah Health Plans",
+  "Medicare",
+  "Utah Medicaid",
+  "TRICARE / TriWest",
+  "EMI",
+];
 ---
 
 <html lang="en">
@@ -173,7 +187,7 @@ import '@/styles/global.css';
           "name": "What insurance do you accept?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We accept most major insurance plans including Blue Cross Blue Shield, UnitedHealthcare, Aetna, Cigna, SelectHealth, Medicare, Medicaid, TRICARE, and workers' compensation. Call (385) 386-7026 if you're unsure about your specific plan."
+            "text": "We accept most major insurance plans including Blue Cross Blue Shield / Regence, UnitedHealthcare, Select Health, UMR, Aetna, Cigna, University of Utah Health Plans, Medicare, Utah Medicaid, TRICARE / TriWest, EMI, and workers' compensation. We also accept HSA and FSA cards. Coverage varies by plan and network—call (385) 386-7026 and we'll verify your benefits before your visit."
           }
         },
         {
@@ -436,6 +450,185 @@ import '@/styles/global.css';
     <!-- Content Sections with White Background -->
     <div class="bg-white text-slate-600">
 
+    <!-- Insurance & Cost -->
+    <section class="w-full relative z-10 bg-white border-b border-slate-100 overflow-hidden" id="insurance">
+      <div class="lg:px-[6%] lg:py-32 max-w-[1600px] mr-auto ml-auto pt-24 pr-6 pb-24 pl-6 relative">
+
+        <!-- Insurance Header -->
+        <div class="max-w-3xl mx-auto text-center">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-[10px] font-bold uppercase tracking-widest mb-6">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+            </span>
+            Insurance Accepted
+          </div>
+
+          <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 tracking-tight leading-[1.1] text-balance">
+            We accept most major insurance plans, plus HSA and FSA cards.
+          </h2>
+
+          <p class="mt-6 text-lg text-slate-500 font-light leading-relaxed max-w-2xl mx-auto">
+            IOC is in-network with most major insurance plans. Bring your insurance card, and we'll handle the paperwork for you.
+          </p>
+        </div>
+
+        <!-- Insurance Carousel (continuous loop) -->
+        <div class="insurance-marquee relative mt-12 overflow-hidden" role="region" aria-label="Accepted insurance plans">
+          <div class="insurance-marquee-track flex w-max animate-scroll will-change-transform">
+            {[0, 1].map((copy) => (
+              <ul class="flex shrink-0 items-center gap-3 pr-3 list-none m-0 p-0" aria-hidden={copy === 1 ? "true" : undefined}>
+                {insurancePlans.map((name) => (
+                  <li class="bg-slate-50 h-12 px-5 rounded-full border border-slate-200 flex items-center gap-2.5 text-sm font-semibold text-slate-700 whitespace-nowrap cursor-default flex-shrink-0">
+                    <svg class="w-4 h-4 text-ioc-green flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="m9 12 2 2 4-4" />
+                    </svg>
+                    {name}
+                  </li>
+                ))}
+              </ul>
+            ))}
+          </div>
+        </div>
+
+        <!-- Under the carousel -->
+        <div class="mt-8 max-w-2xl mx-auto text-center">
+          <p class="text-base md:text-lg font-medium text-slate-700 leading-relaxed">
+            High deductible plan? HSA and FSA cards can be used for copays, deductibles, and eligible self pay services.
+          </p>
+          <p class="mt-3 text-sm text-slate-500 leading-relaxed">
+            Insurance coverage varies by plan and network. Contact us to verify your specific benefits.
+          </p>
+        </div>
+
+        <!-- Verification CTA -->
+        <div class="mt-8 max-w-2xl mx-auto rounded-2xl border border-blue-100 bg-blue-50/60 px-6 py-8 md:px-10 text-center">
+          <p class="text-slate-800 text-base md:text-lg leading-relaxed">
+            <span class="font-semibold">Don't see your plan?</span> We work with many additional insurance plans. Call us and we'll verify your coverage before your visit.
+          </p>
+          <a href="tel:3853867026" class="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-ioc-blue hover:bg-ioc-blue-dark text-white font-semibold text-base px-7 py-3.5 shadow-lg shadow-ioc-blue/30 transition-colors">
+            <Phone client:load className="w-4 h-4" />
+            Call (385) 386-7026
+          </a>
+        </div>
+
+        <!-- Cost Comparison -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center mt-20 lg:mt-28 pt-16 lg:pt-20 border-t border-slate-100">
+
+          <!-- Left Content -->
+          <div class="relative z-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-[10px] font-bold uppercase tracking-widest mb-6">
+              Financial Peace of Mind
+            </div>
+
+            <h3 class="text-3xl md:text-4xl lg:text-5xl font-semibold text-slate-900 tracking-tight leading-[1.05] mb-6">
+              Affordable, transparent
+              <span class="text-ioc-blue">
+                orthopedic care.
+              </span>
+            </h3>
+
+            <p class="text-lg text-slate-500 font-light leading-relaxed mb-10 max-w-lg">
+              Save up to 75% compared to the ER. No surprise bills, no facility fees—just transparent pricing.
+            </p>
+
+            <div class="grid grid-cols-2 gap-x-12 gap-y-10">
+              <div class="group cursor-default">
+                <div class="text-4xl font-semibold text-slate-900 tracking-tight mb-2 group-hover:text-blue-600 transition-colors">
+                  85%
+                </div>
+                <div class="h-0.5 w-12 bg-slate-200 mb-3 group-hover:w-full group-hover:bg-blue-500 transition-all duration-700 ease-out"></div>
+                <p class="text-sm text-slate-500 leading-snug">
+                  Less than average ER costs for orthopedic care
+                </p>
+              </div>
+              <div class="group cursor-default">
+                <div class="text-4xl font-semibold text-slate-900 tracking-tight mb-2 group-hover:text-blue-600 transition-colors">
+                  Most
+                </div>
+                <div class="h-0.5 w-12 bg-slate-200 mb-3 group-hover:w-full group-hover:bg-blue-500 transition-all duration-700 ease-out"></div>
+                <p class="text-sm text-slate-500 leading-snug">
+                  Major insurance accepted in-network
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Content: Chart Card -->
+          <div class="relative group">
+            <!-- Decorative background glow -->
+            <div class="absolute -inset-4 bg-gradient-to-r from-blue-50 to-slate-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl"></div>
+
+            <div class="relative bg-white border border-slate-200 rounded-xl p-6 lg:p-8 shadow-sm transition-all duration-500 hover:shadow-lg hover:border-blue-100">
+              <div class="flex items-center justify-between mb-8">
+                <div>
+                  <h4 class="text-base font-semibold text-slate-900 tracking-tight">
+                    Cost Comparison
+                  </h4>
+                  <p class="text-[10px] text-slate-400 mt-1 font-mono uppercase tracking-widest">
+                    Avg. Out-of-Pocket Cost
+                  </p>
+                </div>
+                <div class="flex items-center gap-4 text-[10px] font-bold tracking-wider uppercase">
+                  <div class="flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                    <span class="text-slate-600">Us</span>
+                  </div>
+                  <div class="flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-slate-200"></span>
+                    <span class="text-slate-400">Hospital ER</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- The Chart -->
+              <div class="flex items-end justify-center gap-20 h-[280px] w-full pb-4 relative">
+
+                <!-- Bar 1: ER -->
+                <div class="flex flex-col items-center group/bar">
+                  <span class="text-slate-400 font-semibold text-sm mb-3">$1,500+</span>
+                  <div class="w-24 h-52 bg-slate-100 border-t-4 border-slate-300 rounded-t-sm relative overflow-hidden group-hover/bar:bg-slate-200 transition-colors"></div>
+                  <span class="text-slate-400 font-medium text-xs mt-4 uppercase tracking-wider">ER Visit</span>
+                </div>
+
+                <!-- Bar 2: IOC -->
+                <div class="flex flex-col items-center relative group/bar">
+                  <div class="absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide">
+                    Save 85%
+                  </div>
+                  <div class="w-24 h-20 bg-gradient-to-t from-blue-600 to-blue-500 rounded-t-md shadow-lg shadow-blue-200/50 relative overflow-hidden group-hover/bar:shadow-xl group-hover/bar:shadow-blue-300/50 transition-all mt-3"></div>
+                  <span class="text-slate-900 font-semibold text-xs mt-4 uppercase tracking-wider">Us</span>
+                </div>
+
+              </div>
+
+              <div class="mt-6 pt-6 border-t border-slate-100 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="p-2 bg-emerald-100 text-emerald-700 rounded-full">
+                    <DollarSign client:load className="w-4 h-4" />
+                  </div>
+                  <div class="text-sm">
+                    <span class="font-semibold text-slate-900 block leading-tight">
+                      No Surprise Bills
+                    </span>
+                    <span class="text-slate-500 text-xs font-normal">
+                      Transparent pricing upfront
+                    </span>
+                  </div>
+                </div>
+                <a href="tel:3853867026" class="group/btn flex items-center gap-2 text-xs font-bold text-blue-600 uppercase tracking-wider hover:text-blue-700 transition-colors">
+                  Contact Us
+                  <span class="group-hover/btn:translate-x-1 transition-transform">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <!-- Commercial Video Section -->
     <Section background="white" id="video" class="w-full z-10 pt-24 pb-24 lg:pt-28 lg:pb-28 relative !bg-transparent">
       <Container class="relative z-10">
@@ -651,195 +844,6 @@ import '@/styles/global.css';
 
 
 
-    <!-- Insurance & Cost (Redesigned) -->
-    <section class="w-full relative z-10 bg-white border-b border-slate-100 overflow-hidden" id="insurance">
-      <div class="lg:px-[6%] lg:py-32 max-w-[1600px] mr-auto ml-auto pt-24 pr-6 pb-24 pl-6 relative">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-          
-          <!-- Left Content -->
-          <div class="relative z-10">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-[10px] font-bold uppercase tracking-widest mb-6">
-              <span class="relative flex h-2 w-2">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-              </span>
-              Financial Peace of Mind
-        </div>
-
-            <h2 class="text-4xl md:text-5xl lg:text-6xl font-semibold text-slate-900 tracking-tight leading-[1.05] mb-6">
-              Affordable, transparent
-              <span class="text-ioc-blue">
-                orthopedic care.
-              </span>
-            </h2>
-
-            <p class="text-lg text-slate-500 font-light leading-relaxed mb-10 max-w-lg">
-              Save up to 75% compared to the ER. We accept most major insurance plans and handle the paperwork for you. No surprise bills, no facility fees—just transparent pricing.
-            </p>
-
-            <div class="grid grid-cols-2 gap-x-12 gap-y-10 mb-10">
-              <div class="group cursor-default">
-                <div class="text-4xl font-semibold text-slate-900 tracking-tight mb-2 group-hover:text-blue-600 transition-colors">
-                  85%
-                </div>
-                <div class="h-0.5 w-12 bg-slate-200 mb-3 group-hover:w-full group-hover:bg-blue-500 transition-all duration-700 ease-out"></div>
-                <p class="text-sm text-slate-500 leading-snug">
-                  Less than average ER costs for orthopedic care
-                </p>
-                </div>
-              <div class="group cursor-default">
-                <div class="text-4xl font-semibold text-slate-900 tracking-tight mb-2 group-hover:text-blue-600 transition-colors">
-                  8+
-                </div>
-                <div class="h-0.5 w-12 bg-slate-200 mb-3 group-hover:w-full group-hover:bg-blue-500 transition-all duration-700 ease-out"></div>
-                <p class="text-sm text-slate-500 leading-snug">
-                  Major insurance plans accepted in-network
-                </p>
-                </div>
-          </div>
-
-            <!-- Insurance Logos (Horizontal Scroll) -->
-            <div id="insurance-pills-scroll" class="flex flex-nowrap gap-3 overflow-x-auto pb-2 -mb-2 scrollbar-hide">
-              {["BlueCross", "United", "Aetna", "Cigna", "Medicare", "Medicaid", "TRICARE", "SelectHealth", "EMI"].map((name) => (
-                <div class="bg-slate-50 h-10 px-4 rounded-full border border-slate-200 flex items-center gap-2 text-xs font-semibold text-slate-600 cursor-default flex-shrink-0">
-                  <CheckCircle client:load className="w-3.5 h-3.5 text-ioc-green flex-shrink-0" />
-                  {name}
-                </div>
-              ))}
-                </div>
-
-        <script>
-          (function() {
-            const scrollContainer = document.getElementById('insurance-pills-scroll');
-            if (!scrollContainer) return;
-            
-            function updateMask() {
-              const scrollLeft = scrollContainer.scrollLeft;
-              const scrollWidth = scrollContainer.scrollWidth;
-              const clientWidth = scrollContainer.clientWidth;
-              const maxScroll = scrollWidth - clientWidth;
-              
-              // Determine if we need left fade (scrolled right)
-              const needsLeftFade = scrollLeft > 10; // Small threshold to avoid flicker
-              // Determine if we need right fade (more content to scroll)
-              const needsRightFade = scrollLeft < maxScroll - 10; // Small threshold
-              
-              let maskGradient = '';
-              
-              if (needsLeftFade && needsRightFade) {
-                // Both fades needed
-                maskGradient = 'linear-gradient(to right, transparent 0%, black 8%, black 87%, transparent 100%)';
-              } else if (needsLeftFade) {
-                // Only left fade (at end)
-                maskGradient = 'linear-gradient(to right, transparent 0%, black 8%, black 100%)';
-              } else if (needsRightFade) {
-                // Only right fade (at start)
-                maskGradient = 'linear-gradient(to right, black 0%, black 87%, transparent 100%)';
-              } else {
-                // No fades needed (shouldn't happen, but just in case)
-                maskGradient = 'linear-gradient(to right, black 0%, black 100%)';
-              }
-              
-              scrollContainer.style.maskImage = maskGradient;
-              scrollContainer.style.webkitMaskImage = maskGradient;
-            }
-            
-            // Initial update
-            updateMask();
-            
-            // Update on scroll
-            scrollContainer.addEventListener('scroll', updateMask);
-            
-            // Update on resize (in case container size changes)
-            window.addEventListener('resize', updateMask);
-          })();
-        </script>
-
-            <a href="tel:3853867026" class="group/btn flex items-center gap-2 text-xs font-bold text-blue-600 uppercase tracking-wider hover:text-blue-700 transition-colors mt-6">
-              Don't see your plan? Call to verify
-              <span class="group-hover/btn:translate-x-1 transition-transform">&rarr;</span>
-            </a>
-                </div>
-
-          <!-- Right Content: Chart Card -->
-          <div class="relative group">
-            <!-- Decorative background glow -->
-            <div class="absolute -inset-4 bg-gradient-to-r from-blue-50 to-slate-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl"></div>
-
-            <div class="relative bg-white border border-slate-200 rounded-xl p-6 lg:p-8 shadow-sm transition-all duration-500 hover:shadow-lg hover:border-blue-100">
-              <div class="flex items-center justify-between mb-8">
-          <div>
-                  <h3 class="text-base font-semibold text-slate-900 tracking-tight">
-                    Cost Comparison
-                  </h3>
-                  <p class="text-[10px] text-slate-400 mt-1 font-mono uppercase tracking-widest">
-                    Avg. Out-of-Pocket Cost
-                  </p>
-              </div>
-                <div class="flex items-center gap-4 text-[10px] font-bold tracking-wider uppercase">
-                  <div class="flex items-center gap-1.5">
-                    <span class="w-2 h-2 rounded-full bg-blue-500"></span>
-                    <span class="text-slate-600">Us</span>
-          </div>
-                  <div class="flex items-center gap-1.5">
-                    <span class="w-2 h-2 rounded-full bg-slate-200"></span>
-                    <span class="text-slate-400">Hospital ER</span>
-        </div>
-        </div>
-            </div>
-
-              <!-- The Chart -->
-              <div class="flex items-end justify-center gap-20 h-[280px] w-full pb-4 relative">
-                
-                <!-- Bar 1: ER (The Loser) -->
-                <div class="flex flex-col items-center group/bar">
-                  <span class="text-slate-400 font-semibold text-sm mb-3">$1,500+</span>
-                  <div class="w-24 h-52 bg-slate-100 border-t-4 border-slate-300 rounded-t-sm relative overflow-hidden group-hover/bar:bg-slate-200 transition-colors">
-            </div>
-                  <span class="text-slate-400 font-medium text-xs mt-4 uppercase tracking-wider">ER Visit</span>
-        </div>
-
-                <!-- Bar 2: IOC (The Winner) -->
-                <div class="flex flex-col items-center relative group/bar">
-                  <!-- Floating Badge -->
-                  <div class="absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide">
-                    Save 85%
-        </div>
-                  
-                  <div class="w-24 h-20 bg-gradient-to-t from-blue-600 to-blue-500 rounded-t-md shadow-lg shadow-blue-200/50 relative overflow-hidden group-hover/bar:shadow-xl group-hover/bar:shadow-blue-300/50 transition-all mt-3">
-              </div>
-                  <span class="text-slate-900 font-semibold text-xs mt-4 uppercase tracking-wider">Us</span>
-        </div>
-
-              </div>
-
-              <div class="mt-6 pt-6 border-t border-slate-100 flex items-center justify-between">
-                <div class="flex items-center gap-3">
-                  <div class="p-2 bg-emerald-100 text-emerald-700 rounded-full">
-                    <DollarSign client:load className="w-4 h-4" />
-              </div>
-                  <div class="text-sm">
-                    <span class="font-semibold text-slate-900 block leading-tight">
-                      No Surprise Bills
-                    </span>
-                    <span class="text-slate-500 text-xs font-normal">
-                      Transparent pricing upfront
-                    </span>
-            </div>
-              </div>
-                <a href="tel:3853867026" class="group/btn flex items-center gap-2 text-xs font-bold text-blue-600 uppercase tracking-wider hover:text-blue-700 transition-colors">
-                  Contact Us
-                  <span class="group-hover/btn:translate-x-1 transition-transform">&rarr;</span>
-                </a>
-            </div>
-                </div>
-        </div>
-
-        </div>
-        </div>
-    </section>
-
-
     <!-- Location & Hours -->
     <Section background="gray" id="location">
       <Container>
@@ -973,7 +977,7 @@ import '@/styles/global.css';
             },
             {
               question: "What insurance do you accept?",
-              answer: "We accept most major insurance plans including Blue Cross Blue Shield, UnitedHealthcare, Aetna, Cigna, SelectHealth, Medicare, Medicaid, TRICARE, and workers' compensation. Call (385) 386-7026 if you're unsure about your specific plan."
+              answer: "We accept most major insurance plans including Blue Cross Blue Shield / Regence, UnitedHealthcare, Select Health, UMR, Aetna, Cigna, University of Utah Health Plans, Medicare, Utah Medicaid, TRICARE / TriWest, EMI, and workers' compensation. We also accept HSA and FSA cards. Coverage varies by plan and network—call (385) 386-7026 and we'll verify your benefits before your visit."
             },
             {
               question: "How much does orthopedic urgent care cost vs. the ER?",

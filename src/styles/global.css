@@ -77,6 +77,30 @@
   }
 }
 
+/* Insurance carousel: two identical copies slide by -50% so the loop is seamless */
+.insurance-marquee {
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.insurance-marquee:hover .insurance-marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .insurance-marquee {
+    overflow-x: auto;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+  .insurance-marquee-track {
+    animation: none;
+  }
+  .insurance-marquee-track > [aria-hidden="true"] {
+    display: none;
+  }
+}
+
 /* Animations */
 @keyframes fade-in-up {
   from {
