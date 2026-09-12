@@ -107,7 +107,37 @@ import { Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
 <!-- Kira Live Chat Widget -->
 <script src="https://beta.leadconnectorhq.com/loader.js" data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a1b39c67645b2ba9a0e50fc"></script>
 
-<!-- GHL Call Tracking / Number Swap -->
-<script is:inline src="https://backend.leadconnectorhq.com/appengine/loc/P2u1fEJ2FLpliycVsCGX/pool/z9IXoWHn24BwhcLwZPas/number_pool.js"></script>
-<script is:inline src="https://backend.leadconnectorhq.com/appengine/js/user_session.js"></script>
+<!--
+  GHL Call Tracking / Number Swap
+  Only loaded for visitors who arrived from a tracked ad click (or who did so within
+  the last 30 days). Direct, organic, and referral traffic keeps the main clinic
+  number, (385) 386-7026, exactly as written in the markup.
+-->
+<script is:inline>
+  (function () {
+    var AD_CLICK_PARAMS = ['gclid', 'gbraid', 'wbraid', 'fbclid', 'msclkid', 'ttclid', 'utm_source', 'utm_medium', 'utm_campaign'];
+    var COOKIE_NAME = 'ioc_ad_visitor';
+    var COOKIE_MAX_AGE = 30 * 24 * 60 * 60;
+    var GHL_SCRIPTS = [
+      'https://backend.leadconnectorhq.com/appengine/loc/P2u1fEJ2FLpliycVsCGX/pool/z9IXoWHn24BwhcLwZPas/number_pool.js',
+      'https://backend.leadconnectorhq.com/appengine/js/user_session.js'
+    ];
+
+    var params = new URLSearchParams(window.location.search);
+    var fromAd = AD_CLICK_PARAMS.some(function (p) { return params.has(p); });
+    var hasCookie = document.cookie.split('; ').some(function (c) { return c.indexOf(COOKIE_NAME + '=') === 0; });
+
+    if (fromAd && !hasCookie) {
+      document.cookie = COOKIE_NAME + '=1; max-age=' + COOKIE_MAX_AGE + '; path=/; SameSite=Lax; Secure';
+    }
+    if (!fromAd && !hasCookie) return;
+
+    GHL_SCRIPTS.forEach(function (src) {
+      var s = document.createElement('script');
+      s.src = src;
+      s.async = false;
+      document.body.appendChild(s);
+    });
+  })();
+</script>
 
