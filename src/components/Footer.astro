@@ -112,12 +112,15 @@ import { Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
   Only loaded for visitors who arrived from a tracked ad click (or who did so within
   the last 30 days). Direct, organic, and referral traffic keeps the main clinic
   number, (385) 386-7026, exactly as written in the markup.
+  The flag cookie is scoped to .instantorthocare.com so it is shared with the ad
+  landing page at go.instantorthocare.com, which runs this same logic.
 -->
 <script is:inline>
   (function () {
     var AD_CLICK_PARAMS = ['gclid', 'gbraid', 'wbraid', 'fbclid', 'msclkid', 'ttclid', 'utm_source', 'utm_medium', 'utm_campaign'];
     var COOKIE_NAME = 'ioc_ad_visitor';
     var COOKIE_MAX_AGE = 30 * 24 * 60 * 60;
+    var COOKIE_DOMAIN = /(^|\.)instantorthocare\.com$/.test(location.hostname) ? '; domain=.instantorthocare.com' : '';
     var GHL_SCRIPTS = [
       'https://backend.leadconnectorhq.com/appengine/loc/P2u1fEJ2FLpliycVsCGX/pool/z9IXoWHn24BwhcLwZPas/number_pool.js',
       'https://backend.leadconnectorhq.com/appengine/js/user_session.js'
@@ -128,7 +131,7 @@ import { Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
     var hasCookie = document.cookie.split('; ').some(function (c) { return c.indexOf(COOKIE_NAME + '=') === 0; });
 
     if (fromAd && !hasCookie) {
-      document.cookie = COOKIE_NAME + '=1; max-age=' + COOKIE_MAX_AGE + '; path=/; SameSite=Lax; Secure';
+      document.cookie = COOKIE_NAME + '=1; max-age=' + COOKIE_MAX_AGE + '; path=/' + COOKIE_DOMAIN + '; SameSite=Lax' + (location.protocol === 'https:' ? '; Secure' : '');
     }
     if (!fromAd && !hasCookie) return;
 
