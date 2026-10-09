@@ -77,6 +77,16 @@
   }
 }
 
+/* LeadConnector chat widget: its internals use z-index 99999999 inside a shadow
+   root, which we can't style directly. Giving the host element its own stacking
+   context caps everything inside it, so it stays beneath the header and open
+   mobile menu (z-50). */
+chat-widget {
+  position: relative;
+  z-index: 40;
+  isolation: isolate;
+}
+
 /* Insurance carousel: two identical copies slide by -50% so the loop is seamless */
 .insurance-marquee {
   mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
