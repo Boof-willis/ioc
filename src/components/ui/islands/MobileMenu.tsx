@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 interface MobileMenuProps {
   className?: string;
@@ -7,16 +7,35 @@ interface MobileMenuProps {
 export default function MobileMenu({ className }: MobileMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isExiting, setIsExiting] = useState(false);
+  const panelRef = useRef<HTMLElement>(null);
 
+  // Lock page scroll while the menu is open.
+  // Note: global.css sets `html { overflow-x: hidden }`, which stops `body`'s
+  // overflow from propagating to the viewport, so we must lock `html` directly.
+  // iOS Safari also ignores overflow locking for touch, so we block touchmove
+  // outside the menu panel as well.
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-      setIsExiting(false);
-    } else {
-      document.body.style.overflow = '';
-    }
+    if (!isOpen) return;
+    setIsExiting(false);
+
+    const html = document.documentElement;
+    const prevOverflow = html.style.overflow;
+    const prevOverscroll = html.style.overscrollBehavior;
+    html.style.overflow = 'hidden';
+    html.style.overscrollBehavior = 'none';
+
+    const blockScroll = (e: Event) => {
+      if (panelRef.current?.contains(e.target as Node)) return;
+      e.preventDefault();
+    };
+    document.addEventListener('touchmove', blockScroll, { passive: false });
+    document.addEventListener('wheel', blockScroll, { passive: false });
+
     return () => {
-      document.body.style.overflow = '';
+      html.style.overflow = prevOverflow;
+      html.style.overscrollBehavior = prevOverscroll;
+      document.removeEventListener('touchmove', blockScroll);
+      document.removeEventListener('wheel', blockScroll);
     };
   }, [isOpen]);
 
@@ -24,6 +43,7 @@ export default function MobileMenu({ className }: MobileMenuProps) {
     setIsExiting(true);
     setTimeout(() => {
       setIsOpen(false);
+      setIsExiting(false);
     }, 280);
   };
 
@@ -95,6 +115,7 @@ export default function MobileMenu({ className }: MobileMenuProps) {
 
           {/* Mobile Menu */}
           <nav
+            ref={panelRef}
             style={{
               position: 'fixed',
               top: '80px',
@@ -105,8 +126,11 @@ export default function MobileMenu({ className }: MobileMenuProps) {
               zIndex: 50,
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'center',
+              justifyContent: 'safe center',
               alignItems: 'center',
+              overflowY: 'auto',
+              overscrollBehavior: 'contain',
+              WebkitOverflowScrolling: 'touch',
               border: 'none',
               boxShadow: 'none',
               outline: 'none',
