@@ -3,7 +3,8 @@ dist/
 .output/
 
 # dependencies
-node_modules/
+node_modules
+node_modules.nosync/
 
 # logs
 npm-debug.log*
