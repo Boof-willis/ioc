@@ -104,8 +104,18 @@ import { Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
   </Container>
 </footer>
 
-<!-- Kira Live Chat Widget -->
-<script src="https://beta.leadconnectorhq.com/loader.js" data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a1b39c67645b2ba9a0e50fc"></script>
+<!--
+  AI Chatbot (Athelas/Commure EHR AI agent)
+  Replaced the previous Kira/LeadConnector live chat widget on 2026-10-28 as part of
+  the clinic's EMR transition. Footer renders as the last element inside <body>, so
+  this loads just before the closing </body> tag as the vendor requires.
+-->
+<script
+  is:inline
+  src="https://ehr-ai-agents-production-frontend.onrender.com/chat-widget.js"
+  async
+  data-widget-id="1c00fcec-5c15-466c-8e0a-26200a78bd03"
+></script>
 
 <!--
   GHL Call Tracking / Number Swap

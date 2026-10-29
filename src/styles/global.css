@@ -77,14 +77,22 @@
   }
 }
 
-/* LeadConnector chat widget: its internals use z-index 99999999 inside a shadow
-   root, which we can't style directly. Giving the host element its own stacking
-   context caps everything inside it, so it stays beneath the header and open
-   mobile menu (z-50). */
-chat-widget {
+/* AI chatbot (Athelas/Commure, loaded in Footer.astro): its internals use a fixed
+   div with z-index 2147483647 inside a shadow root, which we can't style directly.
+   Giving the host element its own stacking context caps everything inside it, so
+   it stays beneath the header and open mobile menu (z-50). */
+#chat-widget-root {
   position: relative;
   z-index: 40;
   isolation: isolate;
+}
+
+/* The LeadConnector/GHL loader in A2PCompliance.astro must stay in <head> for SMS
+   carrier verification, but it also mounts a visible chat bubble in the same corner
+   as the AI chatbot above. The clinic's live chat moved to the AI chatbot, so hide
+   the GHL bubble to avoid two overlapping chat buttons. */
+chat-widget {
+  display: none !important;
 }
 
 /* Insurance carousel: two identical copies slide by -50% so the loop is seamless */
