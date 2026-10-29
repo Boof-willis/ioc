@@ -57,4 +57,4 @@ Instant Orthopedic Care (IOC) is a walk-in orthopedic urgent care clinic located
 
 ## Optional
 
-- [Patient Login](https://pp-wfe-102.advancedmd.com/156528/account/logon): Existing patient portal access.
+- [Patient Login](https://portal.athelas.com/site/instantorthocare): Existing patient portal access.
