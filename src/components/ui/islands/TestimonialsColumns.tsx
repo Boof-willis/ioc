@@ -242,7 +242,7 @@ export default function TestimonialsColumns() {
               </p>
               <div>
                 <a
-                  href="https://pp-wfe-101.advancedmd.com/163338/onlineintake/demographic"
+                  href="https://portal.athelas.com/site/instantorthocare"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center bg-blue-600 text-white px-8 py-4 rounded-full font-semibold text-xs uppercase tracking-widest hover:bg-blue-500 transition-all gap-3 shadow-lg shadow-blue-500/25 border border-blue-500/50"

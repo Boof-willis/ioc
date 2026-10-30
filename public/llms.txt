@@ -17,7 +17,7 @@ Instant Orthopedic Care (IOC) is a walk-in orthopedic urgent care clinic located
 
 - [Home](https://instantorthocare.com/): Overview of the clinic, comparison to ER and urgent care, testimonials, location, insurance info, and FAQs.
 - [Our Team](https://instantorthocare.com/team): Meet our board-certified orthopedic surgeons and physician assistants.
-- [Book Online](https://pp-wfe-101.advancedmd.com/163338/onlineintake/demographic): Online check-in and appointment scheduling.
+- [Book Online](https://portal.athelas.com/site/instantorthocare): Online check-in and appointment scheduling.
 
 ## Services
 

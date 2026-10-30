@@ -95,7 +95,7 @@ const MobileComparisonTable = () => {
         {/* CTA Button */}
         <div className="pt-4">
           <a 
-            href="https://pp-wfe-101.advancedmd.com/163338/onlineintake/demographic" 
+            href="https://portal.athelas.com/site/instantorthocare" 
             className="flex items-center justify-center w-full py-4 bg-blue-600 text-white font-bold text-lg rounded-full shadow-xl shadow-blue-900/30 hover:bg-blue-700 transition-all active:scale-95 border border-white/20 backdrop-blur-sm"
           >
             Check In Now

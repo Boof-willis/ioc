@@ -189,7 +189,7 @@ export default function MobileMenu({ className }: MobileMenuProps) {
               </a>
 
               <a
-                href="https://pp-wfe-101.advancedmd.com/163338/onlineintake/demographic"
+                href="https://portal.athelas.com/site/instantorthocare"
                 onClick={closeMenu}
                 style={{
                   display: 'block',
