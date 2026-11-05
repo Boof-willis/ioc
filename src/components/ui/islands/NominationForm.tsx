@@ -13,7 +13,7 @@ const STEPS = [
 type Status = 'idle' | 'sending' | 'sent' | 'emailed' | 'error';
 
 const inputClass =
-  'w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-base text-slate-900 placeholder:text-slate-400 transition-colors focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-100';
+  'ioc-field w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-base text-slate-900 placeholder:text-slate-400 transition-[border-color,box-shadow] focus:outline-none';
 const labelClass = 'mb-1.5 block text-sm font-semibold text-slate-800';
 
 function push(event: Record<string, unknown>) {
@@ -250,7 +250,7 @@ export default function NominationForm() {
             {ASSISTANCE_OPTIONS.map((option) => (
               <label
                 key={option}
-                className="flex cursor-pointer items-center gap-3 rounded-xl border border-slate-300 bg-white px-4 py-4 text-base font-medium text-slate-700 transition-colors hover:border-blue-300 has-[:checked]:border-blue-500 has-[:checked]:bg-blue-50 has-[:checked]:text-slate-900 has-[:focus-visible]:ring-4 has-[:focus-visible]:ring-blue-100"
+                className="ioc-choice flex cursor-pointer items-center gap-3 rounded-xl border border-slate-300 bg-white px-4 py-4 text-base font-medium text-slate-700 transition-[border-color,background-color,box-shadow] hover:border-blue-300 has-[:checked]:border-blue-500 has-[:checked]:bg-blue-50 has-[:checked]:text-slate-900"
               >
                 <input
                   type="checkbox"

@@ -289,3 +289,23 @@ header img {
   max-width: 100%;
   height: auto;
 }
+
+/* Form fields that opt back in to a visible focus state.
+   The rules above force focused inputs to border-color: inherit and strip every ring,
+   which leaves fields with no visible active state. These selectors are more specific,
+   so they win over those !important rules for elements with these classes only. */
+input.ioc-field:focus,
+input.ioc-field:focus-visible,
+textarea.ioc-field:focus,
+textarea.ioc-field:focus-visible,
+select.ioc-field:focus,
+select.ioc-field:focus-visible {
+  border-color: rgb(37 99 235) !important; /* blue-600 */
+  box-shadow: 0 0 0 4px rgb(219 234 254) !important; /* blue-100 ring */
+}
+
+/* Checkbox tiles: show the ring when the box inside has keyboard focus. */
+label.ioc-choice:has(input:focus-visible) {
+  border-color: rgb(37 99 235) !important;
+  box-shadow: 0 0 0 4px rgb(219 234 254) !important;
+}
