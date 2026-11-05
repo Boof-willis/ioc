@@ -1,0 +1,301 @@
+---
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import Container from '@/components/ui/Container.astro';
+import A2PCompliance from '@/components/A2PCompliance.astro';
+import NominationForm from '@/components/ui/islands/NominationForm';
+import { FUND_EMAIL, DONATION_LINKS, DONATION_DISCLOSURE, MAX_AWARD } from '@/config/access-to-play';
+import '@/styles/global.css';
+
+const pageUrl = 'https://instantorthocare.com/access-to-play';
+const title = 'Access to Play Fund | Instant Orthopedic Care';
+const description = `The Access to Play Fund helps local youth athletes cover sports registration fees, equipment, uniforms, and other costs. Nominate an athlete or donate to the fund.`;
+
+// Stand-in photo (Unsplash License, free for commercial use). Swap for a local photo when one is ready.
+const photo = 'https://images.unsplash.com/photo-1629977007371-0ba395424741';
+const photoAt = (w: number) => `${photo}?auto=format&fit=crop&w=${w}&q=70`;
+const photoSrcset = [640, 960, 1280, 1600].map((w) => `${photoAt(w)} ${w}w`).join(', ');
+const ogImage = `${photo}?auto=format&fit=crop&w=1200&h=630&q=70`;
+
+const covers = [
+  {
+    title: 'Registration fees',
+    text: 'League, club, and school team fees.',
+    path: 'M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 0 1 0 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 0 1 0-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375Z',
+  },
+  {
+    title: 'Equipment',
+    text: 'Cleats, pads, gloves, and other gear.',
+    path: 'M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007Z',
+  },
+  {
+    title: 'Uniforms',
+    text: 'Jerseys, shorts, socks, and team gear.',
+    path: 'M9 3 4.5 5.25 2.25 10.5l3 1.125V21h13.5v-9.375l3-1.125L19.5 5.25 15 3a3 3 0 0 1-6 0Z',
+  },
+  {
+    title: 'Other costs',
+    text: 'Other expenses that come with joining a team.',
+    path: 'M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z',
+  },
+];
+
+const steps = [
+  { title: 'Nominate', text: 'Share a few details about the athlete and what they need to play.' },
+  { title: 'Review', text: 'Our team reviews each nomination based on need and available funding.' },
+  { title: 'Support', text: `Selected athletes receive up to $${MAX_AWARD} toward the cost of playing.` },
+];
+
+const donationsOpen = Object.values(DONATION_LINKS).some(Boolean);
+// Each amount uses its own link, or the custom-amount link when it has none.
+const donationTiles = [
+  ...(['25', '50', '100', '250'] as const).map((amount) => ({
+    key: amount,
+    label: `$${amount}`,
+    note: amount === String(MAX_AWARD) ? 'Funds one full award' : '',
+    href: DONATION_LINKS[amount] || DONATION_LINKS.custom,
+  })),
+  { key: 'custom', label: 'Custom', note: 'Any amount', href: DONATION_LINKS.custom },
+];
+---
+
+<html lang="en">
+  <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-52DJTWGN');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="canonical" href={pageUrl} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Instant Orthopedic Care" />
+    <meta property="og:title" content="Access to Play Fund" />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Access to Play Fund" />
+    <meta name="twitter:description" content={description} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <A2PCompliance />
+  </head>
+  <body class="bg-white text-slate-900 font-sans antialiased selection:bg-blue-500 selection:text-white">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-52DJTWGN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <Header />
+
+    <main>
+      <!-- Hero -->
+      <section class="relative overflow-hidden bg-white pt-10 pb-16 md:pt-16 md:pb-24 lg:pt-20">
+        <div class="pointer-events-none absolute -top-24 left-1/2 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-blue-100/50 blur-[120px]"></div>
+        <Container class="relative">
+          <div class="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+            <div>
+              <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-blue-700">
+                <span class="h-2 w-2 rounded-full bg-ioc-green"></span>
+                IOC community initiative
+              </div>
+              <h1 class="mb-6 text-5xl font-bold leading-[1.02] tracking-tight text-slate-900 md:text-6xl lg:text-7xl">
+                Access to <span class="whitespace-nowrap text-blue-600">Play Fund</span>
+              </h1>
+              <p class="mb-8 max-w-xl text-lg leading-relaxed text-slate-600 md:text-xl">
+                Registration fees, cleats, and uniforms add up fast. The Access to Play Fund helps local youth athletes cover the cost of playing the sports they love.
+              </p>
+              <div class="flex flex-col gap-3 sm:flex-row sm:gap-4">
+                <a href="#nominate" class="inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-8 py-4 font-bold text-white shadow-lg shadow-blue-600/25 transition-all hover:bg-blue-700 hover:-translate-y-0.5 active:translate-y-0">
+                  Nominate an Athlete
+                </a>
+                <a href="#donate" class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-900 px-8 py-[14px] font-bold text-slate-900 transition-all hover:bg-slate-900 hover:text-white hover:-translate-y-0.5 active:translate-y-0">
+                  Donate to the Fund
+                </a>
+              </div>
+            </div>
+
+            <div class="relative">
+              <div class="aspect-[4/3] overflow-hidden rounded-[2rem] bg-slate-200 shadow-2xl shadow-blue-950/20 lg:aspect-[5/6]">
+                <img
+                  src={photoAt(1280)}
+                  srcset={photoSrcset}
+                  sizes="(min-width: 1024px) 520px, 100vw"
+                  alt="Youth soccer player in a blue number 15 jersey going up for the ball"
+                  width="1280"
+                  height="1067"
+                  fetchpriority="high"
+                  class="h-full w-full object-cover object-[42%_center]"
+                />
+              </div>
+              <div class="relative mx-4 -mt-8 flex items-center gap-4 rounded-2xl bg-white p-4 shadow-xl shadow-slate-900/10 ring-1 ring-slate-900/5 sm:absolute sm:-bottom-6 sm:right-6 sm:mx-0 sm:mt-0 sm:max-w-[19rem] lg:-left-8 lg:right-auto">
+                <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-ioc-green/25 text-green-800">
+                  <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d={covers[3].path} /></svg>
+                </div>
+                <p class="text-sm leading-snug text-slate-600">
+                  <span class="block text-lg font-bold text-slate-900">Up to ${MAX_AWARD} per athlete</span>
+                  for fees, gear, and uniforms
+                </p>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <!-- About the fund -->
+      <section id="about" class="bg-ioc-gray-light py-20 md:py-28">
+        <Container>
+          <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+            <div>
+              <span class="mb-3 inline-block text-xs font-bold uppercase tracking-widest text-blue-600">Our Commitment to the Community</span>
+              <h2 class="mb-6 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl text-balance">Every Child Deserves a Chance to Play.</h2>
+              <div class="space-y-4 text-lg leading-relaxed text-slate-600">
+                <p>At Instant Orthopedic Care, we believe every child deserves the opportunity to experience the benefits of sports, regardless of financial circumstances.</p>
+                <p>That's why we created the Access to Play Fund, a community initiative dedicated to helping young athletes overcome financial barriers to participation.</p>
+              </div>
+              <p class="mt-8 border-l-4 border-ioc-green pl-4 font-semibold text-slate-800">
+                Assistance is up to ${MAX_AWARD} per athlete, depending on need and available funding.
+              </p>
+            </div>
+            <div>
+              <h3 class="mb-5 text-sm font-bold text-slate-500">The fund can help with</h3>
+              <ul class="grid grid-cols-2 gap-3 sm:gap-4">
+                {covers.map((item) => (
+                  <li class="rounded-2xl border border-slate-100 bg-white p-4 shadow-sm sm:p-6">
+                    <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+                      <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d={item.path} /></svg>
+                    </div>
+                    <p class="mb-1 font-bold text-slate-900">{item.title}</p>
+                    <p class="text-sm leading-relaxed text-slate-500">{item.text}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <!-- IOC commitment -->
+      <section class="bg-white py-20 md:py-24">
+        <Container>
+          <div class="relative overflow-hidden rounded-[2.5rem] bg-slate-900 px-8 py-14 shadow-2xl md:px-16 md:py-20">
+            <div class="pointer-events-none absolute -right-24 -top-24 h-[420px] w-[520px] rounded-full bg-blue-600/25 blur-[110px]"></div>
+            <div class="relative grid items-center gap-8 md:grid-cols-[auto_1fr] md:gap-16">
+              <p class="text-[6.5rem] font-extrabold leading-none tracking-tighter text-ioc-green md:text-[9rem]" aria-hidden="true">2%</p>
+              <div class="max-w-xl">
+                <span class="mb-3 inline-block text-xs font-bold uppercase tracking-widest text-blue-300">Our commitment</span>
+                <h2 class="mb-4 text-2xl font-bold leading-snug tracking-tight text-white md:text-3xl text-balance">As Instant Orthopedic Care grows, we're committed to contributing 2% of our positive net profits to support the fund, alongside contributions from individuals and businesses who share our vision.</h2>
+                <p class="text-lg font-semibold leading-relaxed text-ioc-green">
+                  Together, we can help more kids get in the game.
+                </p>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <!-- Nominate -->
+      <section id="nominate" class="bg-ioc-gray-light py-20 md:py-28">
+        <Container>
+          <div class="grid items-start gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+            <div class="lg:sticky lg:top-28">
+              <span class="mb-3 inline-block text-xs font-bold uppercase tracking-widest text-blue-600">Nominate an athlete</span>
+              <h2 class="mb-4 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl text-balance">Know a young athlete who could use a hand?</h2>
+              <p class="mb-10 text-lg leading-relaxed text-slate-600">Tell us about them and what they need to play this season.</p>
+              <ol class="space-y-6">
+                {steps.map((step, i) => (
+                  <li class="flex gap-4">
+                    <span class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-sm font-bold text-white">{i + 1}</span>
+                    <div class="pt-1">
+                      <p class="font-bold text-slate-900">{step.title}</p>
+                      <p class="text-slate-600">{step.text}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+              <p class="mt-10 text-sm text-slate-500">
+                Questions? Email <a href={`mailto:${FUND_EMAIL}`} class="font-semibold text-blue-600 hover:underline">{FUND_EMAIL}</a>
+              </p>
+            </div>
+            <div class="rounded-[2rem] border border-slate-100 bg-white p-6 shadow-xl shadow-slate-900/5 sm:p-8 md:p-10">
+              <NominationForm client:visible />
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <!-- Donate -->
+      <section id="donate" class="bg-white py-20 md:py-28">
+        <Container size="md">
+          <div class="mb-12 text-center">
+            <span class="mb-3 inline-block text-xs font-bold uppercase tracking-widest text-blue-600">Donate to the Fund</span>
+            <h2 class="mb-4 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl text-balance">Support the Access to Play Fund</h2>
+            <p class="mx-auto max-w-2xl text-lg leading-relaxed text-slate-600">
+              Your contribution helps local youth athletes overcome financial barriers to sports participation, including registration fees, equipment, and uniforms.
+            </p>
+          </div>
+
+          {!donationsOpen && (
+            <p class="mx-auto mb-6 max-w-2xl rounded-2xl bg-blue-50 px-5 py-4 text-center text-sm font-medium text-blue-900">
+              Online contributions open soon. To contribute now, email <a href={`mailto:${FUND_EMAIL}`} class="font-bold underline underline-offset-2">{FUND_EMAIL}</a>.
+            </p>
+          )}
+
+          <div class="grid grid-cols-2 gap-3 sm:grid-cols-5">
+            {donationTiles.map((tile) => {
+              const custom = tile.key === 'custom';
+              const size = custom ? 'text-xl' : 'text-3xl';
+              const span = custom ? 'col-span-2 sm:col-span-1' : '';
+              return tile.href ? (
+                <a
+                  href={tile.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-donation-amount={tile.key}
+                  class:list={[
+                    'flex flex-col items-center justify-center rounded-2xl border-2 px-4 py-6 text-center transition-all hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-4',
+                    custom
+                      ? 'border-blue-600 bg-blue-600 text-white hover:bg-blue-700 focus-visible:ring-blue-200'
+                      : 'border-slate-200 text-slate-900 hover:border-blue-500 hover:bg-blue-50 focus-visible:border-blue-500 focus-visible:ring-blue-100',
+                    span,
+                  ]}
+                >
+                  <span class:list={[size, 'font-extrabold tracking-tight']}>{tile.label}</span>
+                  {tile.note && <span class:list={['mt-1 text-xs font-semibold', custom ? 'text-blue-100' : 'text-blue-700']}>{tile.note}</span>}
+                </a>
+              ) : (
+                <div aria-disabled="true" class:list={['flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-slate-200 px-4 py-6 text-center text-slate-400', span]}>
+                  <span class:list={[size, 'font-extrabold tracking-tight']}>{tile.label}</span>
+                  {tile.note && <span class="mt-1 text-xs font-semibold">{tile.note}</span>}
+                </div>
+              );
+            })}
+          </div>
+
+          {DONATION_DISCLOSURE && (
+            <p class="mx-auto mt-6 max-w-2xl text-center text-sm leading-relaxed text-slate-500">{DONATION_DISCLOSURE}</p>
+          )}
+        </Container>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>
