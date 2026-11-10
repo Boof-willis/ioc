@@ -46,17 +46,17 @@ const steps = [
   { title: 'Support', text: `Selected athletes receive up to $${MAX_AWARD} toward the cost of playing.` },
 ];
 
+const AMOUNTS = ['25', '50', '100', '250'] as const;
 const donationsOpen = Object.values(DONATION_LINKS).some(Boolean);
-// Each amount uses its own link, or the custom-amount link when it has none.
-const donationTiles = [
-  ...(['25', '50', '100', '250'] as const).map((amount) => ({
-    key: amount,
-    label: `$${amount}`,
-    note: amount === String(MAX_AWARD) ? 'Funds one full award' : '',
-    href: DONATION_LINKS[amount] || DONATION_LINKS.custom,
-  })),
-  { key: 'custom', label: 'Custom', note: 'Any amount', href: DONATION_LINKS.custom },
-];
+// Fixed-amount buttons only appear for amounts that have their own Stripe link.
+const amountTiles = AMOUNTS.filter((a) => DONATION_LINKS[a]).map((a) => ({
+  key: a,
+  label: `$${a}`,
+  note: a === String(MAX_AWARD) ? 'Funds one full award' : '',
+  href: DONATION_LINKS[a],
+}));
+const useTiles = amountTiles.length > 0;
+const donationTiles = [...amountTiles, { key: 'custom', label: 'Custom', note: 'Any amount', href: DONATION_LINKS.custom }];
 ---
 
 <html lang="en">
@@ -258,36 +258,66 @@ const donationTiles = [
             </p>
           )}
 
-          <div class="grid grid-cols-2 gap-3 sm:grid-cols-5">
-            {donationTiles.map((tile) => {
-              const custom = tile.key === 'custom';
-              const size = custom ? 'text-xl' : 'text-3xl';
-              const span = custom ? 'col-span-2 sm:col-span-1' : '';
-              return tile.href ? (
+          {useTiles ? (
+            <div class="flex flex-wrap justify-center gap-3">
+              {donationTiles.map((tile) => {
+                const custom = tile.key === 'custom';
+                const base = 'flex w-[calc(50%-0.375rem)] flex-col items-center justify-center rounded-2xl border-2 px-4 py-6 text-center sm:w-36';
+                return tile.href ? (
+                  <a
+                    href={tile.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-donation-amount={tile.key}
+                    class:list={[
+                      base,
+                      'transition-all hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-4',
+                      custom
+                        ? 'border-blue-600 bg-blue-600 text-white hover:bg-blue-700 focus-visible:ring-blue-200'
+                        : 'border-slate-200 text-slate-900 hover:border-blue-500 hover:bg-blue-50 focus-visible:border-blue-500 focus-visible:ring-blue-100',
+                    ]}
+                  >
+                    <span class:list={[custom ? 'text-xl' : 'text-3xl', 'font-extrabold tracking-tight']}>{tile.label}</span>
+                    {tile.note && <span class:list={['mt-1 text-xs font-semibold', custom ? 'text-blue-100' : 'text-blue-700']}>{tile.note}</span>}
+                  </a>
+                ) : (
+                  <div aria-disabled="true" class:list={[base, 'border-dashed border-slate-200 text-slate-400']}>
+                    <span class="text-xl font-extrabold tracking-tight">{tile.label}</span>
+                    <span class="mt-1 text-xs font-semibold">{tile.note}</span>
+                  </div>
+                );
+              })}
+            </div>
+          ) : (
+            <div class="mx-auto max-w-2xl rounded-3xl border-2 border-slate-200 p-6 text-center sm:p-8">
+              <p class="mb-4 text-xs font-bold uppercase tracking-widest text-slate-500">Suggested gifts</p>
+              <ul class="mb-8 flex flex-wrap items-start justify-center gap-x-8 gap-y-4" aria-label="Suggested gift amounts">
+                {AMOUNTS.map((amount) => (
+                  <li class="flex flex-col items-center">
+                    <span class="text-3xl font-extrabold tracking-tight text-slate-900">${amount}</span>
+                    {amount === String(MAX_AWARD) && <span class="mt-1 text-xs font-semibold text-blue-700">Funds one full award</span>}
+                  </li>
+                ))}
+              </ul>
+              {DONATION_LINKS.custom ? (
                 <a
-                  href={tile.href}
+                  href={DONATION_LINKS.custom}
                   target="_blank"
                   rel="noopener noreferrer"
-                  data-donation-amount={tile.key}
-                  class:list={[
-                    'flex flex-col items-center justify-center rounded-2xl border-2 px-4 py-6 text-center transition-all hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-4',
-                    custom
-                      ? 'border-blue-600 bg-blue-600 text-white hover:bg-blue-700 focus-visible:ring-blue-200'
-                      : 'border-slate-200 text-slate-900 hover:border-blue-500 hover:bg-blue-50 focus-visible:border-blue-500 focus-visible:ring-blue-100',
-                    span,
-                  ]}
+                  data-donation-amount="custom"
+                  class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-blue-600 px-8 py-4 text-lg font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-200 sm:w-auto"
                 >
-                  <span class:list={[size, 'font-extrabold tracking-tight']}>{tile.label}</span>
-                  {tile.note && <span class:list={['mt-1 text-xs font-semibold', custom ? 'text-blue-100' : 'text-blue-700']}>{tile.note}</span>}
+                  Donate Securely
+                  <span aria-hidden="true">→</span>
                 </a>
               ) : (
-                <div aria-disabled="true" class:list={['flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-slate-200 px-4 py-6 text-center text-slate-400', span]}>
-                  <span class:list={[size, 'font-extrabold tracking-tight']}>{tile.label}</span>
-                  {tile.note && <span class="mt-1 text-xs font-semibold">{tile.note}</span>}
-                </div>
-              );
-            })}
-          </div>
+                <span aria-disabled="true" class="inline-flex w-full items-center justify-center rounded-full border-2 border-dashed border-slate-200 px-8 py-4 text-lg font-bold text-slate-400 sm:w-auto">
+                  Donate Securely
+                </span>
+              )}
+              <p class="mt-4 text-sm text-slate-500">You can choose any amount on the next page. Payments are processed by Stripe.</p>
+            </div>
+          )}
 
           {DONATION_DISCLOSURE && (
             <p class="mx-auto mt-6 max-w-2xl text-center text-sm leading-relaxed text-slate-500">{DONATION_DISCLOSURE}</p>

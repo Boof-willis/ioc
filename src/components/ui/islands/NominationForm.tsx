@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
-import { FUND_EMAIL, MAX_AWARD, NOMINATION_FORM_KEY } from '@/config/access-to-play';
+import { FUND_EMAIL, MAX_AWARD, NOMINATION_ENDPOINT } from '@/config/access-to-play';
 
 const ASSISTANCE_OPTIONS = ['Registration fees', 'Equipment', 'Uniform', 'Other participation costs'];
 
@@ -10,7 +10,7 @@ const STEPS = [
   { key: 'you', title: 'How can we reach you?', hint: "We'll only contact you about this nomination." },
 ] as const;
 
-type Status = 'idle' | 'sending' | 'sent' | 'emailed' | 'error';
+type Status = 'idle' | 'sending' | 'sent' | 'error';
 
 const inputClass =
   'ioc-field w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-base text-slate-900 placeholder:text-slate-400 transition-[border-color,box-shadow] focus:outline-none';
@@ -95,42 +95,26 @@ export default function NominationForm() {
       return;
     }
 
-    const fields: Record<string, string> = {
-      'Nominator name': value('nominator_name'),
-      'Nominator email': value('nominator_email'),
-      'Nominator phone': value('nominator_phone') || 'Not provided',
-      'Athlete name': value('athlete_name'),
-      'Athlete age': value('athlete_age'),
-      'Sport or organization': value('sport'),
-      'Assistance needed': data.getAll('assistance').map(String).join(', '),
-      'Estimated amount requested': `$${value('amount_requested')}`,
-      'Why they are being nominated': value('reason'),
+    // Field names match what the Worker in workers/nominations expects.
+    const fields = {
+      athlete_name: value('athlete_name'),
+      athlete_age: value('athlete_age'),
+      sport: value('sport'),
+      assistance: data.getAll('assistance').map(String).join(', '),
+      amount_requested: value('amount_requested'),
+      reason: value('reason'),
+      nominator_name: value('nominator_name'),
+      nominator_email: value('nominator_email'),
+      nominator_phone: value('nominator_phone'),
     };
-    const subject = `Access to Play nomination: ${fields['Athlete name']}`;
-    setAthlete(fields['Athlete name']);
-
-    if (!NOMINATION_FORM_KEY) {
-      const body = Object.entries(fields)
-        .map(([k, v]) => `${k}: ${v}`)
-        .join('\n\n');
-      window.location.href = `mailto:${FUND_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      push({ event: 'access_to_play_nomination', nomination_method: 'email' });
-      setStatus('emailed');
-      return;
-    }
+    setAthlete(fields.athlete_name);
 
     setStatus('sending');
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
+      const res = await fetch(NOMINATION_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          access_key: NOMINATION_FORM_KEY,
-          subject,
-          from_name: 'IOC website: Access to Play Fund',
-          replyto: fields['Nominator email'],
-          ...fields,
-        }),
+        body: JSON.stringify(fields),
       });
       const json = await res.json().catch(() => null);
       if (!res.ok || !json?.success) throw new Error('Submission failed');
@@ -149,7 +133,7 @@ export default function NominationForm() {
     setStatus('idle');
   }
 
-  if (status === 'sent' || status === 'emailed') {
+  if (status === 'sent') {
     return (
       <div role="status" className="py-6 text-center">
         <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-ioc-green/20">
@@ -157,27 +141,11 @@ export default function NominationForm() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        {status === 'sent' ? (
-          <>
-            <h3 className="mb-2 text-2xl font-bold text-slate-900">Nomination received</h3>
-            <p className="mx-auto max-w-sm text-slate-600">
-              Thank you for nominating {athlete || 'this athlete'}. Our team reviews every nomination, and we'll reach
-              out by email with any questions.
-            </p>
-          </>
-        ) : (
-          <>
-            <h3 className="mb-2 text-2xl font-bold text-slate-900">Almost done</h3>
-            <p className="mx-auto max-w-sm text-slate-600">
-              Your email app should open with the nomination written out. Press send to finish. If it didn't open,
-              email the details to{' '}
-              <a href={`mailto:${FUND_EMAIL}`} className="font-semibold text-blue-600 underline-offset-2 hover:underline">
-                {FUND_EMAIL}
-              </a>
-              .
-            </p>
-          </>
-        )}
+        <h3 className="mb-2 text-2xl font-bold text-slate-900">Nomination received</h3>
+        <p className="mx-auto max-w-sm text-slate-600">
+          Thank you for nominating {athlete || 'this athlete'}. Our team reviews every nomination, and we'll reach out
+          by email with any questions.
+        </p>
         <button type="button" onClick={startOver} className="mt-6 text-sm font-bold text-blue-600 hover:text-blue-700">
           Nominate another athlete
         </button>

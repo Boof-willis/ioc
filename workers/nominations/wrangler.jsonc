@@ -1,0 +1,26 @@
+{
+  // Emails Access to Play Fund nominations. Deploy with: npx wrangler deploy (from this folder).
+  "name": "ioc-nominations",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-11-01",
+  "account_id": "15c0ed37096745bbf79320d99b111039",
+  "workers_dev": false,
+  "routes": [
+    { "pattern": "instantorthocare.com/api/nominate", "zone_name": "instantorthocare.com" },
+    { "pattern": "www.instantorthocare.com/api/nominate", "zone_name": "instantorthocare.com" }
+  ],
+  "vars": {
+    "NOMINATION_TO": "accesstoplay@instantorthocare.com",
+    // Sent from the notify. subdomain, which is onboarded to Cloudflare Email Sending on its own
+    // so its DMARC policy never touches the clinic's main @instantorthocare.com mail.
+    "NOMINATION_FROM": "nominations@notify.instantorthocare.com"
+  },
+  "send_email": [
+    {
+      "name": "EMAIL",
+      "remote": true,
+      // The Worker can only email these addresses, so a bug or abuse can't use it to mail anyone else.
+      "allowed_destination_addresses": ["accesstoplay@instantorthocare.com"]
+    }
+  ]
+}
