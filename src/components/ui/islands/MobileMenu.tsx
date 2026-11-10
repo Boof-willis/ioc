@@ -54,6 +54,7 @@ export default function MobileMenu({ className }: MobileMenuProps) {
     { label: 'Location', href: '/#location' },
     { label: 'Reviews', href: '/#testimonials' },
     { label: 'Patient Resources', href: '/patient-resources' },
+    { label: 'Access to Play', href: '/access-to-play/' },
     { label: 'Contact', href: '/contact' },
     { label: 'Login', href: 'https://portal.athelas.com/site/instantorthocare' },
   ];
@@ -66,7 +67,7 @@ export default function MobileMenu({ className }: MobileMenuProps) {
     <div className={className} style={{ display: 'block' }}>
       <button
         onClick={() => (isOpen ? closeMenu() : setIsOpen(true))}
-        className="lg:hidden relative w-10 h-10 flex items-center justify-center"
+        className="xl:hidden relative w-10 h-10 flex items-center justify-center"
         aria-label="Toggle menu"
         style={{
           background: 'transparent',
