@@ -147,16 +147,16 @@ function TestimonialsColumn({
             {testimonials.map((t, i) => (
               <div
                 key={`${copyIndex}-${i}`}
-                className="p-7 rounded-2xl border border-slate-100 bg-white shadow-md shadow-slate-200/60 w-full"
+                className="p-7 rounded-2xl border border-slate-100 bg-white shadow-sm w-full"
               >
                 <StarRating />
-                <p className="text-gray-700 text-[15px] leading-relaxed mb-5">"{t.text}"</p>
+                <p className="text-slate-700 text-[15px] leading-relaxed mb-5">"{t.text}"</p>
                 <div className="flex items-center gap-3 pt-4 border-t border-slate-100">
                   <div className={`w-9 h-9 rounded-full ${t.color} flex items-center justify-center flex-shrink-0`}>
                     <span className="text-white font-bold text-[10px] tracking-wide">{t.initials}</span>
                   </div>
                   <div className="flex flex-col">
-                    <span className="font-semibold text-gray-900 text-sm leading-5 tracking-tight">
+                    <span className="font-semibold text-slate-900 text-sm leading-5 tracking-tight">
                       {t.name}
                     </span>
                     <span className="text-slate-400 text-xs leading-5 tracking-tight">
@@ -179,7 +179,7 @@ export default function TestimonialsColumns() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4 leading-[0.95]">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4 leading-tight">
             Care that puts <span className="text-blue-600">you first.</span>
           </h2>
           <p className="text-lg text-slate-500">
@@ -206,9 +206,7 @@ export default function TestimonialsColumns() {
         </div>
 
         {/* CTA Banner — Solid dark with blended right image */}
-        <div className="mt-16 rounded-3xl overflow-hidden shadow-2xl relative bg-slate-900">
-          {/* Subtle blue glow to keep brand presence */}
-          <div className="absolute top-1/2 -translate-y-1/2 left-0 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[100px] pointer-events-none mix-blend-screen"></div>
+        <div className="mt-16 rounded-3xl overflow-hidden shadow-xl relative bg-slate-900">
 
           {/* Right image positioned absolutely behind everything */}
           <div className="absolute inset-0 hidden md:block">
@@ -245,7 +243,7 @@ export default function TestimonialsColumns() {
                   href="https://portal.athelas.com/site/instantorthocare"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center bg-blue-600 text-white px-8 py-4 rounded-full font-semibold text-xs uppercase tracking-widest hover:bg-blue-500 transition-all gap-3 shadow-lg shadow-blue-500/25 border border-blue-500/50"
+                  className="inline-flex items-center bg-blue-600 text-white px-8 py-4 rounded-full font-semibold text-xs uppercase tracking-widest hover:bg-blue-700 transition-all gap-3 shadow-lg shadow-blue-600/25 border border-blue-500/50"
                 >
                   Book Online
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

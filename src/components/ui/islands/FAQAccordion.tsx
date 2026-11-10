@@ -23,8 +23,8 @@ export default function FAQAccordion({ items }: FAQAccordionProps) {
           key={index} 
           className={`border rounded-2xl overflow-hidden transition-all duration-300 ${
             openIndex === index 
-              ? 'border-blue-600 bg-blue-50 shadow-md' 
-              : 'border-gray-200 bg-white shadow-sm hover:border-blue-400'
+              ? 'border-blue-600 bg-blue-50 shadow-sm' 
+              : 'border-slate-200 bg-white shadow-sm hover:border-blue-400'
           }`}
         >
           <button
@@ -33,7 +33,7 @@ export default function FAQAccordion({ items }: FAQAccordionProps) {
               openIndex === index ? 'bg-blue-50' : 'bg-white hover:bg-blue-50'
             }`}
           >
-            <span className="font-semibold text-sm md:text-lg pr-4 text-gray-900 leading-snug line-clamp-2 md:line-clamp-none">{item.question}</span>
+            <span className="font-semibold text-sm md:text-lg pr-4 text-slate-900 leading-snug line-clamp-2 md:line-clamp-none">{item.question}</span>
             <svg
               className={`w-6 h-6 text-blue-600 flex-shrink-0 transition-transform duration-500 ${
                 openIndex === index ? 'rotate-180' : ''
@@ -50,7 +50,7 @@ export default function FAQAccordion({ items }: FAQAccordionProps) {
               openIndex === index ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
             }`}
           >
-            <div className="px-6 md:px-8 py-6 bg-white text-gray-700 border-t border-blue-100">
+            <div className="px-6 md:px-8 py-6 bg-white text-slate-700 border-t border-blue-100">
               <p className="text-base md:text-lg leading-relaxed">{item.answer}</p>
             </div>
           </div>

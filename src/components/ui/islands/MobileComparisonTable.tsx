@@ -44,7 +44,7 @@ const MobileComparisonTable = () => {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest mb-4">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
             </span>
             Why Choose Us
           </div>
@@ -70,7 +70,7 @@ const MobileComparisonTable = () => {
           </div>
 
           {/* Right Column: IOC (Highlighted) */}
-          <div className="bg-blue-600 border border-blue-500 rounded-2xl rounded-bl-none overflow-hidden relative shadow-lg shadow-blue-900/20">
+          <div className="bg-blue-600 border border-blue-500 rounded-2xl rounded-bl-none overflow-hidden relative shadow-lg shadow-blue-600/25">
             {/* Header Cell */}
             <div className="h-20 flex flex-col justify-center items-center border-b border-blue-500/30 bg-blue-600">
               <p className="text-white font-extrabold text-xl leading-none mb-1">IOC</p>
@@ -96,7 +96,7 @@ const MobileComparisonTable = () => {
         <div className="pt-4">
           <a 
             href="https://portal.athelas.com/site/instantorthocare" 
-            className="flex items-center justify-center w-full py-4 bg-blue-600 text-white font-bold text-lg rounded-full shadow-xl shadow-blue-900/30 hover:bg-blue-700 transition-all active:scale-95 border border-white/20 backdrop-blur-sm"
+            className="flex items-center justify-center w-full py-4 bg-blue-600 text-white font-bold text-lg rounded-full shadow-xl shadow-blue-600/25 hover:bg-blue-700 transition-all active:scale-95 border border-white/20"
           >
             Check In Now
           </a>

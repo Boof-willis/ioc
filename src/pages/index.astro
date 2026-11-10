@@ -254,7 +254,7 @@ const insurancePlans = [
     <!-- Full Screen Hero -->
     <div class="min-h-[calc(100vh-5rem)] flex flex-col relative overflow-hidden">
 
-        <div class="relative z-10 h-[calc(100dvh-5rem)] lg:h-[85vh] min-h-[600px] w-full lg:w-[calc(100%-2rem)] max-w-[1400px] mx-0 lg:mx-auto rounded-none lg:rounded-[2.5rem] flex flex-col overflow-hidden border-0 lg:border border-slate-200/50 bg-white">
+        <div class="relative z-10 h-[calc(100dvh-5rem)] lg:h-[85vh] min-h-[600px] w-full lg:w-[calc(100%-2rem)] max-w-[1400px] mx-0 lg:mx-auto rounded-none lg:rounded-3xl flex flex-col overflow-hidden border-0 lg:border border-slate-200/50 bg-white">
         
         <!-- Background Image -->
         <div class="absolute inset-0 w-full h-full">
@@ -460,12 +460,12 @@ const insurancePlans = [
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-[10px] font-bold uppercase tracking-widest mb-6">
             <span class="relative flex h-2 w-2">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
             </span>
             Insurance Accepted
           </div>
 
-          <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 tracking-tight leading-[1.1] text-balance">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight text-balance">
             We accept most major insurance plans, plus HSA and FSA cards.
           </h2>
 
@@ -508,7 +508,7 @@ const insurancePlans = [
           <p class="text-slate-800 text-base md:text-lg leading-relaxed">
             <span class="font-semibold">Don't see your plan?</span> We work with many additional insurance plans. Call us and we'll verify your coverage before your visit.
           </p>
-          <a href="tel:3853867026" class="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-ioc-blue hover:bg-ioc-blue-dark text-white font-semibold text-base px-7 py-3.5 shadow-lg shadow-ioc-blue/30 transition-colors">
+          <a href="tel:3853867026" class="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold text-base px-7 py-3.5 shadow-lg shadow-blue-600/25 transition-colors">
             <Phone client:load className="w-4 h-4" />
             Call (385) 386-7026
           </a>
@@ -525,7 +525,7 @@ const insurancePlans = [
 
             <h3 class="text-3xl md:text-4xl lg:text-5xl font-semibold text-slate-900 tracking-tight leading-[1.05] mb-6">
               Affordable, transparent
-              <span class="text-ioc-blue">
+              <span class="text-blue-600">
                 orthopedic care.
               </span>
             </h3>
@@ -539,7 +539,7 @@ const insurancePlans = [
                 <div class="text-4xl font-semibold text-slate-900 tracking-tight mb-2 group-hover:text-blue-600 transition-colors">
                   85%
                 </div>
-                <div class="h-0.5 w-12 bg-slate-200 mb-3 group-hover:w-full group-hover:bg-blue-500 transition-all duration-700 ease-out"></div>
+                <div class="h-0.5 w-12 bg-slate-200 mb-3 group-hover:w-full group-hover:bg-blue-700 transition-all duration-700 ease-out"></div>
                 <p class="text-sm text-slate-500 leading-snug">
                   Less than average ER costs for orthopedic care
                 </p>
@@ -548,7 +548,7 @@ const insurancePlans = [
                 <div class="text-4xl font-semibold text-slate-900 tracking-tight mb-2 group-hover:text-blue-600 transition-colors">
                   Most
                 </div>
-                <div class="h-0.5 w-12 bg-slate-200 mb-3 group-hover:w-full group-hover:bg-blue-500 transition-all duration-700 ease-out"></div>
+                <div class="h-0.5 w-12 bg-slate-200 mb-3 group-hover:w-full group-hover:bg-blue-700 transition-all duration-700 ease-out"></div>
                 <p class="text-sm text-slate-500 leading-snug">
                   Major insurance accepted in-network
                 </p>
@@ -558,10 +558,7 @@ const insurancePlans = [
 
           <!-- Right Content: Chart Card -->
           <div class="relative group">
-            <!-- Decorative background glow -->
-            <div class="absolute -inset-4 bg-gradient-to-r from-blue-50 to-slate-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl"></div>
-
-            <div class="relative bg-white border border-slate-200 rounded-xl p-6 lg:p-8 shadow-sm transition-all duration-500 hover:shadow-lg hover:border-blue-100">
+            <div class="relative bg-white border border-slate-200 rounded-2xl p-6 lg:p-8 shadow-sm transition-all duration-500 hover:shadow-xl hover:border-blue-100">
               <div class="flex items-center justify-between mb-8">
                 <div>
                   <h4 class="text-base font-semibold text-slate-900 tracking-tight">
@@ -573,7 +570,7 @@ const insurancePlans = [
                 </div>
                 <div class="flex items-center gap-4 text-[10px] font-bold tracking-wider uppercase">
                   <div class="flex items-center gap-1.5">
-                    <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                    <span class="w-2 h-2 rounded-full bg-blue-600"></span>
                     <span class="text-slate-600">Us</span>
                   </div>
                   <div class="flex items-center gap-1.5">
@@ -598,7 +595,7 @@ const insurancePlans = [
                   <div class="absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide">
                     Save 85%
                   </div>
-                  <div class="w-24 h-20 bg-gradient-to-t from-blue-600 to-blue-500 rounded-t-md shadow-lg shadow-blue-200/50 relative overflow-hidden group-hover/bar:shadow-xl group-hover/bar:shadow-blue-300/50 transition-all mt-3"></div>
+                  <div class="w-24 h-20 bg-blue-600 rounded-t-md shadow-lg shadow-blue-200/50 relative overflow-hidden group-hover/bar:shadow-xl group-hover/bar:shadow-blue-300/50 transition-all mt-3"></div>
                   <span class="text-slate-900 font-semibold text-xs mt-4 uppercase tracking-wider">Us</span>
                 </div>
 
@@ -634,7 +631,7 @@ const insurancePlans = [
     <Section background="white" id="video" class="w-full z-10 pt-24 pb-24 lg:pt-28 lg:pb-28 relative !bg-transparent">
       <Container class="relative z-10">
         <div class="text-center mb-10">
-          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4 leading-tight max-w-2xl mx-auto">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4 leading-tight max-w-2xl mx-auto">
             See IOC in action
           </h2>
           <p class="text-lg text-slate-600 max-w-xl mx-auto">
@@ -660,7 +657,7 @@ const insurancePlans = [
             aria-label="Play video"
             class="absolute inset-0 flex items-center justify-center bg-slate-900/20 transition-opacity duration-300"
           >
-            <span class="flex items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-full bg-ioc-blue shadow-2xl shadow-ioc-blue/40 ring-4 ring-white/30 transition-transform duration-300 group-hover:scale-110">
+            <span class="flex items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-full bg-blue-600 shadow-xl shadow-blue-600/25 ring-4 ring-white/30 transition-transform duration-300 group-hover:scale-110">
               <svg class="w-8 h-8 md:w-10 md:h-10 text-white ml-1" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M8 5.14v13.72c0 .84.93 1.35 1.64.9l10.78-6.86a1.07 1.07 0 0 0 0-1.8L9.64 4.24A1.07 1.07 0 0 0 8 5.14z"/>
               </svg>
@@ -705,7 +702,7 @@ const insurancePlans = [
       
       <Container class="relative z-10">
         <div class="hidden lg:block mb-24 text-center">
-          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight max-w-2xl mx-auto">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-6 leading-tight max-w-2xl mx-auto">
             Why choose IOC over the ER?
           </h2>
             </div>
@@ -727,20 +724,20 @@ const insurancePlans = [
                         <p class="text-slate-600 font-bold text-lg mb-1">Comparison</p>
                     </div>
                     
-                    <div class="h-20 flex items-center pl-10 pr-6 font-bold text-slate-700 text-lg border-b-2 border-[#e6ebf7] bg-slate-50 rounded-tl-xl">Wait Time</div>
-                    <div class="h-20 flex items-center pl-10 pr-6 font-bold text-slate-700 text-lg border-b-2 border-[#e6ebf7] bg-slate-50">Cost</div>
-                    <div class="h-20 flex items-center pl-10 pr-6 font-bold text-slate-700 text-lg border-b-2 border-[#e6ebf7] bg-slate-50">Provider</div>
-                    <div class="h-20 flex items-center pl-10 pr-6 font-bold text-slate-700 text-lg border-b-2 border-[#e6ebf7] bg-slate-50">Imaging</div>
+                    <div class="h-20 flex items-center pl-10 pr-6 font-bold text-slate-700 text-lg border-b-2 border-slate-200 bg-slate-50 rounded-tl-xl">Wait Time</div>
+                    <div class="h-20 flex items-center pl-10 pr-6 font-bold text-slate-700 text-lg border-b-2 border-slate-200 bg-slate-50">Cost</div>
+                    <div class="h-20 flex items-center pl-10 pr-6 font-bold text-slate-700 text-lg border-b-2 border-slate-200 bg-slate-50">Provider</div>
+                    <div class="h-20 flex items-center pl-10 pr-6 font-bold text-slate-700 text-lg border-b-2 border-slate-200 bg-slate-50">Imaging</div>
                     <div class="h-20 flex items-center pl-10 pr-6 font-bold text-slate-700 text-lg bg-slate-50 rounded-bl-xl">The Experience</div>
                 </div>
 
                 <!-- Column 2: IOC (Highlighted) -->
-                <div class="w-1/4 bg-white rounded-2xl shadow-2xl z-20 border border-blue-100 overflow-hidden relative flex flex-col -my-4">
-                    <div class="absolute top-0 left-0 right-0 h-1.5 bg-ioc-blue"></div>
+                <div class="w-1/4 bg-white rounded-2xl shadow-xl z-20 border border-blue-100 overflow-hidden relative flex flex-col -my-4">
+                    <div class="absolute top-0 left-0 right-0 h-1.5 bg-blue-600"></div>
                     
                     <!-- Fixed Height Header to match table alignment -->
                     <div class="h-[7rem] flex flex-col justify-end items-center bg-white border-b border-transparent pb-4 pt-2">
-                        <p class="text-ioc-blue font-extrabold text-2xl mb-1">IOC</p>
+                        <p class="text-blue-600 font-extrabold text-2xl mb-1">IOC</p>
                         <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">The Smart Way</p>
                     </div>
 
@@ -772,7 +769,7 @@ const insurancePlans = [
 
                     <!-- Integrated CTA (Extra Row) -->
                     <div class="p-6 bg-white border-t border-transparent">
-                        <a href="https://portal.athelas.com/site/instantorthocare" target="_blank" rel="noopener noreferrer" class="flex justify-center items-center w-full py-4 text-white bg-blue-600 hover:bg-blue-700 font-bold rounded-full transition-all shadow-lg shadow-blue-500/30">
+                        <a href="https://portal.athelas.com/site/instantorthocare" target="_blank" rel="noopener noreferrer" class="flex justify-center items-center w-full py-4 text-white bg-blue-600 hover:bg-blue-700 font-bold rounded-full transition-all shadow-lg shadow-blue-600/25">
                             Book Online
                         </a>
               </div>
@@ -788,19 +785,19 @@ const insurancePlans = [
                         <p class="text-xs text-slate-500 font-medium">The Slow Way</p>
             </div>
 
-                    <div class="h-20 flex justify-center items-center border-b-2 border-[#e6ebf7] bg-[#f5f9fe]">
+                    <div class="h-20 flex justify-center items-center border-b-2 border-slate-200 bg-slate-50">
                         <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-sm font-medium">Hours</span>
               </div>
-                    <div class="h-20 flex justify-center items-center border-b-2 border-[#e6ebf7] bg-[#f5f9fe]">
+                    <div class="h-20 flex justify-center items-center border-b-2 border-slate-200 bg-slate-50">
                         <span class="bg-white border border-red-200 text-red-600 px-3 py-1 rounded-full text-sm font-medium">High Deductible</span>
             </div>
-                    <div class="h-20 flex justify-center items-center border-b-2 border-[#e6ebf7] bg-[#f5f9fe]">
+                    <div class="h-20 flex justify-center items-center border-b-2 border-slate-200 bg-slate-50">
                         <span class="text-slate-500 font-medium">Generalist</span>
               </div>
-                    <div class="h-20 flex justify-center items-center border-b-2 border-[#e6ebf7] bg-[#f5f9fe]">
+                    <div class="h-20 flex justify-center items-center border-b-2 border-slate-200 bg-slate-50">
                         <span class="text-slate-500 font-medium">Yes</span>
             </div>
-                    <div class="h-20 flex justify-center items-center bg-[#f5f9fe]">
+                    <div class="h-20 flex justify-center items-center bg-slate-50">
                         <span class="text-slate-500 font-medium">Wait & See</span>
         </div>
                 </div>
@@ -812,19 +809,19 @@ const insurancePlans = [
                         <p class="text-xs text-slate-500 font-medium">The Basic Way</p>
         </div>
 
-                    <div class="h-20 flex justify-center items-center border-b-2 border-[#e6ebf7] bg-[#f5f9fe] rounded-tr-lg">
+                    <div class="h-20 flex justify-center items-center border-b-2 border-slate-200 bg-slate-50 rounded-tr-lg">
                         <span class="text-slate-500 font-medium">Varies</span>
               </div>
-                    <div class="h-20 flex justify-center items-center border-b-2 border-[#e6ebf7] bg-[#f5f9fe]">
+                    <div class="h-20 flex justify-center items-center border-b-2 border-slate-200 bg-slate-50">
                         <span class="text-slate-500 font-medium">Mid/High</span>
             </div>
-                    <div class="h-20 flex justify-center items-center border-b-2 border-[#e6ebf7] bg-[#f5f9fe]">
+                    <div class="h-20 flex justify-center items-center border-b-2 border-slate-200 bg-slate-50">
                         <span class="text-slate-500 font-medium">Generalist</span>
               </div>
-                    <div class="h-20 flex justify-center items-center border-b-2 border-[#e6ebf7] bg-[#f5f9fe]">
-                        <span class="bg-gray-100 text-gray-500 px-3 py-1 rounded-full text-sm font-medium">No MRI</span>
+                    <div class="h-20 flex justify-center items-center border-b-2 border-slate-200 bg-slate-50">
+                        <span class="bg-slate-100 text-slate-500 px-3 py-1 rounded-full text-sm font-medium">No MRI</span>
             </div>
-                    <div class="h-20 flex justify-center items-center bg-[#f5f9fe] rounded-br-lg">
+                    <div class="h-20 flex justify-center items-center bg-slate-50 rounded-br-lg">
                         <span class="text-slate-500 font-medium">Refer & Wait</span>
               </div>
             </div>
@@ -853,12 +850,12 @@ const insurancePlans = [
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-[10px] font-bold uppercase tracking-widest mb-6">
             <span class="relative flex h-2 w-2">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
             </span>
             Convenient Access
           </div>
           
-          <h2 class="text-4xl md:text-5xl lg:text-6xl font-semibold text-slate-900 tracking-tight leading-[1.05] mb-6">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight mb-6">
             Walk-In Orthopedic Clinic <span class="text-blue-600">in Draper, UT</span>
           </h2>
           
@@ -868,11 +865,11 @@ const insurancePlans = [
         </div>
 
         <!-- Unified Card Container -->
-        <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
+        <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
           <div class="grid lg:grid-cols-2">
             <!-- Left: Content -->
             <div class="p-6 md:p-8 lg:p-12 flex flex-col justify-center">
-              <h2 class="text-2xl lg:text-4xl font-bold text-gray-900 mb-6 lg:mb-8">Draper, Utah Clinic</h2>
+              <h2 class="text-2xl lg:text-4xl font-bold text-slate-900 mb-6 lg:mb-8">Draper, Utah Clinic</h2>
               
               <div class="space-y-4 lg:space-y-6 mb-8 lg:mb-10">
               <div class="flex items-start gap-3 lg:gap-4">
@@ -880,8 +877,8 @@ const insurancePlans = [
                     <MapPin client:load class="w-4 h-4 lg:w-5 lg:h-5" />
                   </div>
                 <div>
-                    <h3 class="font-semibold text-gray-900 mb-0.5 lg:mb-1 text-sm lg:text-base">Address</h3>
-                    <p class="text-gray-600 leading-relaxed text-sm lg:text-base">75 E 12300 S Suite 100<br />Draper, UT 84020</p>
+                    <h3 class="font-semibold text-slate-900 mb-0.5 lg:mb-1 text-sm lg:text-base">Address</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm lg:text-base">75 E 12300 S Suite 100<br />Draper, UT 84020</p>
                 </div>
               </div>
 
@@ -891,7 +888,7 @@ const insurancePlans = [
                   </div>
                   <div class="flex-1">
                     <div class="flex items-center gap-2 mb-1 lg:mb-2">
-                      <h3 class="font-semibold text-gray-900 text-sm lg:text-base">Hours</h3>
+                      <h3 class="font-semibold text-slate-900 text-sm lg:text-base">Hours</h3>
                       <span class="inline-flex items-center gap-1.5 bg-green-100 text-green-700 text-[10px] lg:text-xs px-2 lg:px-2.5 py-0.5 lg:py-1 rounded-full font-semibold">
                         <span class="relative flex h-1.5 w-1.5 lg:h-2 lg:w-2">
                           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
@@ -900,7 +897,7 @@ const insurancePlans = [
                         Open Now
                       </span>
                     </div>
-                    <ul class="text-gray-600 space-y-0.5 lg:space-y-1 leading-relaxed text-sm lg:text-base">
+                    <ul class="text-slate-600 space-y-0.5 lg:space-y-1 leading-relaxed text-sm lg:text-base">
                     <li>Monday - Friday: 9:00 AM - 8:00 PM</li>
                     <li>Saturday: 10:00 AM - 4:00 PM</li>
                     <li>Sunday: 10:00 AM - 2:00 PM</li>
@@ -913,7 +910,7 @@ const insurancePlans = [
                     <Phone client:load class="w-4 h-4 lg:w-5 lg:h-5" />
                   </div>
                 <div>
-                    <h3 class="font-semibold text-gray-900 mb-0.5 lg:mb-1 text-sm lg:text-base">Phone</h3>
+                    <h3 class="font-semibold text-slate-900 mb-0.5 lg:mb-1 text-sm lg:text-base">Phone</h3>
                     <a href="tel:3853867026" class="text-blue-600 hover:text-blue-700 font-semibold text-base lg:text-lg">
                     (385) 386-7026
                   </a>
@@ -925,7 +922,7 @@ const insurancePlans = [
                     <Mail client:load class="w-4 h-4 lg:w-5 lg:h-5" />
                   </div>
                 <div>
-                    <h3 class="font-semibold text-gray-900 mb-0.5 lg:mb-1 text-sm lg:text-base">Email</h3>
+                    <h3 class="font-semibold text-slate-900 mb-0.5 lg:mb-1 text-sm lg:text-base">Email</h3>
                     <a href="mailto:info@instantorthocare.com" class="text-blue-600 hover:text-blue-700 font-semibold text-sm lg:text-base break-all sm:break-normal">
                     info@instantorthocare.com
                   </a>
@@ -934,7 +931,7 @@ const insurancePlans = [
             </div>
 
               <div>
-                <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 py-3 lg:px-8 lg:py-4 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-colors shadow-md hover:shadow-xl text-sm lg:text-base w-full sm:w-auto">
+                <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 py-3 lg:px-8 lg:py-4 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/25 text-sm lg:text-base w-full sm:w-auto">
                 Get Directions
                   <svg class="w-4 h-4 lg:w-5 lg:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -965,8 +962,8 @@ const insurancePlans = [
     <Section background="gray" id="faq" class="py-24">
       <Container class="max-w-[1000px] mx-auto">
         <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Orthopedic Urgent Care FAQ</h2>
-          <p class="text-lg text-gray-500 mt-4">Common questions about walk-in orthopedic care in Draper, Utah.</p>
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight mb-4">Orthopedic Urgent Care FAQ</h2>
+          <p class="text-lg text-slate-500 mt-4">Common questions about walk-in orthopedic care in Draper, Utah.</p>
         </div>
 
         <FAQAccordion 
@@ -1003,9 +1000,7 @@ const insurancePlans = [
         
         <!-- Mobile Layout (Team Page Style) -->
         <div class="lg:hidden px-4">
-          <div class="bg-slate-900 rounded-[2.5rem] p-10 text-center relative overflow-hidden shadow-2xl">
-            <!-- Glow effect -->
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"></div>
+          <div class="bg-slate-900 rounded-3xl p-10 text-center relative overflow-hidden shadow-xl">
             
             <div class="relative z-10 max-w-2xl mx-auto">
               <h2 class="text-3xl font-bold text-white tracking-tight mb-6">
@@ -1015,7 +1010,7 @@ const insurancePlans = [
                 Same-day appointments available for fractures, sprains, and sports injuries.
               </p>
               <div class="flex flex-col gap-4 justify-center">
-                <a href="https://portal.athelas.com/site/instantorthocare" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-500 transition-all shadow-lg shadow-blue-600/30">
+                <a href="https://portal.athelas.com/site/instantorthocare" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/25">
                   Check In Now
                 </a>
                 <a href="tel:3853867026" class="inline-flex items-center justify-center px-8 py-4 bg-white/5 text-white font-bold rounded-full hover:bg-white/10 transition-colors border border-white/10 backdrop-blur-sm">
@@ -1027,13 +1022,8 @@ const insurancePlans = [
         </div>
 
         <!-- Desktop Layout (Original Split) -->
-        <div class="w-[calc(100%-2rem)] max-w-[1400px] mx-auto rounded-[2.5rem] bg-blue-50/30 relative overflow-hidden border border-blue-100 group min-h-[600px] hidden lg:flex flex-col lg:flex-row items-stretch shadow-sm">
+        <div class="w-[calc(100%-2rem)] max-w-[1400px] mx-auto rounded-3xl bg-blue-50/30 relative overflow-hidden border border-blue-100 group min-h-[600px] hidden lg:flex flex-col lg:flex-row items-stretch shadow-sm">
           
-          <!-- Mesh Gradient Background -->
-          <div class="absolute inset-0 z-0">
-            <div class="absolute top-0 left-0 w-[600px] h-[600px] bg-blue-200/20 rounded-full blur-[100px] -translate-x-1/3 -translate-y-1/3 mix-blend-multiply"></div>
-            <div class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-ioc-green/10 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3 mix-blend-multiply"></div>
-          </div>
 
           <!-- Background Image (Right Aligned & Anchored Bottom) -->
           <div class="absolute inset-0 z-10 pointer-events-none">
@@ -1050,7 +1040,7 @@ const insurancePlans = [
           <!-- Left Side: Content -->
           <div class="flex-1 relative flex flex-col justify-center py-16 md:py-24 px-8 md:px-16 lg:px-20 z-20">
             <div class="max-w-md">
-              <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight leading-[1.1]">
+              <h2 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
                 The care you need, from <span class="text-blue-600">doctors you trust.</span>
               </h2>
             </div>
@@ -1058,7 +1048,7 @@ const insurancePlans = [
 
           <!-- Right Side: Booking Card -->
           <div class="flex-1 flex items-center justify-center lg:justify-end p-8 md:p-16 lg:pr-20 lg:pl-0 relative z-30">
-            <div class="bg-white/90 backdrop-blur-md rounded-[2rem] shadow-2xl border border-white/50 p-8 md:p-12 w-full max-w-md transform transition-all hover:scale-[1.02] duration-300">
+            <div class="bg-white rounded-3xl shadow-xl border border-slate-100 p-8 md:p-12 w-full max-w-md transform transition-all hover:scale-[1.02] duration-300">
               <div class="mb-8">
                 <h3 class="text-3xl font-bold text-slate-900 mb-3">Ready to be seen?</h3>
                 <p class="text-slate-500 text-lg leading-relaxed">
@@ -1067,7 +1057,7 @@ const insurancePlans = [
               </div>
 
               <div class="space-y-4">
-                <a href="https://portal.athelas.com/site/instantorthocare" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-full py-5 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-700 transition-all shadow-lg shadow-blue-500/25 text-xl">
+                <a href="https://portal.athelas.com/site/instantorthocare" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-full py-5 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/25 text-xl">
                   Check In Now
                 </a>
                 <a href="tel:3853867026" class="flex items-center justify-center w-full py-5 bg-white text-slate-700 font-bold rounded-full hover:bg-slate-50 transition-all border-2 border-slate-100 shadow-sm text-xl gap-3 group/phone">
