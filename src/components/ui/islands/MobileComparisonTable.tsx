@@ -51,7 +51,7 @@ const MobileComparisonTable = () => {
           <h2 className="text-3xl font-bold text-slate-900 tracking-tight mb-2">
             Better care. <span className="text-blue-600">Better value.</span>
           </h2>
-          <p className="text-slate-500 text-sm">See how we stack up against the ER.</p>
+          <p className="text-slate-600 text-base">See how we stack up against the ER.</p>
         </div>
 
         {/* Two-Column Layout (Independent Columns) */}
@@ -74,7 +74,7 @@ const MobileComparisonTable = () => {
             {/* Header Cell */}
             <div className="h-20 flex flex-col justify-center items-center border-b border-blue-500/30 bg-blue-600">
               <p className="text-white font-extrabold text-xl leading-none mb-1">IOC</p>
-              <p className="text-[10px] text-blue-100 uppercase tracking-widest font-medium">The Smart Way</p>
+              <p className="text-xs text-blue-100 uppercase tracking-widest font-medium">The Smart Way</p>
             </div>
 
             {/* Rows */}

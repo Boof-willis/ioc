@@ -68,8 +68,8 @@ const services = [
             <img src={encodeURI(service.svgPath)} alt={service.title} class="w-full h-full min-w-0 min-h-0 object-contain transition-all duration-300 service-icon" />
           </div>
           <h3 class="text-lg font-bold text-slate-900 mb-3 pointer-events-none">{service.title}</h3>
-          <p class="text-sm text-slate-500 leading-relaxed mb-4 pointer-events-none">{service.description}</p>
-          <span class="text-sm font-semibold text-blue-500 inline-flex items-center gap-1 group-hover:gap-2 group-hover:text-blue-600 transition-all pointer-events-none">
+          <p class="text-base text-slate-600 leading-relaxed mb-4 pointer-events-none">{service.description}</p>
+          <span class="text-sm font-semibold text-blue-600 inline-flex items-center gap-1 group-hover:gap-2 group-hover:text-blue-700 transition-all pointer-events-none">
             Learn more
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
           </span>
@@ -83,7 +83,7 @@ const services = [
 
       <div class="relative z-10 p-8 md:p-12 grid md:grid-cols-12 gap-6 items-center">
         <div class="md:col-span-8">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm text-white/90 text-[10px] font-bold uppercase tracking-widest mb-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm text-white/90 text-xs font-bold uppercase tracking-widest mb-4">
             <span class="relative flex h-2 w-2">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style="background-color: #a1e80a;"></span>
               <span class="relative inline-flex rounded-full h-2 w-2" style="background-color: #a1e80a;"></span>

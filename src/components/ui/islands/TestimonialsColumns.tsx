@@ -150,7 +150,7 @@ function TestimonialsColumn({
                 className="p-7 rounded-2xl border border-slate-100 bg-white shadow-sm w-full"
               >
                 <StarRating />
-                <p className="text-slate-700 text-[15px] leading-relaxed mb-5">"{t.text}"</p>
+                <p className="text-slate-700 text-base leading-relaxed mb-5">"{t.text}"</p>
                 <div className="flex items-center gap-3 pt-4 border-t border-slate-100">
                   <div className={`w-9 h-9 rounded-full ${t.color} flex items-center justify-center flex-shrink-0`}>
                     <span className="text-white font-bold text-[10px] tracking-wide">{t.initials}</span>
@@ -159,7 +159,7 @@ function TestimonialsColumn({
                     <span className="font-semibold text-slate-900 text-sm leading-5 tracking-tight">
                       {t.name}
                     </span>
-                    <span className="text-slate-400 text-xs leading-5 tracking-tight">
+                    <span className="text-slate-500 text-xs leading-5 tracking-tight">
                       {t.role}
                     </span>
                   </div>
