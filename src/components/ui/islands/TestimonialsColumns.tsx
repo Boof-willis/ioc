@@ -175,7 +175,7 @@ function TestimonialsColumn({
 
 export default function TestimonialsColumns() {
   return (
-    <section id="testimonials" className="py-24 lg:py-32 bg-white overflow-hidden relative">
+    <section id="testimonials" className="py-16 md:py-24 bg-white overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
